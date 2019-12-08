@@ -6,7 +6,6 @@ import colors from '../../assets/colors'
 
 const MenuContainer = styled.div`
     background-color: ${colors.primaryBlue};
-    bottom: 0;
     background-color: #0916b9;
     position: fixed;
     width: 100vw;
@@ -16,6 +15,8 @@ const MenuContainer = styled.div`
     justify-content: space-between;
     padding-top: 4vh;
     padding-bottom: 4vh;
+    transition: bottom 1s;
+    bottom: ${props => props.visible ? '0' : '-50vh'};
 `
 
 const NavigationLinkContainer = styled.div`
@@ -45,8 +46,9 @@ const SocialContainer = styled.div`
 
 
 const MainMenu = ( props ) => {
+
   return (
-    <MenuContainer>
+    <MenuContainer visible={props.visible}>
         <SocialContainer>
             <img alt='Placeholder' src='https://via.placeholder.com/50'/>
             <img alt='Placeholder' src='https://via.placeholder.com/50'/>

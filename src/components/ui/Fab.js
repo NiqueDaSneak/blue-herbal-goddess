@@ -9,11 +9,10 @@ const Circle = styled.div`
   width: 10vw;
   height: 10vw;
 `
-
 const FloatingActionButton = ( props ) => {
   return(
     <>
-      <Circle />
+      <Circle onClick={props.onClick}/>
     </>
   )
 }

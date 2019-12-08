@@ -18,6 +18,7 @@ const MenuContainer = styled.div`
     transition: bottom 1s;
     bottom: ${props => props.visible ? '0' : '-50vh'};
     left: 0;
+    z-index: 2;
 `
 
 const NavigationLinkContainer = styled.div`

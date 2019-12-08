@@ -57,7 +57,6 @@ const ContentShade = styled.div`
 `
 
 const MainMenu = ( props ) => {
-
   return (
       <>
         <ContentShade onClick={ props.toggleMenu } visible={ props.visible }/>

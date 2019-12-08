@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import MainMenu from '../ui/MainMenu'
-import FloatingActionButton from '../ui/Fab'
+import FloatingActionButtons from '../ui/Fab'
 
 const RootLayer = styled.div`
   margin: 0;
@@ -15,8 +15,10 @@ const Layout = ( props ) => {
 
   return (
     <RootLayer>
-      <FloatingActionButton 
-      onClick={ () => setMenu(!menuVisible) } />
+      <FloatingActionButtons
+      onClick={ () => setMenu(!menuVisible) } 
+      showCart={false}
+      />
       <MainMenu 
       toggleMenu={ () => setMenu(!menuVisible) } 
       visible={ menuVisible }/>

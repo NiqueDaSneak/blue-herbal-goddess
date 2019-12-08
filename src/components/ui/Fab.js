@@ -6,8 +6,11 @@ const Circle = styled.div`
   border-radius: 10vw;
   background-color: ${colors.test};
   border-radius: 50%;
-  width: 10vw;
-  height: 10vw;
+  width: 20vw;
+  height: 20vw;
+  position: fixed;
+  bottom: 4vh;
+  right: 8vw;
 `
 const FloatingActionButton = ( props ) => {
   return(

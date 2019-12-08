@@ -43,35 +43,45 @@ const SocialContainer = styled.div`
     }
 `
 
-
+const ContentShade = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background-color: ${ colors.transparent.midGrey };
+    opacity: ${ props => props.visible ? 1 : 0};
+    transition: visibility 2s, opacity 2s;
+    visibility: ${ props => props.visible ? "visible" : "hidden" };
+`
 
 const MainMenu = ( props ) => {
 
   return (
-    <MenuContainer visible={props.visible}>
-        <SocialContainer>
-            <img alt='Placeholder' src='https://via.placeholder.com/50'/>
-            <img alt='Placeholder' src='https://via.placeholder.com/50'/>
-            <img alt='Placeholder' src='https://via.placeholder.com/50'/>
-        </SocialContainer>
-        <NavigationLinkContainer className="nav-links">
-            <Router>
-                <NavListItem>
-                    <Link>Discover Products</Link>
-                </NavListItem>
-                <NavListItem>
-                    <Link>Cart</Link>
-                </NavListItem>
-                <NavListItem>
-                    <Link>Assessment</Link>
-                </NavListItem>
-                <NavListItem>
-                    <Link>About Us</Link>
-                </NavListItem>
-            </Router>
-        </NavigationLinkContainer>
-        <SearchBar />
-    </MenuContainer>
+      <>
+        <ContentShade onClick={ props.toggleMenu } visible={ props.visible }/>
+        <MenuContainer visible={props.visible}>
+            <SocialContainer>
+                <img alt='Placeholder' src='https://via.placeholder.com/50'/>
+                <img alt='Placeholder' src='https://via.placeholder.com/50'/>
+                <img alt='Placeholder' src='https://via.placeholder.com/50'/>
+            </SocialContainer>
+            <NavigationLinkContainer>
+                <Router>
+                    <NavListItem>
+                        <Link>Discover Products</Link>
+                    </NavListItem>
+                    <NavListItem>
+                        <Link>Cart</Link>
+                    </NavListItem>
+                    <NavListItem>
+                        <Link>Assessment</Link>
+                    </NavListItem>
+                    <NavListItem>
+                        <Link>About Us</Link>
+                    </NavListItem>
+                </Router>
+            </NavigationLinkContainer>
+            <SearchBar />
+        </MenuContainer>
+      </>
   )
 }
 

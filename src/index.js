@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Layout from './components/hoc/Layout'
-import './index.css';
-import * as serviceWorker from './serviceWorker';
+import { Home } from './components/views/index'
+import * as serviceWorker from './serviceWorker'
 
 const AppRouter = () => (
   <Layout>
     <Router>
       <Switch>
         <Route path="/" exact>
-          <span>home</span>
+          <Home />
         </Route>
         <Route path="/about">
           <h1>about</h1>

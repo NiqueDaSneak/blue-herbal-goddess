@@ -12,6 +12,7 @@ const Circle = styled.div`
   bottom: 4vh;
   right: 8vw;
 `
+
 const FloatingActionButton = ( props ) => {
   return(
     <>

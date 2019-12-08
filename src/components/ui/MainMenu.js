@@ -17,6 +17,7 @@ const MenuContainer = styled.div`
     padding-bottom: 4vh;
     transition: bottom 1s;
     bottom: ${props => props.visible ? '0' : '-50vh'};
+    left: 0;
 `
 
 const NavigationLinkContainer = styled.div`
@@ -50,6 +51,9 @@ const ContentShade = styled.div`
     opacity: ${ props => props.visible ? 1 : 0};
     transition: visibility 2s, opacity 2s;
     visibility: ${ props => props.visible ? "visible" : "hidden" };
+    top: 0;
+    left: 0;
+    position: fixed;
 `
 
 const MainMenu = ( props ) => {

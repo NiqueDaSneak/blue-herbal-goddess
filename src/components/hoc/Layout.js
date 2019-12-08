@@ -6,6 +6,8 @@ import FloatingActionButton from '../ui/Fab'
 
 const RootLayer = styled.div`
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 const Layout = ( props ) => {

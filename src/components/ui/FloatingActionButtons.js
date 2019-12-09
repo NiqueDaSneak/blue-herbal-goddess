@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
-import Images from '../../assets/imgs/'
+import Images from '../../assets/imgs'
 
 const Circle = styled.div`
   display: flex;
@@ -34,17 +34,23 @@ const CartToggle = styled(Circle)`
   transition: bottom 1s;
 `
 
-const ButtonContainer = ( props ) => {
+const ButtonContainer = styled.div`
+  MenuToggle {
+    right: ${ props => props.hidden ? '-100vw' : '8vw' }
+  }
+`
+
+const FloatingActionButtons = ( props ) => {
   return(
-    <>
+    <ButtonContainer hidden>
       <MenuToggle onClick={props.onClick}>
         <img alt='Floating Action Button' src={Images.menu}/>
       </MenuToggle>
       <CartToggle showCart={props.showCart}>
         <img alt='Floating Action Button' src={Images.cart}/>
       </CartToggle>
-    </>
+    </ButtonContainer>
   )
 }
 
-export default ButtonContainer
+export default FloatingActionButtons

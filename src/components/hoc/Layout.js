@@ -24,6 +24,7 @@ const Layout = ( props ) => {
       <Resets />
       <RootLayer>
         <FloatingActionButtons
+        hidden={true}
         onClick={ () => setMenu(!menuVisible) } 
         showCart={false}
         />

@@ -15,7 +15,6 @@ const HomeBackground = styled.div`
   flex-direction: column;
   background-image: url(${images.mountains});
   background-size: cover;
-  /* filter: grayscale(100%); */
 `
 
 const Heading = styled.span`
@@ -23,7 +22,7 @@ const Heading = styled.span`
   color: ${ colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
-  /* font-weight: bolder; */
+  margin-top: 2vh;
 `
 
 const pulse = keyframes`

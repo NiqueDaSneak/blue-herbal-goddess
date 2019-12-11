@@ -10,15 +10,20 @@ const ButtonContainer = styled.div`
 `
 
 const NavigationButtons = ( props ) => {
-  const [navButtonValues, setNavValues] = useState(['Button 1','Button 2','Button 3','More'])
+  const buttonValues = {
+    first: ['Discover Products','Take Assessment','Book Time','More'],
+    second: ['Instagram','Medium','Facebook','Back']
+  }
+
+  const [navButtonValues, setNavValues] = useState(buttonValues.first)
   
   const toggleNavButtons = (buttonText) => {
     switch (buttonText) {
       case 'More':
-        setNavValues(['Button 4','Button 5','Button 6','Back'])
+        setNavValues(buttonValues.second)
         break;
       case 'Back':
-        setNavValues(['Button 1','Button 2','Button 3','More'])
+        setNavValues(buttonValues.first)
         break;
       default:
         break;

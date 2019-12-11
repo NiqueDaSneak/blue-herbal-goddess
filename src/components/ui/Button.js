@@ -12,6 +12,7 @@ const ButtonStyle = styled.button`
   margin-bottom: 2vh;
   text-transform: uppercase;
   border-radius: 2vw;
+  font-weight: lighter;
 `
 
 const Button = ( props ) => {

@@ -15,8 +15,9 @@ const TextInput = styled.input.attrs({
   width: 80vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  padding-left: 2vw;
+  padding-left: 4vw;
   padding-right: 2vw;
+  font-weight: 100;
 `
 
 const SearchBar = ( props ) => {

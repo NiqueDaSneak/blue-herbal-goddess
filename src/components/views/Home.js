@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes, createGlobalStyle } from 'styled-components'
+import styled, { css, keyframes, createGlobalStyle } from 'styled-components'
 import images from '../../assets/imgs'
 import { FlexCenter } from '../hoc/Utility'
 import SearchBar from '../ui/SearchBar'
@@ -23,6 +23,7 @@ const Heading = styled.span`
   color: ${ colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
+  /* font-weight: bolder; */
 `
 
 const pulse = keyframes`
@@ -38,17 +39,51 @@ const pulse = keyframes`
  transform-origin: center;
 }
 `
+const colorChange = keyframes`
+  0% { 
+    fill: ${colors.blue.main} 
+  }
+	50% { 
+    fill: red
+  }
+	100% { 
+    fill: ${colors.blue.main} 
+  }
+`
+
+// function template(i, items, duration) {
+//   return `
+//       &:nth-child(${i + 1}) {
+//         animation-delay: ${`${(duration / items) * i}s`};
+//        }
+//     `
+// }
+// function getAnimations(items, duration) {
+//   let str = ''
+//   for (let i = 0; i < items; i += 1) {
+//     str += template(i, items, duration)
+//   }
+//   return str
+// }
 
 const GoddessImg = styled(ImportedComponent)`
   width: 100vw;
   height: 50vh;
-  #Leaves {
-    path {
-      animation: ${pulse} infinite 3s ease-in-out;
-    }
-  }
-  }
+  /* .goddess {
+    animation: ${colorChange} infinite 3s linear;
+  } */
+  /* .goddess { */
+    /* fill: red; */
+    /* animation: ${colorChange} infinite 3s linear; */
+  /* } */
+  /* #Leaves { */
+
+    /* path { */
+      /* animation: ${pulse} infinite 4s ease-in-out; */
+    /* } */
+  /* } */
 `
+
 
 const Home = ( props ) => (
   <HomeBackground>

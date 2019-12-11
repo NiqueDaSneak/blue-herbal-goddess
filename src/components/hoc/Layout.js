@@ -4,9 +4,11 @@ import styled, { createGlobalStyle } from 'styled-components'
 import MainMenu from '../ui/MainMenu'
 import FloatingActionButtons from '../ui/FloatingActionButtons'
 
-const Resets = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,500i,700&display=swap");
   body {
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
   }
 `
 
@@ -21,7 +23,7 @@ const Layout = ( props ) => {
 
   return (
     <>
-      <Resets />
+      <GlobalStyles />
       <RootLayer>
         <FloatingActionButtons
         hidden={true}

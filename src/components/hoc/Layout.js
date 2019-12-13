@@ -14,26 +14,24 @@ const GlobalStyles = createGlobalStyle`
 
 const RootLayer = styled.div`
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 `
 
 const Layout = ( props ) => {
   const [menuVisible, setMenu] = useState(false);
-
   return (
     <>
+    {console.log(props.path)}
       <GlobalStyles />
       <RootLayer>
         <FloatingActionButtons
-        hidden={true}
+        hidden={ props.path === '/' ? true : false }
         onClick={ () => setMenu(!menuVisible) } 
         showCart={false}
         />
         <MainMenu 
         toggleMenu={ () => setMenu(!menuVisible) } 
         visible={ menuVisible }/>
-          { props.children }
+        { props.children }
       </RootLayer>
     </>
   )

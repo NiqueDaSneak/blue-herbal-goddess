@@ -1,10 +1,11 @@
 import React from 'react'
 import styled, { css, keyframes, createGlobalStyle } from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenter } from '../hoc/Utility'
+import { FlexCenterHeading } from '../hoc/Utility'
 import SearchBar from '../ui/SearchBar'
 import NavigationButtons from '../ui/NavigationButtons'
 import colors from '../../assets/colors'
+import Layout from '../hoc/Layout'
 import { ReactComponent as ImportedComponent } from '../../assets/imgs/goddess.svg'
 
 const HomeBackground = styled.div`
@@ -15,14 +16,6 @@ const HomeBackground = styled.div`
   flex-direction: column;
   background-image: url(${images.mountains});
   background-size: cover;
-`
-
-const Heading = styled.span`
-  font-size: 30pt;
-  color: ${ colors.blue.dark };
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 2vh;
 `
 
 const pulse = keyframes`
@@ -85,14 +78,15 @@ const GoddessImg = styled(ImportedComponent)`
 
 
 const Home = ( props ) => (
-  <HomeBackground>
-    <FlexCenter>
-      <Heading>Blue Herbal Goddess</Heading>
-    </FlexCenter>
-    <GoddessImg alt='Logo' />
-    <SearchBar />
-    <NavigationButtons />
-  </HomeBackground>
+  <>
+    <Layout path={props.match.path} />
+    <HomeBackground>
+      <FlexCenterHeading text='Blue Herbal Goddess' />
+      <GoddessImg alt='Logo' />
+      <SearchBar />
+      <NavigationButtons />
+    </HomeBackground>
+  </>
 )
 
 export default Home

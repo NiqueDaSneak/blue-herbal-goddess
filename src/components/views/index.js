@@ -1,7 +1,7 @@
 import Home from './Home';
-// import Bar from './Bar';
+import Services from './Services';
 
 export {
   Home,
-  // Bar,
+  Services
 }

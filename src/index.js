@@ -1,24 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
-import Layout from './components/hoc/Layout'
-import { Home } from './components/views/index'
+import { Home, Services } from './components/views/index'
 
 import * as serviceWorker from './serviceWorker'
 
 const AppRouter = () => (
-  <Layout>
-    <Router>
+  <Router>
       <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/about">
-          <h1>about</h1>
-        </Route>
+        <Route path="/" component={Home} exact />
+        <Route path='/services' component={Services} />
       </Switch>
-    </Router>
-  </Layout>
+  </Router>
 )
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));

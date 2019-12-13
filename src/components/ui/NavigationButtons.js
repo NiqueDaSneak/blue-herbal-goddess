@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Button from '../ui/Button'
 import styled from 'styled-components'
 
@@ -18,7 +18,7 @@ const NavigationButtons = ( props ) => {
     links: {
       'Discover Products': '',
       'Take Assessment': '',
-      'Services': '',
+      'Services': '/services',
       social: {
         'Instagram': 'https://instagram.com',
         'Medium': 'https://www.medium.com',

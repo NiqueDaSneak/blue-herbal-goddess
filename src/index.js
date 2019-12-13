@@ -8,9 +8,9 @@ import * as serviceWorker from './serviceWorker'
 const AppRouter = () => (
   <Router>
       <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path='/services' component={Services} />
-        <Route path='/coming-soon' component={ComingSoon} />
+        {/* <Route path="/" component={Home} exact />
+        <Route path='/services' component={Services} /> */}
+        <Route path='/' component={ComingSoon} />
       </Switch>
   </Router>
 )

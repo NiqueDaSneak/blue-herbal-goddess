@@ -20,3 +20,9 @@ export const FlexCenterHeading = ( props ) => (
     <Heading>{props.text}</Heading>
 </FlexCenter>
 )
+
+export const BodyCopy = styled.p`
+  width: 80vw;
+  font-weight: normal;
+  text-align: center;
+`

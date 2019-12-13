@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading } from '../hoc/Utility'
+import { FlexCenterHeading, BodyCopy } from '../hoc/Utility'
 import colors from '../../assets/colors'
 import ServiceItem from '../ui/ServiceItem'
 import Layout from '../hoc/Layout'
@@ -13,11 +13,6 @@ const ServicesBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-
-const BodyCopy = styled.p`
-  width: 80vw;
-  font-weight: normal;
 `
 
 const ServicesContainer = styled.div`

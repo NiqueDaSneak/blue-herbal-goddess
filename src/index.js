@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
-import { Home, Services } from './components/views/index'
+import { Home, Services, ComingSoon } from './components/views/index'
 
 import * as serviceWorker from './serviceWorker'
 
@@ -10,6 +10,7 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path='/services' component={Services} />
+        <Route path='/coming-soon' component={ComingSoon} />
       </Switch>
   </Router>
 )

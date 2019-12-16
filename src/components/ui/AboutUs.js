@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FlexCenterHeading, BodyCopy } from '../hoc/Utility'
+import { FlexCenterHeading, BodyCopy } from './Utility'
 import images from '../../assets/imgs'
 import colors from '../../assets/colors'
 

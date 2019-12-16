@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import images from '../../assets/imgs'
 
@@ -29,13 +29,17 @@ const InfoIcon = styled.img`
 `
 
 
-const ServiceItem = ( props ) => (
-  <Container>
-    {/* <span>{ props.heading }</span> */}
-    <ServiceIcon src={ props.icon } alt='Service Item'/>
-    <span>{ props.productName }</span>
-    <InfoIcon src={images.information} alt='Information Button' />
-  </Container>
-)
+const ServiceItem = ( props ) => {
+  return(
+    <>
+      <Container onClick>
+        {/* <span>{ props.heading }</span> */}
+        <ServiceIcon src={ props.icon } alt='Service Item'/>
+        <span>{ props.productName }</span>
+        <InfoIcon src={images.information} alt='Information Button' />
+      </Container>
+    </>
+  )
+}
 
 export default ServiceItem

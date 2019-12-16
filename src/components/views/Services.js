@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading, BodyCopy } from '../hoc/Utility'
+import { FlexCenterHeading, BodyCopy } from '../ui/Utility'
 import colors from '../../assets/colors'
 import ServiceItem from '../ui/ServiceItem'
 import Layout from '../hoc/Layout'
 import AboutUs from '../ui/AboutUs'
+import ServiceModal from  '../ui/ServiceModal'
 
 const ServicesBackground = styled.div`
   /* background-color: ${colors.test}; */
@@ -57,8 +58,10 @@ const ServiceItems = [
   },
 ]
 
-const Services = ( props ) => (
-  <>
+const Services = ( props ) => {
+  const [modalActive, setModal] = useState(false)
+  return(
+    <>
     <Layout path={ props.match.path } />
     <ServicesBackground>
       <FlexCenterHeading text='Services' />
@@ -76,6 +79,9 @@ const Services = ( props ) => (
       </ServicesContainer>
       </ServicesBackground>
       <AboutUs />
+      <ServiceModal visible={modalActive}/>
   </>
-)
+  )
+}
+
 export default Services

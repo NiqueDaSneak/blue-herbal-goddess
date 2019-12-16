@@ -2,24 +2,28 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import SearchBar from './SearchBar'
+import { ContentShade } from './Utility'
 import colors from '../../assets/colors'
 
 const MenuContainer = styled.div`
-    /* background-color: ${colors.blue.main}; */
-    position: fixed;
-    width: 100vw;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 4vh;
-    padding-bottom: 4vh;
-    bottom: 0;
-    opacity: ${ props => props.visible ? "1" : "0" };
-    visibility: ${ props => props.visible ? "visible" : "hidden" };
-    transition: opacity 1s ease-in-out;
-    left: 0;
-    z-index: 2;
+  /* background-color: ${colors.blue.main}; */
+  position: fixed;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  bottom: 0;
+  transform: ${ props => props.visible ? 'scale(1)' : 'scale(.4)'};
+  opacity: ${ props => props.visible ? "1" : "0" };
+  visibility: ${ props => props.visible ? "visible" : "hidden" };
+  /* transition: transform 6s ease-in-out; */
+  transition: opacity .8s ease-in-out;
+  /* transition: visibility 1s ease-in-out; */
+  left: 0;
+  z-index: 2;
 `
 
 const NavigationLinkContainer = styled.div`
@@ -44,18 +48,6 @@ const SocialContainer = styled.div`
         margin-right: 10vw;
         margin-left: 10vw;
     }
-`
-
-const ContentShade = styled.div`
-    height: 100vh;
-    width: 100vw;
-    background-color: ${ colors.transparent.midGrey };
-    opacity: ${ props => props.visible ? 1 : 0};
-    transition: visibility 2s, opacity 2s;
-    visibility: ${ props => props.visible ? "visible" : "hidden" };
-    top: 0;
-    left: 0;
-    position: fixed;
 `
 
 const MainMenu = ( props ) => {

@@ -13,6 +13,7 @@ const Circle = styled.div`
 
 const CircleToSquare = styled.div`
   transition: all .4s;
+  visibility: ${ props => props.hidden ? 'hidden' : 'visible' }
   ${ props => props.circle ? css`
     display: flex;
     justify-content: center;
@@ -38,6 +39,7 @@ const CircleToSquare = styled.div`
     bottom: 0;
     right: 0;
     z-index: 2;
+    border-radius: 20px 20px 0px 0px;
     img {
       visibility: hidden;
     } 
@@ -59,8 +61,8 @@ const CartToggle = styled(Circle)`
   z-index: 1;
   margin-bottom: 4vh;
   bottom: 5vh;
-    right: 5vh;
-    position: fixed;
+  right: 5vh;
+  position: fixed;
   img {
     width: 5vw;
   }

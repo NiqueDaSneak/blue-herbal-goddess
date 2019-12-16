@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css, keyframes, createGlobalStyle } from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading } from '../hoc/Utility'
+import { FlexCenterHeading } from '../ui/Utility'
 import SearchBar from '../ui/SearchBar'
 import NavigationButtons from '../ui/NavigationButtons'
 import colors from '../../assets/colors'

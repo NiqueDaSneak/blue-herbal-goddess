@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { createGlobalStyle, keyframes } from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading, BodyCopy } from '../hoc/Utility'
+import { FlexCenterHeading, BodyCopy } from '../ui/Utility'
 import colors from '../../assets/colors'
 import Layout from '../hoc/Layout'
 import { device } from '../../assets/MediaQueries'

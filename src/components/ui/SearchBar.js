@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FlexCenter } from '../hoc/Utility'
+import { FlexCenter } from './Utility'
 import colors from '../../assets/colors'
 
 const TextInput = styled.input.attrs({

@@ -24,6 +24,7 @@ const Layout = ( props ) => {
       <GlobalStyles />
       <RootLayer>
         <FloatingActionButtons
+        circle={menuVisible ? false : true}
         hidden={ props.path === '/' ? true : false }
         onClick={ () => setMenu(!menuVisible) } 
         showCart={false}

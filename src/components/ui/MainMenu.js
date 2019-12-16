@@ -5,8 +5,7 @@ import SearchBar from './SearchBar'
 import colors from '../../assets/colors'
 
 const MenuContainer = styled.div`
-    background-color: ${colors.primaryBlue};
-    background-color: #0916b9;
+    /* background-color: ${colors.blue.main}; */
     position: fixed;
     width: 100vw;
     height: 40vh;
@@ -15,8 +14,10 @@ const MenuContainer = styled.div`
     justify-content: space-between;
     padding-top: 4vh;
     padding-bottom: 4vh;
-    transition: bottom 1s ease-in-out;
-    bottom: ${props => props.visible ? '0' : '-50vh'};
+    bottom: 0;
+    opacity: ${ props => props.visible ? "1" : "0" };
+    visibility: ${ props => props.visible ? "visible" : "hidden" };
+    transition: opacity 1s ease-in-out;
     left: 0;
     z-index: 2;
 `
@@ -70,16 +71,16 @@ const MainMenu = ( props ) => {
             <NavigationLinkContainer>
                 <Router>
                     <NavListItem>
-                        <Link>Discover Products</Link>
+                        <Link to='/'>Discover Products</Link>
                     </NavListItem>
                     <NavListItem>
-                        <Link>Cart</Link>
+                        <Link to='/'>Cart</Link>
                     </NavListItem>
                     <NavListItem>
-                        <Link>Assessment</Link>
+                        <Link to='/'>Assessment</Link>
                     </NavListItem>
                     <NavListItem>
-                        <Link>About Us</Link>
+                        <Link to='/'>About Us</Link>
                     </NavListItem>
                 </Router>
             </NavigationLinkContainer>

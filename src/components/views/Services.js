@@ -5,10 +5,11 @@ import { FlexCenterHeading, BodyCopy } from '../hoc/Utility'
 import colors from '../../assets/colors'
 import ServiceItem from '../ui/ServiceItem'
 import Layout from '../hoc/Layout'
+import AboutUs from '../ui/AboutUs'
 
 const ServicesBackground = styled.div`
   /* background-color: ${colors.test}; */
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -23,22 +24,58 @@ const ServicesContainer = styled.div`
   height: 46vh;
 `
 
+const ServiceItems = [
+  {
+    heading: 'Heading',
+    productName: 'Product Name',
+    icon: 'http://via.placeholder.com/50x50'
+  },
+  {
+    heading: 'Heading',
+    productName: 'Product Name',
+    icon: 'http://via.placeholder.com/50x50'
+  },
+  {
+    heading: 'Heading',
+    productName: 'Product Name',
+    icon: 'http://via.placeholder.com/50x50'
+  },
+  {
+    heading: 'Heading',
+    productName: 'Product Name',
+    icon: 'http://via.placeholder.com/50x50'
+  },
+  {
+    heading: 'Heading',
+    productName: 'Product Name',
+    icon: 'http://via.placeholder.com/50x50'
+  },
+  {
+    heading: 'Heading',
+    productName: 'Product Name',
+    icon: 'http://via.placeholder.com/50x50'
+  },
+]
+
 const Services = ( props ) => (
   <>
-    {/* {console.log(props)} */}
-    <Layout path={props.match.path} />
+    <Layout path={ props.match.path } />
     <ServicesBackground>
       <FlexCenterHeading text='Services' />
       <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
       <ServicesContainer>
-        <ServiceItem />
-        <ServiceItem />
-        <ServiceItem />
-        <ServiceItem />
-        <ServiceItem />
-        <ServiceItem />
+      { ServiceItems.map( item => {
+        return (
+          <ServiceItem 
+          heading={ item.heading }
+          productName={ item.productName }
+          icon={ item.icon }
+          />
+        )
+      }) } 
       </ServicesContainer>
-    </ServicesBackground>
+      </ServicesBackground>
+      <AboutUs />
   </>
 )
 export default Services

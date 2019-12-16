@@ -5,6 +5,7 @@ import WaterRipple from '../imgs/water-ripple.jpg'
 import Mountains from '../imgs/mountains.jpg'
 import Information from '../imgs/round-information-button.svg'
 import Ocean from './ocean.jpg'
+import Woman from './woman.jpg'
 
 const Images = {
   menu: Menu,
@@ -13,7 +14,8 @@ const Images = {
   waterRipple: WaterRipple,
   mountains: Mountains,
   information: Information,
-  ocean: Ocean
+  ocean: Ocean,
+  woman: Woman
 }
 
 export default Images

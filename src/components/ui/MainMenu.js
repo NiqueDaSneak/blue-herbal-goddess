@@ -15,7 +15,7 @@ const MenuContainer = styled.div`
     justify-content: space-between;
     padding-top: 4vh;
     padding-bottom: 4vh;
-    transition: bottom 1s;
+    transition: bottom 1s ease-in-out;
     bottom: ${props => props.visible ? '0' : '-50vh'};
     left: 0;
     z-index: 2;

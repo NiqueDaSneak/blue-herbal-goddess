@@ -31,9 +31,9 @@ const InfoIcon = styled.img`
 
 const ServiceItem = ( props ) => (
   <Container>
-    <span>Heading</span>
-    <ServiceIcon src='http://via.placeholder.com/50x50' alt='Service Item'/>
-    <span>Product Name</span>
+    {/* <span>{ props.heading }</span> */}
+    <ServiceIcon src={ props.icon } alt='Service Item'/>
+    <span>{ props.productName }</span>
     <InfoIcon src={images.information} alt='Information Button' />
   </Container>
 )

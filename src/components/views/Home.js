@@ -9,7 +9,7 @@ import Layout from '../hoc/Layout'
 import { ReactComponent as ImportedComponent } from '../../assets/imgs/goddess.svg'
 
 const HomeBackground = styled.div`
-  background-color: ${colors.blue.main};
+  /* background-color: ${colors.blue.main}; */
   width: 100vw;
   height: 100vh;
   display: flex;

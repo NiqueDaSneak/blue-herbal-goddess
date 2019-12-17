@@ -38,5 +38,5 @@ export const ContentShade = styled.div`
   left: 0;
   position: fixed;
   filter: grayscale(1);
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(3px);
 `

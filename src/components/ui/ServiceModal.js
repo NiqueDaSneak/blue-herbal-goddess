@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
+import { ContentShade } from './Utility'
 import { BodyCopy, FlexCenter } from '../ui/Utility'
 import images from '../../assets/imgs'
+import colors from '../../assets/colors'
 
 const Container = styled.div`
-  background-color: red;
+  background-color: ${ colors.blue.light };
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,11 +20,12 @@ const Container = styled.div`
   z-index: 3;
   width: 100vw;
   border-radius: 20px 20px 0px 0px;
+  transition: bottom .6s ease-in-out;
 `
 
 const Chevron = styled.img`
   width: 10vw;
-  transform: ${ props => props.left ? null : 'scaleX(-1)'};
+  transform: ${ props => props.right ? null : 'scaleX(-1)'};
 `
 
 const Content = styled.div`
@@ -46,17 +50,27 @@ const CenterModule = styled.div`
 `
 
 const ServiceModal = ( props ) => (
-  <Container active>
-    <Chevron src={ images.chevron }/>
-    <CenterModule>
-      <Content>
-        <img alt='Placeholder' src='https://via.placeholder.com/100x100'/>
-        <BodyCopy>Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
-      </Content>
-      <Button text='CTA Text' />
-    </CenterModule>
-    <Chevron left src={ images.chevron }/>
+  <>
+  <ContentShade onClick={ props.reset } visible={ props.visible }/>
+    <Container active={props.visible}>
+      <Chevron onClick={() => props.setActiveIndex(-1)} src={ images.chevron }/>
+      <CenterModule>
+        <Content>
+          <img alt='Placeholder' src={props.activeItem.icon}/>
+          <BodyCopy>{props.activeItem.description}</BodyCopy>
+        </Content>
+        <Button text='CTA Text' />
+      </CenterModule>
+      <Chevron onClick={() => props.setActiveIndex(1)} right src={ images.chevron }/>
     </Container>
-)
+  </>
+  )
+
+ServiceModal.defaultProps = {
+  activeItem: {
+    icon: '',
+    description: '',
+  }
+}
 
 export default ServiceModal

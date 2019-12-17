@@ -7,6 +7,7 @@ import Information from '../imgs/round-information-button.svg'
 import Ocean from './ocean.jpg'
 import Woman from './woman.jpg'
 import Chevron from './chevron.svg'
+import Tree from './tree.jpg'
 
 const Images = {
   menu: Menu,
@@ -17,7 +18,8 @@ const Images = {
   information: Information,
   ocean: Ocean,
   woman: Woman,
-  chevron: Chevron
+  chevron: Chevron,
+  tree: Tree,
 }
 
 export default Images

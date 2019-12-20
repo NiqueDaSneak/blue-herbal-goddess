@@ -9,7 +9,7 @@ justify-content: center;
 
 const Heading = styled.span`
   font-size: 30pt;
-  color: ${ colors.blue.dark };
+  color: ${ props => props.color ? colors.textColors[props.color] : colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
   margin-top: 2vh;
@@ -17,7 +17,7 @@ const Heading = styled.span`
 
 export const FlexCenterHeading = ( props ) => (
   <FlexCenter>
-    <Heading>{props.text}</Heading>
+    <Heading color={props.color}>{props.text}</Heading>
 </FlexCenter>
 )
 
@@ -37,6 +37,6 @@ export const ContentShade = styled.div`
   top: 0;
   left: 0;
   position: fixed;
-  filter: grayscale(1);
-  backdrop-filter: blur(3px);
+  /* filter: grayscale(1); */
+  backdrop-filter: grayscale(1);
 `

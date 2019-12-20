@@ -7,6 +7,9 @@ const colors = {
   },
   transparent: {
     midGrey: '#00000066'
+  },
+  textColors: {
+    light: 'white'
   }
 }
 

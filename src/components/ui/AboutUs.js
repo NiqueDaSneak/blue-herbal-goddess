@@ -12,6 +12,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding-bottom: 15vh;
+  color: white;
 `
 
 const Image = styled.img`
@@ -55,7 +56,7 @@ const Item = styled.div`
 
 const AboutUs = ( props ) => (
     <Container>
-        <FlexCenterHeading text='About Us' />
+        <FlexCenterHeading color='light' text='About Us' />
         <Image src={images.woman} />
         <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
         <FAQs>

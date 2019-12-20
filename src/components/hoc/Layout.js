@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
+import colors from '../../assets/colors'
 
 import MainMenu from '../ui/MainMenu'
 import FloatingActionButtons from '../ui/FloatingActionButtons'
@@ -9,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient( ${colors.blue.dark}, ${colors.blue.light});
   }
 `
 

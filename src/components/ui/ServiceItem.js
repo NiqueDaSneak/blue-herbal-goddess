@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import images from '../../assets/imgs'
 
 const Container = styled.div`
-  background-color: ${ props => props.index === props.activeIndex ? 'none' : 'none'};
-  box-shadow: ${ props => props.index === props.activeIndex ? '0px 0px 10px 0px rgba(0,0,0,0.75)' : null};
+  /* background-color: ${ props => props.index === props.activeIndex ? 'red' : 'none'}; */
+  box-shadow: ${ props => props.index === props.activeIndex ? '0px 0px 10px 0px white' : null};
   display: flex;
   flex-direction: column;
   width: 25vw;
@@ -13,7 +13,9 @@ const Container = styled.div`
   justify-content: space-evenly;
   height: 22vh;
   border-radius: 4vw;
-  transition: all 1s;
+  transition: background-color 1s, box-shadow 1s, width .5s, height .5s;
+  /* position: ${ props => props.index === props.activeIndex ? 'fixed' : null }; */
+  /* height: ${ props => props.index === props.activeIndex ? '50vh' : null }; */
   span {
     &:first-of-type {
       /* color: green; */

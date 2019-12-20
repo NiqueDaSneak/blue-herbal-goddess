@@ -16,11 +16,15 @@ const Container = styled.div`
   padding-top: 4vh;
   padding-bottom: 2vh;
   position: fixed;
-  bottom: ${ props => props.active ? '0' : '-40vh' };
+  bottom: ${ props => props.active ? '0vh;' : '-40vh'};
+  visibility: ${ props => props.active ? 'visible' : 'hidden'};
+  opacity: ${ props => props.active ? '1' : '0'};
+  height: 40vh;
   z-index: 3;
   width: 100vw;
-  border-radius: 20px 20px 0px 0px;
-  transition: bottom .6s ease-in-out;
+  /* margin-left: 5vw; */
+  border-radius: 20px 20px 0 0;
+  transition: all .6s ease-in-out;
 `
 
 const Chevron = styled.img`
@@ -30,16 +34,20 @@ const Chevron = styled.img`
 
 const Content = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 60vw;
-  margin-bottom: 4vw;
+  margin-bottom: 4vh;
+  align-items: center;
   img {
+    width: 40vw;
+    margin-bottom: 4vh;
   }
   p {
     text-align: left;    
     margin: 0;
     font-size: 10pt;
     margin-left: 4vw;
+    width: inherit;
   }
 `
 

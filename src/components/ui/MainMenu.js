@@ -21,6 +21,7 @@ const MenuContainer = styled.div`
   visibility: ${ props => props.visible ? "visible" : "hidden" };
   /* transition: transform 6s ease-in-out; */
   transition: opacity .8s ease-in-out;
+  transition-delay: .2s;
   /* transition: visibility 1s ease-in-out; */
   left: 0;
   z-index: 2;

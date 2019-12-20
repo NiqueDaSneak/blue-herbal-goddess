@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading, BodyCopy } from '../ui/Utility'
+import { FlexCenterHeading, BodyCopy, ContentShade } from '../ui/Utility'
 import colors from '../../assets/colors'
 import ServiceItem from '../ui/ServiceItem'
 import Layout from '../hoc/Layout'
@@ -15,18 +15,20 @@ const ServicesSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 `
-const globalcreateGlobalStyles`
-`
+// const globalcreateGlobalStyles`
+// `
 const BackgroundImage = styled.div`
+  z-index: -1;
   background-size: cover;
-  background-image: url(${ images.mountains });
+  /* background-image: url(${ images.mountains }); */
   background-position-x: center;
   height: 100vh;
+  width: 100vw;
   overflow: scroll;
   position: fixed;
   color: white;
-  /* background: linear-gradient(${colors.blue.main}, ${colors.blue.light}); */
 `
 
 const ItemsContainer = styled.div`
@@ -106,9 +108,9 @@ const Services = ( props ) => {
   return(
     <>
     <Layout path={ props.match.path } />
-    <BackgroundImage>
+    <BackgroundImage />
       <ServicesSection>
-        <FlexCenterHeading text='Services' />
+        <FlexCenterHeading color='light' text='Services' />
         <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
         <ItemsContainer>
         { ServiceItems.map( (item, index) => {
@@ -126,7 +128,7 @@ const Services = ( props ) => {
         </ItemsContainer>
         </ServicesSection>
         <AboutUs />
-      </BackgroundImage>
+      {/* <ContentShade onClick={ () => resetHandler() } visible={ modalActive }/> */}
       <ServiceModal 
         setActiveIndex={ (val) => activeIndexChangeHandler(val)}
         reset={() => resetHandler()} 

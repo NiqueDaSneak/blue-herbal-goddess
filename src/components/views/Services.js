@@ -16,6 +16,7 @@ const ServicesSection = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
+  padding-top: 4vh;
 `
 // const globalcreateGlobalStyles`
 // `
@@ -37,6 +38,11 @@ const ItemsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   height: 46vh;
+`
+
+const Logo = styled.img`
+  width: 12vw;
+
 `
 
 const ServiceItems = [
@@ -108,8 +114,8 @@ const Services = ( props ) => {
   return(
     <>
     <Layout path={ props.match.path } />
-    <BackgroundImage />
       <ServicesSection>
+        <Logo src={images.goddess.white} />
         <FlexCenterHeading color='light' text='Services' />
         <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
         <ItemsContainer>

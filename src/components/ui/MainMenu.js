@@ -1,39 +1,32 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import SearchBar from './SearchBar'
 import { ContentShade } from './Utility'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+`
+
 const MenuContainer = styled.div`
-  /* background-color: ${colors.blue.main}; */
-  position: fixed;
-  width: 100vw;
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
-  bottom: 0;
-  transform: ${ props => props.visible ? 'scale(1)' : 'scale(.4)'};
-  opacity: ${ props => props.visible ? "1" : "0" };
-  visibility: ${ props => props.visible ? "visible" : "hidden" };
-  /* transition: transform 6s ease-in-out; */
-  transition: opacity .8s ease-in-out;
-  transition-delay: .2s;
-  /* transition: visibility 1s ease-in-out; */
-  left: 0;
-  z-index: 2;
+  opacity: 0;
+  animation: ${fadeIn} 1s linear .2s 1 forwards;
+  z-index: 9;
 `
 
 const NavigationLinkContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 20vh;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+  justify-content: space-evenly;
 `
 
 const NavListItem = styled.span`
@@ -56,12 +49,12 @@ const Placeholder = styled.img.attrs( props => ({
   alt: 'Placeholder'
 }))`
   width: 12vw;
+  height: 10vw;
 `
 
 const MainMenu = ( props ) => {
   return (
       <>
-        <ContentShade onClick={ props.toggleMenu } visible={ props.visible }/>
         <MenuContainer visible={props.visible}>
             <SocialContainer>
                 <Placeholder />

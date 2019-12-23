@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import colors from '../../assets/colors'
 
-import MainMenu from '../ui/MainMenu'
 import FloatingActionButtons from '../ui/FloatingActionButtons'
 
 const GlobalStyles = createGlobalStyle`
@@ -19,21 +18,15 @@ const RootLayer = styled.div`
 `
 
 const Layout = ( props ) => {
-  const [menuVisible, setMenu] = useState(false);
   return (
     <>
     {console.log(props.path)}
       <GlobalStyles />
       <RootLayer>
         <FloatingActionButtons
-        circle={menuVisible ? false : true}
         hidden={ props.path === '/' ? true : false }
-        onClick={ () => setMenu(!menuVisible) } 
         showCart={false}
         />
-        <MainMenu 
-        toggleMenu={ () => setMenu(!menuVisible) } 
-        visible={ menuVisible }/>
         { props.children }
       </RootLayer>
     </>

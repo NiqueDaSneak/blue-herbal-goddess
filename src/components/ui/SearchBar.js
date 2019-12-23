@@ -7,17 +7,18 @@ const TextInput = styled.input.attrs( props => ({
   type: 'search',
   placeholder: 'Search begins within...'
 }))`
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  /* margin-top: 3vh;
+  margin-bottom: 3vh; */
   font-size: 16px;
   border: none;
   border-radius: 10vw;
   width: 80vw;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+  /* padding-top: 1vh;
+  padding-bottom: 1vh; */
   padding-left: 4vw;
   padding-right: 2vw;
   font-weight: 100;
+  height: 4vh;
 `
 
 const SearchBar = ( props ) => {

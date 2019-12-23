@@ -16,6 +16,12 @@ const HomeBackground = styled.div`
   flex-direction: column;
   background-image: url(${images.mountains});
   background-size: cover;
+  div {
+    &:nth-of-type(2) {
+      margin-top: 4vh;
+      margin-bottom: 4vh;
+    }
+  }
 `
 
 const pulse = keyframes`

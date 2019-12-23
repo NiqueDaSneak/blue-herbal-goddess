@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import colors from '../../assets/colors'
 
 export const FlexCenter = styled.div`
@@ -27,11 +27,23 @@ export const BodyCopy = styled.p`
   text-align: center;
 `
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+`
+
 export const ContentShade = styled.div`
+  /* opacity: 0; */
+  /* animation: ${fadeIn} 1s linear .4s 1 forwards; */
   height: 100vh;
   width: 100vw;
+  /* background-color: red; */
   background-color: ${ colors.transparent.midGrey };
-  opacity: ${ props => props.visible ? 1 : 0};
+  opacity: ${ props => props.visible ? '1' : '0'};
   transition: all .4s ease-in-out;
   visibility: ${ props => props.visible ? "visible" : "hidden" };
   top: 0;

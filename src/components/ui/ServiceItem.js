@@ -27,7 +27,7 @@ const Container = styled.div`
 `
 
 const ServiceIcon = styled.img`
-  width: 18vw;
+  width: 12vw;
 `
 
 const InfoIcon = styled.img`

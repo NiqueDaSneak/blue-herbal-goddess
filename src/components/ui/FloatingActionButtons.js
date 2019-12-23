@@ -11,45 +11,46 @@ const Circle = styled.div`
   height: 15vw;
 `
 
+const Cir = css`
+  display: flex;
+  justify-content: center;
+  border-radius: 10vw;
+  width: 15vw;
+  height: 15vw;
+  bottom: 5vh;
+  right: 5vh;
+  position: fixed;
+  img {
+    width: 6vw;
+  }
+`
+const Square = css`   
+  position: fixed;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  border-radius: 20px 20px 0px 0px;
+  img {
+    visibility: hidden;
+  } 
+`
+
 const CircleToSquare = styled.div`
+  box-shadow: 0px 0px 5px 0px black;
   transition: all .4s;
-  visibility: ${ props => props.hidden ? 'hidden' : 'visible' }
-  ${ props => props.circle ? css`
-    display: flex;
-    justify-content: center;
-    border-radius: 10vw;
-    width: 15vw;
-    height: 15vw;
-    bottom: 5vh;
-    right: 5vh;
-    position: fixed;
-    img {
-      width: 6vw;
-    }
-  ` : css`
-    background-color: ${colors.blue.main};
-    position: fixed;
-    width: 100vw;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 4vh;
-    padding-bottom: 4vh;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    border-radius: 20px 20px 0px 0px;
-    img {
-      visibility: hidden;
-    } 
-  ` }
+  visibility: ${ props => props.hidden ? 'hidden' : 'visible' };
+  ${ props => props.circle ? Cir : Square };
 `
 
 // const CircleToSquare = styled()
 
 const MenuToggle = styled(CircleToSquare)`
-  background-color: ${colors.blue.dark};
+  background-color: ${colors.blue.main};
   z-index: 2;
 `
 
@@ -80,24 +81,20 @@ const FloatingActionButtons = ( props ) => {
   const [isCircle, toggleCircle] = useState(true)
   return(
     <>
-      {/* <CircleToSquare circle={isCircle} onClick={() => toggleCircle(!isCircle)} /> */}
-      {/* <Container> */}
-        <MenuToggle 
-        circle={props.circle} 
-        onClick={() => {
-          toggleCircle(!isCircle)
-          props.onClick()
-          } 
-        }
-        hidden={props.hidden} 
-        // onClick={props.onClick}
-        >
-          <img alt='Floating Action Button' src={Images.menu}/>
-        </MenuToggle>
-        <CartToggle showCart={props.showCart}>
-          <img alt='Floating Action Button' src={Images.cart}/>
-        </CartToggle>
-      {/* </Container> */}
+      <MenuToggle 
+      circle={props.circle} 
+      onClick={() => {
+        toggleCircle(!isCircle)
+        props.onClick()
+        } 
+      }
+      hidden={props.hidden} 
+      >
+        <img alt='Floating Action Button' src={Images.menu}/>
+      </MenuToggle>
+      <CartToggle showCart={props.showCart}>
+        <img alt='Floating Action Button' src={Images.cart}/>
+      </CartToggle>
     </>
   )
 }

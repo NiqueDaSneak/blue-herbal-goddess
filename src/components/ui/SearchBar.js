@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { FlexCenter } from './Utility'
 import colors from '../../assets/colors'
 
-const TextInput = styled.input.attrs({
+const TextInput = styled.input.attrs( props => ({
   type: 'search',
   placeholder: 'Search begins within...'
-})`
+}))`
   margin-top: 3vh;
   margin-bottom: 3vh;
   font-size: 16px;

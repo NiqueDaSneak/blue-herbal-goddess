@@ -9,6 +9,9 @@ import Ocean from './ocean.jpg'
 import Woman from './woman.jpg'
 import Chevron from './chevron.svg'
 import Tree from './tree.jpg'
+import FPO1 from './fpo1.svg'
+import FPO2 from './fpo1.svg'
+import FPO3 from './fpo1.svg'
 
 const Images = {
   menu: Menu,
@@ -24,6 +27,9 @@ const Images = {
   woman: Woman,
   chevron: Chevron,
   tree: Tree,
+  fpo1:FPO1,
+  fpo2:FPO2,
+  fpo3:FPO3
 }
 
 export default Images

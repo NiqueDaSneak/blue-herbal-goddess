@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import SearchBar from './SearchBar'
 import { ContentShade } from './Utility'
 import colors from '../../assets/colors'
+import images from '../../assets/imgs'
 
 const MenuContainer = styled.div`
   /* background-color: ${colors.blue.main}; */
@@ -50,6 +51,12 @@ const SocialContainer = styled.div`
         margin-left: 10vw;
     }
 `
+const Placeholder = styled.img.attrs( props => ({
+  src: images.fpo1,
+  alt: 'Placeholder'
+}))`
+  width: 12vw;
+`
 
 const MainMenu = ( props ) => {
   return (
@@ -57,9 +64,9 @@ const MainMenu = ( props ) => {
         <ContentShade onClick={ props.toggleMenu } visible={ props.visible }/>
         <MenuContainer visible={props.visible}>
             <SocialContainer>
-                <img alt='Placeholder' src='https://via.placeholder.com/50'/>
-                <img alt='Placeholder' src='https://via.placeholder.com/50'/>
-                <img alt='Placeholder' src='https://via.placeholder.com/50'/>
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
             </SocialContainer>
             <NavigationLinkContainer>
                 <Router>

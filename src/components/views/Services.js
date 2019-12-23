@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import images from '../../assets/imgs'
 import { FlexCenterHeading, BodyCopy, ContentShade } from '../ui/Utility'
 import colors from '../../assets/colors'
@@ -39,47 +39,54 @@ const ItemsContainer = styled.div`
   justify-content: space-between;
   height: 46vh;
 `
+// const rotate = keyframes`
+//   from {
+//     transform: rotateY(0deg);
+//   }
+//   to {
+//     transform: rotateY(360deg);
+//   }
+// `
 
 const Logo = styled.img`
   width: 12vw;
-
 `
 
 const ServiceItems = [
   {
-    heading: 'Heading',
-    productName: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50',
+    heading: 'Heading 1',
+    productName: 'Product Name 1',
+    icon: images.fpo1,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
-    heading: 'Heading',
-    productName: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50',
+    heading: 'Heading 2',
+    productName: 'Product Name 2',
+    icon: images.fpo2,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
-    heading: 'Heading',
-    productName: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50',
+    heading: 'Heading 3',
+    productName: 'Product Name 3',
+    icon: images.fpo3,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
-    heading: 'Heading',
-    productName: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50',
+    heading: 'Heading 4',
+    productName: 'Product Name 4',
+    icon: images.fpo1,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
-    heading: 'Heading',
-    productName: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50',
+    heading: 'Heading 5',
+    productName: 'Product Name 5',
+    icon: images.fpo2,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
-    heading: 'Heading',
-    productName: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50',
+    heading: 'Heading 6',
+    productName: 'Product Name 6',
+    icon: images.fpo3,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
 ]

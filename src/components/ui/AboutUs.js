@@ -22,15 +22,15 @@ const Image = styled.img`
 const FAQItems = [
   {
     text: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50'
+    icon: images.fpo
   },
   {
     text: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50'
+    icon: images.fpo
   },
   {
     text: 'Product Name',
-    icon: 'http://via.placeholder.com/50x50'
+    icon: images.fpo
   }
 ]
 
@@ -41,7 +41,7 @@ const FAQs = styled.div`
 `
 
 const Icon = styled.img`
-  width: 18vw;
+  width: 12vw;
 `
 
 const Item = styled.div`

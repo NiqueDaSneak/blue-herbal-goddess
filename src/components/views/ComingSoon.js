@@ -32,9 +32,6 @@ const BackgroundImg = styled.div`
   z-index: -1;
   bottom: 0;
   filter: grayscale(1);
-  /* animation: ${FadeToGrey} 3s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 1s; */
   @media ${ device.laptop } {
     background-image: url(${images.ocean});
   }

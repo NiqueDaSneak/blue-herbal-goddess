@@ -22,7 +22,6 @@ const Container = styled.div`
   height: 40vh;
   z-index: 3;
   width: 100vw;
-  /* margin-left: 5vw; */
   border-radius: 20px 20px 0 0;
   transition: all .6s ease-in-out;
 `

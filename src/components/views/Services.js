@@ -9,7 +9,6 @@ import AboutUs from '../ui/AboutUs'
 import ServiceModal from  '../ui/ServiceModal'
 
 const ServicesSection = styled.div`
-  /* background-color: ${colors.test}; */
   height: 80vh;
   width: 100vw;
   display: flex;
@@ -17,19 +16,6 @@ const ServicesSection = styled.div`
   align-items: center;
   color: white;
   padding-top: 4vh;
-`
-// const globalcreateGlobalStyles`
-// `
-const BackgroundImage = styled.div`
-  z-index: -1;
-  background-size: cover;
-  /* background-image: url(${ images.mountains }); */
-  background-position-x: center;
-  height: 100vh;
-  width: 100vw;
-  overflow: scroll;
-  position: fixed;
-  color: white;
 `
 
 const ItemsContainer = styled.div`
@@ -39,14 +25,6 @@ const ItemsContainer = styled.div`
   justify-content: space-between;
   height: 46vh;
 `
-// const rotate = keyframes`
-//   from {
-//     transform: rotateY(0deg);
-//   }
-//   to {
-//     transform: rotateY(360deg);
-//   }
-// `
 
 const Logo = styled.img`
   width: 12vw;

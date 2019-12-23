@@ -42,8 +42,6 @@ const CircleToSquare = styled.div`
   transition: all .4s;
 `
 
-// const CircleToSquare = styled()
-
 const MenuToggle = styled(CircleToSquare)`
   display: ${ props => props.hidden ? 'none' : undefined };
   background-color: ${colors.blue.main};
@@ -55,8 +53,6 @@ const Hamburger = styled.img.attrs({
   src: images.menu
 })`
   width: 6vw;  
-  /* display: ${ props => props.visible ? 'inherit' : 'none'};
-  opacity: ${ props => props.visible ? '1' : '0'}; */
   transition: all 1s ease-in-out;
 `
 
@@ -74,17 +70,8 @@ const CartToggle = styled(Circle)`
     width: 5vw;
   }
 `
-const Container = styled.div`
-  position: fixed;
-  display: flex;
-  flex-direction: column-reverse;
-  bottom: 5vh;
-  right: 5vh;
-  align-items: center;
-`
 
 const FloatingActionButtons = ( props ) => {
-  const [isCircle, toggleCircle] = useState(true)
   const [menuVisible, setMenu] = useState(false);
 
   return(

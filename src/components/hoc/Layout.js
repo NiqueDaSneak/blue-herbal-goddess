@@ -25,8 +25,7 @@ const Layout = ( props ) => {
       <RootLayer>
         <FloatingActionButtons
         hidden={ props.path === '/' ? true : false }
-        showCart={false}
-        />
+        showCart={false} />
         { props.children }
       </RootLayer>
     </>

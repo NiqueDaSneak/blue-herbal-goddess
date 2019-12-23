@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import images from '../../assets/imgs'
 
 const Container = styled.div`
-  /* background-color: ${ props => props.index === props.activeIndex ? 'red' : 'none'}; */
   box-shadow: ${ props => props.index === props.activeIndex ? '0px 0px 10px 0px white' : null};
   display: flex;
   flex-direction: column;
@@ -14,11 +13,8 @@ const Container = styled.div`
   height: 22vh;
   border-radius: 4vw;
   transition: background-color 1s, box-shadow 1s, width .5s, height .5s;
-  /* position: ${ props => props.index === props.activeIndex ? 'fixed' : null }; */
-  /* height: ${ props => props.index === props.activeIndex ? '50vh' : null }; */
   span {
     &:first-of-type {
-      /* color: green; */
     }
     &:last-of-type {
       font-style: italic;
@@ -47,7 +43,6 @@ const ServiceItem = ( props ) => {
         index={props.index}
         activeIndex={props.activeIndex}
         onClick={ () => clickHandler()}>
-        {/* <span>{ props.heading }</span> */}
         <ServiceIcon src={ props.item.icon } alt='Service Item'/>
         <span>{ props.item.productName }</span>
         <InfoIcon src={images.information} alt='Information Button' />

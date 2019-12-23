@@ -37,11 +37,8 @@ const fadeIn = keyframes`
 `
 
 export const ContentShade = styled.div`
-  /* opacity: 0; */
-  /* animation: ${fadeIn} 1s linear .4s 1 forwards; */
   height: 100vh;
   width: 100vw;
-  /* background-color: red; */
   background-color: ${ colors.transparent.midGrey };
   opacity: ${ props => props.visible ? '1' : '0'};
   transition: all .4s ease-in-out;
@@ -49,6 +46,5 @@ export const ContentShade = styled.div`
   top: 0;
   left: 0;
   position: fixed;
-  /* filter: grayscale(1); */
   backdrop-filter: grayscale(1);
 `

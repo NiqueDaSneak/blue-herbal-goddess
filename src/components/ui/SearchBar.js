@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FlexCenter } from './Utility'
 import colors from '../../assets/colors'
+import { device } from '../../assets/MediaQueries'
 
 const TextInput = styled.input.attrs( props => ({
   type: 'search',
@@ -15,6 +16,16 @@ const TextInput = styled.input.attrs( props => ({
   padding-right: 2vw;
   font-weight: 100;
   height: 4vh;
+  outline: none;
+  @media ${ device.laptop } {
+    width: 30vw;
+    padding-left: 1vw;
+  }
+  @media ${ device.tablet } {
+    width: 44vw;
+    padding-left: 2vw;
+    font-size: 14pt;
+  }
 `
 
 const SearchBar = ( props ) => {

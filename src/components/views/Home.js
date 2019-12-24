@@ -7,6 +7,7 @@ import NavigationButtons from '../ui/NavigationButtons'
 import colors from '../../assets/colors'
 import Layout from '../hoc/Layout'
 import { ReactComponent as ImportedComponent } from '../../assets/imgs/goddess.svg'
+import { device } from '../../assets/MediaQueries'
 
 const HomeBackground = styled.div`
   width: 100vw;
@@ -15,11 +16,22 @@ const HomeBackground = styled.div`
   flex-direction: column;
   background-image: url(${images.mountains});
   background-size: cover;
+  align-items: center;
   div {
     &:nth-of-type(2) {
       margin-top: 4vh;
       margin-bottom: 4vh;
     }
+  }
+  
+  @media ${ device.tablet } {
+    justify-content: space-evenly;
+  }
+
+  @media ${ device.laptop } {
+    justify-content: space-evenly;
+    background-image: url(${images.desert});
+    align-items: center;
   }
 `
 
@@ -48,39 +60,38 @@ const colorChange = keyframes`
   }
 `
 
-// function template(i, items, duration) {
-//   return `
-//       &:nth-child(${i + 1}) {
-//         animation-delay: ${`${(duration / items) * i}s`};
-//        }
-//     `
-// }
-// function getAnimations(items, duration) {
-//   let str = ''
-//   for (let i = 0; i < items; i += 1) {
-//     str += template(i, items, duration)
-//   }
-//   return str
-// }
+function template(i, items, duration) {
+  return `
+      &:nth-child(${i + 1}) {
+        animation-delay: ${`${(duration / items) * i}s`};
+       }
+    `
+}
+function getAnimations(items, duration) {
+  let str = ''
+  for (let i = 0; i < items; i += 1) {
+    str += template(i, items, duration)
+  }
+  return str
+}
 
 const GoddessImg = styled(ImportedComponent)`
   width: 100vw;
   height: 50vh;
-  /* .goddess {
+  .goddess {
     animation: ${colorChange} infinite 3s linear;
-  } */
-  /* .goddess { */
-    /* fill: red; */
-    /* animation: ${colorChange} infinite 3s linear; */
-  /* } */
-  /* #Leaves { */
+  } 
+  .goddess {
+    fill: red;
+    animation: ${colorChange} infinite 3s linear;
+  }
+  #Leaves {
 
-    /* path { */
-      /* animation: ${pulse} infinite 4s ease-in-out; */
-    /* } */
-  /* } */
+    path {
+      animation: ${pulse} infinite 4s ease-in-out;
+    }
+   }
 `
-
 
 const Home = ( props ) => (
   <>

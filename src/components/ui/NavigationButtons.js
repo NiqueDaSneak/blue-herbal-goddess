@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../ui/Button'
 import styled from 'styled-components'
+import { device } from '../../assets/MediaQueries'
+
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -9,6 +11,13 @@ const ButtonContainer = styled.div`
   justify-content: space-between;
   margin-left: 4vw;
   margin-right: 4vw;
+  @media ${ device.laptop } {
+    width: 42vw;
+  }
+  @media ${ device.tablet } {
+    width: 64vw;
+    font-size: 14pt;
+  }
 `
 
 const NavigationButtons = ( props ) => {

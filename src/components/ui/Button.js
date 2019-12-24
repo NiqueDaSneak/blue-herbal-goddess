@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
+import { device } from '../../assets/MediaQueries'
 
 const ButtonStyle = styled.button`
   color: white;
@@ -14,6 +15,13 @@ const ButtonStyle = styled.button`
   text-transform: uppercase;
   border-radius: 2vw;
   font-weight: lighter;
+  outline: none;
+  @media ${ device.tablet } {
+    width: 30vw;
+  }
+  @media ${ device.laptop} {
+    width: 20vw;
+  }
 `
 
 const Button = ( props ) => {

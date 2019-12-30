@@ -5,6 +5,7 @@ import { ContentShade } from './Utility'
 import { BodyCopy, FlexCenter } from '../ui/Utility'
 import images from '../../assets/imgs'
 import colors from '../../assets/colors'
+import { device } from '../../assets/MediaQueries'
 
 const Container = styled.div`
   background-color: ${ colors.blue.light };
@@ -29,6 +30,9 @@ const Container = styled.div`
 const Chevron = styled.img`
   width: 10vw;
   transform: ${ props => props.right ? null : 'scaleX(-1)'};
+  @media ${ device.laptop } {
+    width: 4vw;
+  }
 `
 
 const Content = styled.div`
@@ -40,6 +44,9 @@ const Content = styled.div`
   img {
     width: 40vw;
     margin-bottom: 4vh;
+    @media ${ device.laptop } {
+      width: 10vw;
+    }
   }
   p {
     text-align: left;    
@@ -47,6 +54,11 @@ const Content = styled.div`
     font-size: 10pt;
     margin-left: 4vw;
     width: inherit;
+    @media ${ device.laptop } {
+      text-align: center;
+      margin-left: 0;
+      font-size: 14pt;
+    }
   }
 `
 

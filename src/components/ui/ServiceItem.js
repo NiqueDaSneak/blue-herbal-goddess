@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import images from '../../assets/imgs'
+import { device } from '../../assets/MediaQueries'
 
 const Container = styled.div`
   box-shadow: ${ props => props.index === props.activeIndex ? '0px 0px 10px 0px white' : null};
@@ -13,21 +14,46 @@ const Container = styled.div`
   height: 22vh;
   border-radius: 4vw;
   transition: background-color 1s, box-shadow 1s, width .5s, height .5s;
-  span {
+  div {
     &:first-of-type {
     }
     &:last-of-type {
       font-style: italic;
+      white-space: pre-wrap;
+      @media ${ device.tablet } {
+        font-size: 22pt;
+      }
+      @media ${ device.laptop } {
+        font-size: 16pt;
+      }
     }
+  }
+  @media ${ device.tablet } {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+  }
+  @media ${ device.laptop } {
+    width: 8vw;
+    border-radius: 1.4vw;
+    padding: 0.8%;
   }
 `
 
 const ServiceIcon = styled.img`
   width: 12vw;
+  @media ${ device.tablet } {
+    width: 8vw;
+  }
+  @media ${ device.laptop } {
+    width: 4vw;
+  }
 `
 
 const InfoIcon = styled.img`
   width: 6vw;
+  @media ${ device.laptop } {
+    width: 2vw;
+  }
 `
 
 
@@ -44,7 +70,7 @@ const ServiceItem = ( props ) => {
         activeIndex={props.activeIndex}
         onClick={ () => clickHandler()}>
         <ServiceIcon src={ props.item.icon } alt='Service Item'/>
-        <span>{ props.item.productName }</span>
+        <div>{ props.item.productName }</div>
         <InfoIcon src={images.information} alt='Information Button' />
       </Container>
     </>

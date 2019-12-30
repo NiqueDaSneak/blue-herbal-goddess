@@ -14,6 +14,7 @@ import FPO2 from './fpo1.svg'
 import FPO3 from './fpo1.svg'
 import Breathe from './breathe.jpg'
 import Desert from './desert.jpg'
+import Wood from './wood.png'
 
 const Images = {
   menu: Menu,
@@ -33,7 +34,8 @@ const Images = {
   fpo2: FPO2,
   fpo3: FPO3,
   breathe: Breathe,
-  desert: Desert
+  desert: Desert,
+  wood: Wood
 }
 
 export default Images

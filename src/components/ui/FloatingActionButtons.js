@@ -4,6 +4,7 @@ import colors from '../../assets/colors'
 import images from '../../assets/imgs'
 import MainMenu from '../ui/MainMenu'
 import { ContentShade } from './Utility'
+import { device } from '../../assets/MediaQueries'
 
 const Circle = styled.div`
   display: flex;
@@ -22,6 +23,14 @@ const Cir = css`
   bottom: 5vh;
   right: 5vh;
   position: fixed;
+  @media ${ device.tablet } {
+    width: 10vw;
+    height: 10vw;
+  }
+  @media ${ device.laptop } {
+    width: 4vw;
+    height: 4vw;
+  }
 `
 const Square = css`   
   border-radius: 20px 20px 0 0;
@@ -54,6 +63,12 @@ const Hamburger = styled.img.attrs({
 })`
   width: 6vw;  
   transition: all 1s ease-in-out;
+  @media ${ device.tablet } {
+    width: 4vw;
+  }
+  @media ${ device.laptop } {
+    width: 1.4vw;
+  }
 `
 
 const CartToggle = styled(Circle)`

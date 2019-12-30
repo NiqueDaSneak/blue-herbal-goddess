@@ -17,14 +17,14 @@ const TextInput = styled.input.attrs( props => ({
   font-weight: 100;
   height: 4vh;
   outline: none;
+  @media ${ device.tablet } {
+    width: 64vw;
+    padding-left: 2vw;
+    font-size: 18pt;
+  }
   @media ${ device.laptop } {
     width: 30vw;
     padding-left: 1vw;
-  }
-  @media ${ device.tablet } {
-    width: 44vw;
-    padding-left: 2vw;
-    font-size: 14pt;
   }
 `
 

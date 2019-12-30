@@ -2,22 +2,16 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import SearchBar from './SearchBar'
-import { ContentShade } from './Utility'
+import { ContentShade, fadeInForward } from './Utility'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
+import { device } from '../../assets/MediaQueries'
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1
-  }
-`
+
 
 const MenuContainer = styled.div`
   opacity: 0;
-  animation: ${fadeIn} 1s linear .2s 1 forwards;
+  ${fadeInForward};
   z-index: 9;
 `
 
@@ -27,12 +21,19 @@ const NavigationLinkContainer = styled.div`
   align-items: center;
   height: 20vh;
   justify-content: space-evenly;
+  @media ${ device.tablet } {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
 `
 
 const NavListItem = styled.span`
     a {
         color: white;
         text-decoration: none;
+        @media ${ device.tablet } {
+          font-size: 22pt;
+        }
     }
 `
 
@@ -49,7 +50,9 @@ const Placeholder = styled.img.attrs( props => ({
   alt: 'Placeholder'
 }))`
   width: 12vw;
-  height: 10vw;
+  @media ${ device.tablet } {
+    width: 8vw;
+  }
 `
 
 const MainMenu = ( props ) => {

@@ -22,7 +22,7 @@ const ButtonContainer = styled.div`
 
 const NavigationButtons = ( props ) => {
   const buttonValues = {
-    first: ['Discover Products','Take Assessment','Services','More'],
+    first: ['Discover Products','Herbal Assessment','Services','More'],
     second: ['Instagram','Medium','Facebook','Back'],
     links: {
       'Discover Products': '',

@@ -17,7 +17,7 @@ const Heading = styled.span`
     font-size: 40pt;
   }
 @media ${ device.laptop } {
-    font-size: 26pt;
+    font-size: 30pt;
   }
 `
 

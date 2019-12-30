@@ -22,7 +22,6 @@ const ButtonStyle = styled.button`
   @media ${ device.laptop} {
     width: 12vw;
     border-radius: .6vw;
-    /* min-height: 8vh; */
   }
 `
 

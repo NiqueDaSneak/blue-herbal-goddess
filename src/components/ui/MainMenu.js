@@ -1,9 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import SearchBar from './SearchBar'
-import { ContentShade, fadeInForward } from './Utility'
-import colors from '../../assets/colors'
+import { fadeInForward } from './Utility'
 import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
 

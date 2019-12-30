@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FlexCenter } from './Utility'
-import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'
 
 const TextInput = styled.input.attrs( props => ({
@@ -25,6 +24,7 @@ const TextInput = styled.input.attrs( props => ({
   @media ${ device.laptop } {
     width: 30vw;
     padding-left: 1vw;
+    font-size: 16pt;
   }
 `
 

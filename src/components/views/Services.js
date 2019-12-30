@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading, BodyCopy, ContentShade, fadeInForward } from '../ui/Utility'
-import colors from '../../assets/colors'
+import { FlexCenterHeading, BodyCopy, fadeInForward } from '../ui/Utility'
 import ServiceItem from '../ui/ServiceItem'
 import Layout from '../hoc/Layout'
 import AboutUs from '../ui/AboutUs'
@@ -136,7 +135,6 @@ const Services = ( props ) => {
         </ItemsContainer>
         </ServicesSection>
         <AboutUs />
-      {/* <ContentShade onClick={ () => resetHandler() } visible={ modalActive }/> */}
       <ServiceModal 
         setActiveIndex={ (val) => activeIndexChangeHandler(val)}
         reset={() => resetHandler()} 

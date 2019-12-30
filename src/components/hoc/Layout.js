@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import colors from '../../assets/colors'
 
@@ -23,7 +23,6 @@ const RootLayer = styled.div`
 const Layout = ( props ) => {
   return (
     <>
-    {console.log(props.path)}
       <GlobalStyles />
       <RootLayer>
         <FloatingActionButtons

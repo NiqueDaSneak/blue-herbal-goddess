@@ -1,9 +1,8 @@
 import React from 'react'
-import styled, { createGlobalStyle, keyframes } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import images from '../../assets/imgs'
 import { FlexCenterHeading, BodyCopy } from '../ui/Utility'
 import colors from '../../assets/colors'
-import Layout from '../hoc/Layout'
 import { device } from '../../assets/MediaQueries'
 
 const GlobalStyles = createGlobalStyle`
@@ -11,15 +10,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-  }
-`
-
-const FadeToGrey = keyframes`
-  from {
-    filter: grayscale(0);
-  }
-  to {
-    filter: grayscale(1);
   }
 `
 

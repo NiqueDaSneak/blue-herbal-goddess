@@ -1,27 +1,22 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading, BodyCopy, fadeInForward } from '../ui/Utility'
+import { FlexCenterHeading, BodyCopy, fadeInForward, PageContainer } from '../ui/Utility'
 import ServiceItem from '../ui/ServiceItem'
 import Layout from '../hoc/Layout'
 import AboutUs from '../ui/AboutUs'
 import ServiceModal from  '../ui/ServiceModal'
 import { device } from '../../assets/MediaQueries'
 
-const ServicesSection = styled.div`
+const ServicesSection = styled(PageContainer)`
   height: 80vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  padding-top: 4vh;
   @media ${ device.tablet } {
     height: 90vh;
   }
 `
 
 const ItemsContainer = styled.div`
+  margin-top: 4vh;
   width: 80vw;
   display: flex;
   flex-wrap: wrap;
@@ -118,7 +113,7 @@ const Services = ( props ) => {
       <ServicesSection>
         <Logo src={images.goddess.white} />
         <FlexCenterHeading color='light' text='Services' />
-        <BodyCopy left>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
+        <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
         <ItemsContainer>
         { ServiceItems.map( (item, index) => {
           return (

@@ -15,6 +15,8 @@ import FPO3 from './fpo1.svg'
 import Breathe from './breathe.jpg'
 import Desert from './desert.jpg'
 import Wood from './wood.png'
+import Placeholder from './placeholder.svg'
+import Youtube from './youtube.svg'
 
 const Images = {
   menu: Menu,
@@ -35,7 +37,9 @@ const Images = {
   fpo3: FPO3,
   breathe: Breathe,
   desert: Desert,
-  wood: Wood
+  wood: Wood,
+  placeholder: Placeholder,
+  youtube: Youtube
 }
 
 export default Images

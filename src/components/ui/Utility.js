@@ -4,8 +4,8 @@ import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'
 
 export const FlexCenter = styled.div`
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 `
 
 const Heading = styled.span`
@@ -13,6 +13,7 @@ const Heading = styled.span`
   color: ${ props => props.color ? colors.textColors[props.color] : colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 4vh;
   @media ${ device.tablet } {
     font-size: 40pt;
   }
@@ -31,6 +32,9 @@ export const BodyCopy = styled.p`
   width: 80vw;
   font-weight: normal;
   text-align: center;
+  font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: 0;
   @media ${ device.tablet } {
     font-size: 18pt;
   }
@@ -40,22 +44,33 @@ export const BodyCopy = styled.p`
   }
 `
 
- const fadeIn = keyframes`
+const fadeIn = keyframes`
   from {
     opacity: 0;
   }
   to {
-    opacity: 1
+    opacity: 1;
   }
 `
-export const fadeInForward = css`animation: ${fadeIn} 1s linear .2s 1 forwards`
-export const fadeInForwardSlow = css`animation: ${fadeIn} 2s linear .2s 1 forwards`
 
+const darken = keyframes`
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+`
 
 export const ContentShade = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: ${ colors.transparent.midGrey };
+  /* background-color: green; */
+  z-index: 4;
+  background-color: ${ colors.trans.midGrey };
+  /* animation: ${darken} .6s ease-in-out; */
   opacity: ${ props => props.visible ? '1' : '0'};
   transition: all .4s ease-in-out;
   visibility: ${ props => props.visible ? "visible" : "hidden" };
@@ -64,3 +79,20 @@ export const ContentShade = styled.div`
   position: fixed;
   backdrop-filter: grayscale(1);
 `
+
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 4vh;
+  width: 100vw;
+  color: white;
+`
+
+const normal = 1
+const slow = 2
+const normalString = css`animation: ${fadeIn} ${normal}s linear .2s 1 forwards`
+const fastString = css`animation: ${fadeIn} ${slow}s linear .2s 1 forwards`
+export const fadeInForward = css`${normalString}`
+export const fadeInForwardSlow = css`${fastString}`

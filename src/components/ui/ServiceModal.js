@@ -21,7 +21,7 @@ const Container = styled.div`
   visibility: ${ props => props.active ? 'visible' : 'hidden'};
   opacity: ${ props => props.active ? '1' : '0'};
   height: 40vh;
-  z-index: 3;
+  z-index: 6;
   width: 100vw;
   border-radius: 20px 20px 0 0;
   transition: all .6s ease-in-out;

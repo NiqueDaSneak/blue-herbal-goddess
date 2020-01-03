@@ -1,20 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FlexCenterHeading, BodyCopy } from './Utility'
+import { FlexCenterHeading, BodyCopy, PageContainer } from './Utility'
 import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
 import Button from './Button'
 
-const Container = styled.div`
+const Container = styled(PageContainer)`
   height: 80vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-top: 4vh;
   padding-bottom: 15vh;
-  color: white;
   p {
     @media ${ device.laptop } {
       margin-top: 4vh;

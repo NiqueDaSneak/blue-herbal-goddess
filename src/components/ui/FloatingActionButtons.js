@@ -42,7 +42,6 @@ const Square = css`
   justify-content: space-evenly;
   bottom: 0vh;
   right: 0vh;
-  z-index: 2;
 `
 
 const CircleToSquare = styled.div`
@@ -54,7 +53,7 @@ const CircleToSquare = styled.div`
 const MenuToggle = styled(CircleToSquare)`
   display: ${ props => props.hidden ? 'none' : undefined };
   background-color: ${colors.blue.main};
-  z-index: 2;
+  z-index: 5;
 `
 
 const Hamburger = styled.img.attrs({

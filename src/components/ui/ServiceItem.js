@@ -60,7 +60,7 @@ const InfoIcon = styled.img`
 
 const ServiceItem = ( props ) => {
   const clickHandler = () => {
-    props.setActiveItem(props.item)
+    props.click(props.item)
     props.setActiveIndex(props.index)
   }
   return(
@@ -68,7 +68,7 @@ const ServiceItem = ( props ) => {
       <Container 
         index={props.index}
         activeIndex={props.activeIndex}
-        onClick={ () => clickHandler()}>
+        onClick={() => clickHandler()}>
         <ServiceIcon src={ props.item.icon } alt='Service Item'/>
         <div>{ props.item.productName }</div>
         <InfoIcon src={images.information} alt='Information Button' />

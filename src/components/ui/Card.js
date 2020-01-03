@@ -54,7 +54,7 @@ const Desc = styled.p`
 `
 
 const Card = ( props ) => (
-  <Container onClick={() => props.setModalAction(props.info.modalAction)} type={props.info.type}>
+  <Container onClick={() => props.click(props.info.modalType)} type={props.info.type}>
     <Image src={props.info.type === 'content' ? images.youtube : props.info.image} />
     <Price>{props.info.price ? props.info.price : null}</Price>
     <Desc>{props.info.description}</Desc>

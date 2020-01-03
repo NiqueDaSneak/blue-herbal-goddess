@@ -19,7 +19,7 @@ const CardContainer = styled.div`
 
 const ProductGroups = [
   {
-    modalAction: 'showProductBundle', 
+    modalType: 'showProductBundle', 
     type: 'bundle',
     image: images.placeholder,
     price: '$999.99',
@@ -52,22 +52,16 @@ const ProductGroups = [
 ]
 
 const ProductsPage = ( props ) => {
-  const [modalActive, setModalActive] = useState(false)
-  const [modalAction, setModalAction] = useState(null)
+  // const [modalActive, setModalActive] = useState(false)
+  // const [modalAction, setModalAction] = useState(null)
 
-  const cardClickHandler = (action) => {
-    setModalActive(true)
-    setModalAction(action)
-  }
+  // const cardClickHandler = (action) => {
+  //   setModalActive(true)
+  //   setModalAction(action)
+  // }
 
  return(
   <>
-    <Layout 
-      resetModal={() => setModalActive(false)}
-      // toggleModal={() => setModalActive(!modalActive)}
-      modalActive={modalActive}
-      modalAction={modalAction} 
-      path={props.match.path} />
     <Container>
       <FlexCenterHeading color='light' text='Products' />
       <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
@@ -75,7 +69,7 @@ const ProductsPage = ( props ) => {
       { ProductGroups.map( group => {
         return(
           <Card 
-            setModalAction={ action => cardClickHandler(action) }
+            click={type => props.openModal(type)}
             // setModalAction={ action => cardClickHandler(action) }
             info={group} />
         ) 

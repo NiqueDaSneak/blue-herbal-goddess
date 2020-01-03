@@ -38,7 +38,7 @@ const Chevron = styled.img`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 80vw;
   margin-bottom: 4vh;
   align-items: center;
   img {
@@ -67,29 +67,32 @@ const CenterModule = styled.div`
   flex-direction: column;
   align-items: center;
 `
-
-const ServiceModal = ( props ) => (
+const defaultProps = {
+  icon: '',
+  description: '',
+}
+const ServiceModal = ({active, activeItem = defaultProps, setActiveIndex}) => (
   <>
-  <ContentShade onClick={ props.reset } visible={ props.visible }/>
-    <Container active={props.visible}>
-      <Chevron onClick={() => props.setActiveIndex(-1)} src={ images.chevron }/>
+  {/* <ContentShade onClick={ props.reset } visible={ pddddrops.visible }/> */}
+    <Container active={active}>
+      {/* <Chevron onClick={() => setActiveIndex(-1)} src={ images.chevron }/> */}
       <CenterModule>
         <Content>
-          <img alt='Placeholder' src={props.activeItem.icon}/>
-          <BodyCopy>{props.activeItem.description}</BodyCopy>
+          <img alt='Placeholder' src={activeItem.icon}/>
+          <BodyCopy>{activeItem.description}</BodyCopy>
         </Content>
         <Button text='CTA Text' />
       </CenterModule>
-      <Chevron onClick={() => props.setActiveIndex(1)} right src={ images.chevron }/>
+      {/* <Chevron onClick={() => setActiveIndex(1)} right src={ images.chevron }/> */}
     </Container>
   </>
-  )
+)
 
-ServiceModal.defaultProps = {
-  activeItem: {
-    icon: '',
-    description: '',
-  }
-}
+// ServiceModal.defaultProps = {
+//   activeItem: {
+//     icon: '',
+//     description: '',
+//   }
+// }
 
 export default ServiceModal

@@ -1,5 +1,6 @@
-import showProductBundle from './showProductBundle'
+// import showProductBundle from './showProductBundle'
 
 export const Modals = {
-  showProductBundle: showProductBundle
+  // showProductBundle: showProductBundle
+  // serviceModal: 'SERVICE_MODAL'
 }

@@ -109,7 +109,7 @@ const Services = ( props ) => {
 
   return(
     <>
-    <Layout path={ props.match.path } />
+    {/* <Layout path={ props.match.path } /> */}
       <ServicesSection>
         <Logo src={images.goddess.white} />
         <FlexCenterHeading color='light' text='Services' />
@@ -118,11 +118,12 @@ const Services = ( props ) => {
         { ServiceItems.map( (item, index) => {
           return (
             <ServiceItem
+            // modalOpen={}
             index={index}
-            activeIndex={activeIndex}
+            activeIndex={props.modalOpen ? activeIndex : null}
             setActiveIndex={(val) => setActiveIndex(val)} 
             activeItem={activeItem}
-            setActiveItem={ (item) => itemClickHandler(item) }
+            click={(item) => props.openModal('SERVICE_MODAL', item)}
             item={item}
             />
           )
@@ -130,11 +131,11 @@ const Services = ( props ) => {
         </ItemsContainer>
         </ServicesSection>
         <AboutUs />
-      <ServiceModal 
+      {/* <ServiceModal 
         setActiveIndex={ (val) => activeIndexChangeHandler(val)}
         reset={() => resetHandler()} 
         activeItem={activeItem} 
-        visible={modalActive}/>
+        visible={modalActive}/> */}
   </>
   )
 }

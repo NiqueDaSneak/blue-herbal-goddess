@@ -26,31 +26,31 @@ const RootLayer = styled.div`
   margin: 0;
 `
 const Layout = ( props ) => {
-const initialState = {
-  modalActive: false,
-  modalAction: null
-}
+// const initialState = {
+//   modalActive: false,
+//   modalAction: null
+// }
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'closeModal':
-      props.resetModal()
-      return {modalActive: false};
-    case 'openModal':
-      return {modalActive: true};
-    default:
-      throw new Error();
-  }
-}
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'closeModal':
+//       props.resetModal()
+//       return {modalActive: false};
+//     case 'openModal':
+//       return {modalActive: true};
+//     default:
+//       throw new Error();
+//   }
+// }
 
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    if (props.modalActive) {
-      dispatch({type: 'openModal'})   
-    }
-  }, [props.modalActive])
+  // useEffect(() => {
+  //   if (props.modalActive) {
+  //     dispatch({type: 'openModal'})   
+  //   }
+  // }, [props.modalActive])
 
   return (
     <>
@@ -60,13 +60,13 @@ function reducer(state, action) {
         hidden={ props.path === '/' ? true : false }
         showCart={false} />
         <ContentShade 
-        onClick={() => dispatch({type: 'closeModal'})} 
-        visible={state.modalActive} />
+        onClick={() => props.closeModal(props.modalData)} 
+        visible={props.modalOpen} />
         <Modal 
-          // resetModal={}
-          close={() => dispatch({type: 'closeModal'})} 
-          active={state.modalActive} 
-          modalAction={state.modalAction} />
+          close={props.closeModal}
+          open={props.modalOpen} 
+          modalType={props.modalType}
+          modalData={props.modalData} />
         { props.children }
       </RootLayer>
     </>

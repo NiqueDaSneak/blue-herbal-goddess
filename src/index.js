@@ -6,28 +6,18 @@ import Layout from './components/hoc/Layout'
 import * as serviceWorker from './serviceWorker'
 
 const AppRouter = () => {
-  // const [modalActive, setModalActive] = useState(false)
-  // const [modalAction, setModalAction] = useState(null)
 
   const initialState = {
     modalOpen: false,
     modalType: null,
-    // modalData: null
   }
   
   function reducer(state, action) {
     switch (action.type) {
       case 'openModal':
-        // console.log('action', action)
         return {modalOpen: true, modalType: action.modalType, modalData: action.modalData}
       case 'closeModal':
         return {modalOpen: false, modalData: action.modalData}
-        // return console.log('d')
-    //   case 'closeModal':
-    //     props.resetModal()
-    //     return {modalActive: false};
-    //   case 'openModal':
-    //     return {modalActive: true};
       default:
         throw new Error();
     }
@@ -38,7 +28,6 @@ const AppRouter = () => {
   return(
     <Layout 
       closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
-    // toggleModal={() => setModalActive(!modalActive)}
       modalOpen={state.modalOpen}
       modalType={state.modalType} 
       modalData={state.modalData}

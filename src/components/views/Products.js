@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Layout from '../hoc/Layout'
 import { FlexCenterHeading, PageContainer, BodyCopy } from '../ui/Utility'
 import Card from '../ui/Card'
 import images from '../../assets/imgs'
-import Modal from '../ui/Modals/Modal'
-// import { modalConductor } from '../hoc/ModalConductor'
+
 const Container = styled(PageContainer)`
 `
 
@@ -52,14 +50,6 @@ const ProductGroups = [
 ]
 
 const ProductsPage = ( props ) => {
-  // const [modalActive, setModalActive] = useState(false)
-  // const [modalAction, setModalAction] = useState(null)
-
-  // const cardClickHandler = (action) => {
-  //   setModalActive(true)
-  //   setModalAction(action)
-  // }
-
  return(
   <>
     <Container>
@@ -70,17 +60,11 @@ const ProductsPage = ( props ) => {
         return(
           <Card 
             click={type => props.openModal(type)}
-            // setModalAction={ action => cardClickHandler(action) }
             info={group} />
         ) 
       }) }
       </CardContainer>
     </Container>
-    {/* { modalActive && (
-      <Modal toggle={setModalActive(false)} open={modalActive} modalAction={modalAction}>
-        Sample modal content goes here...
-      </Modal>
-    )} */}
   </>
  )
 }

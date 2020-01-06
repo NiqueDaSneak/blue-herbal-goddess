@@ -17,7 +17,7 @@ const CardContainer = styled.div`
 
 const ProductGroups = [
   {
-    modalType: 'showProductBundle', 
+    modalType: 'PRODUCT_BUNDLE', 
     type: 'bundle',
     image: images.placeholder,
     price: '$999.99',

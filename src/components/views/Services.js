@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import images from '../../assets/imgs'
 import { FlexCenterHeading, BodyCopy, fadeInForward, PageContainer } from '../ui/Utility'
 import ServiceItem from '../ui/ServiceItem'
-import Layout from '../hoc/Layout'
+// import Layout from '../hoc/Layout'
 import AboutUs from '../ui/AboutUs'
-import ServiceModal from  '../ui/ServiceModal'
+// import ServiceModal from  '../ui/ServiceModal'
 import { device } from '../../assets/MediaQueries'
 
 const ServicesSection = styled(PageContainer)`
@@ -81,31 +81,31 @@ const ServiceItems = [
 ]
 
 const Services = ( props ) => {
-  const [modalActive, setModal] = useState(false)
+  // const [modalActive, setModal] = useState(false)
   const [activeItem, setActiveItem] = useState({})
   const [activeIndex, setActiveIndex] = useState(99)
 
-  const itemClickHandler = item => {
-    setModal(true)
-    setActiveItem(item)
-  }
+  // const itemClickHandler = item => {
+  //   setModal(true)
+  //   setActiveItem(item)
+  // }
 
-  const resetHandler = () => {
-    setActiveIndex(99)
-    setModal(false)
-  }
+  // const resetHandler = () => {
+  //   setActiveIndex(99)
+  //   setModal(false)
+  // }
 
-  const activeIndexChangeHandler = (val) => {
-    let newValue = activeIndex + val
-    if (newValue < 0) {
-      newValue = 5
-    }
+  // const activeIndexChangeHandler = (val) => {
+  //   let newValue = activeIndex + val
+  //   if (newValue < 0) {
+  //     newValue = 5
+  //   }
 
-    if (newValue > 5) {
-      newValue = 0
-    }
-    setActiveIndex(newValue)
-  }
+  //   if (newValue > 5) {
+  //     newValue = 0
+  //   }
+  //   setActiveIndex(newValue)
+  // }
 
   return(
     <>
@@ -118,7 +118,6 @@ const Services = ( props ) => {
         { ServiceItems.map( (item, index) => {
           return (
             <ServiceItem
-            // modalOpen={}
             index={index}
             activeIndex={props.modalOpen ? activeIndex : null}
             setActiveIndex={(val) => setActiveIndex(val)} 
@@ -131,11 +130,6 @@ const Services = ( props ) => {
         </ItemsContainer>
         </ServicesSection>
         <AboutUs />
-      {/* <ServiceModal 
-        setActiveIndex={ (val) => activeIndexChangeHandler(val)}
-        reset={() => resetHandler()} 
-        activeItem={activeItem} 
-        visible={modalActive}/> */}
   </>
   )
 }

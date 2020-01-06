@@ -4,14 +4,14 @@ import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'
 
 const ButtonStyle = styled.button`
-  color: white;
+  color: ${props => props.light ? colors.blue.dark : 'white'};
   font-size: 10pt;
-  background-color: ${colors.blue.dark};
+  background-color: ${props => props.light ? 'white' : colors.blue.dark};
   border: none;
   padding-top: 2vh;
   padding-bottom: 2vh;
   width: 44vw;
-  margin-bottom: 2vh;
+  /* margin-bottom: 2vh; */
   text-transform: uppercase;
   border-radius: 2vw;
   font-weight: lighter;
@@ -27,7 +27,7 @@ const ButtonStyle = styled.button`
 
 const Button = ( props ) => {
   return(
-    <ButtonStyle onClick={props.onClick}>
+    <ButtonStyle light={props.light} onClick={props.onClick}>
       {props.text}
     </ButtonStyle>
   )

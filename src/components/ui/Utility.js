@@ -13,7 +13,7 @@ const Heading = styled.span`
   color: ${ props => props.color ? colors.textColors[props.color] : colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 4vh;
+  /* margin-bottom: 4vh; */
   @media ${ device.tablet } {
     font-size: 40pt;
   }

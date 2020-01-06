@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from './Button'
-import { ContentShade } from './Utility'
-import { BodyCopy } from '../ui/Utility'
-import images from '../../assets/imgs'
-import colors from '../../assets/colors'
-import { device } from '../../assets/MediaQueries'
+import Button from '../Button'
+import { ContentShade } from '../Utility'
+import { BodyCopy } from '../Utility'
+import images from '../../../assets/imgs'
+import colors from '../../../assets/colors'
+import { device } from '../../../assets/MediaQueries'
 
 const Container = styled.div`
   background-color: ${ colors.blue.light };

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import images from '../../assets/imgs'
-import { FlexCenterHeading, BodyCopy, fadeInForward, PageContainer } from '../ui/Utility'
+import { FlexCenterHeading, BodyCopy, fadeInForward, PageContainer, NoScrollBackground } from '../ui/Utility'
 import ServiceItem from '../ui/ServiceItem'
+import colors from '../../assets/colors'
 // import Layout from '../hoc/Layout'
 import AboutUs from '../ui/AboutUs'
 // import ServiceModal from  '../ui/ServiceModal'
@@ -79,37 +80,15 @@ const ServiceItems = [
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
 ]
+export const BG = styled(NoScrollBackground)`
+`
 
 const Services = ( props ) => {
-  // const [modalActive, setModal] = useState(false)
   const [activeItem, setActiveItem] = useState({})
   const [activeIndex, setActiveIndex] = useState(99)
 
-  // const itemClickHandler = item => {
-  //   setModal(true)
-  //   setActiveItem(item)
-  // }
-
-  // const resetHandler = () => {
-  //   setActiveIndex(99)
-  //   setModal(false)
-  // }
-
-  // const activeIndexChangeHandler = (val) => {
-  //   let newValue = activeIndex + val
-  //   if (newValue < 0) {
-  //     newValue = 5
-  //   }
-
-  //   if (newValue > 5) {
-  //     newValue = 0
-  //   }
-  //   setActiveIndex(newValue)
-  // }
-
   return(
-    <>
-    {/* <Layout path={ props.match.path } /> */}
+    <BG image={images.wood}>
       <ServicesSection>
         <Logo src={images.goddess.white} />
         <FlexCenterHeading color='light' text='Services' />
@@ -125,12 +104,12 @@ const Services = ( props ) => {
             click={(item) => props.openModal('SERVICE_MODAL', item)}
             item={item}
             />
-          )
-        }) } 
+            )
+          }) } 
         </ItemsContainer>
         </ServicesSection>
         <AboutUs />
-  </>
+      </BG>
   )
 }
 

@@ -32,7 +32,7 @@ const AboutUs = ( props ) => (
         <FlexCenterHeading color='light' text='About Us' />
         <Image src={images.woman} />
         <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
-        <Button text='Learn More'/>
+        <Button light text='Learn More'/>
     </Container>
 )
 

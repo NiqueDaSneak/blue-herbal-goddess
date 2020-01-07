@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { FlexCenterHeading, PageContainer, BodyCopy } from '../ui/Utility'
+import { FlexCenterHeading, PageContainer, BodyCopy, NoScrollBackground } from '../ui/Utility'
 import Card from '../ui/Card'
 import images from '../../assets/imgs'
 
@@ -48,10 +48,12 @@ const ProductGroups = [
     description: 'Interested in some content while you shop?'
   },  
 ]
+export const BG = styled(NoScrollBackground)`
+`
 
 const ProductsPage = ( props ) => {
  return(
-  <>
+  <BG image={images.wood}>
     <Container>
       <FlexCenterHeading color='light' text='Products' />
       <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
@@ -59,13 +61,13 @@ const ProductsPage = ( props ) => {
       { ProductGroups.map( group => {
         return(
           <Card 
-            click={type => props.openModal(type)}
-            info={group} />
-        ) 
-      }) }
+          click={type => props.openModal(type)}
+          info={group} />
+          ) 
+        }) }
       </CardContainer>
     </Container>
-  </>
+  </BG>
  )
 }
 

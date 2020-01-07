@@ -26,28 +26,30 @@ const AppRouter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return(
-    <Layout 
-      closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
-      modalOpen={state.modalOpen}
-      modalType={state.modalType} 
-      modalData={state.modalData}
-    // path={props.match.path} 
-    >
     <Router>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path='/services'>
-            <Services
-              modalOpen={state.modalOpen} 
-              openModal={(modalType, modalData) => dispatch({type: 'openModal', modalData: modalData, modalType: modalType})} />
-          </Route> 
-          <Route path='/products'> 
-            <Products openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
-          </Route>
-          {/* <Route path='/' component={ComingSoon} /> */}
-        </Switch>
+      <Layout 
+        closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
+        modalOpen={state.modalOpen}
+        modalType={state.modalType} 
+        modalData={state.modalData}
+      // path={props.match.path} 
+      >
+          <Switch>
+            <Route path="/" exact >
+              <Home />
+            </Route>
+            <Route path='/services'>
+              <Services
+                modalOpen={state.modalOpen} 
+                openModal={(modalType, modalData) => dispatch({type: 'openModal', modalData: modalData, modalType: modalType})} />
+            </Route> 
+            <Route path='/products'> 
+              <Products openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
+            </Route>
+            {/* <Route path='/' component={ComingSoon} /> */}
+          </Switch>
+      </Layout>
     </Router>
-    </Layout>
   )
 }
 

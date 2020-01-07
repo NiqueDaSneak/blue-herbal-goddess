@@ -6,6 +6,7 @@ import { device } from '../../assets/MediaQueries'
 
 
 const ButtonContainer = styled.div`
+  height: 16vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

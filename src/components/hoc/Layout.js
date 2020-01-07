@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 import colors from '../../assets/colors'
 import Modal from '../ui/Modals/Modal'
@@ -11,9 +12,9 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    background: url(${images.wood});
+    /* background: url(${images.wood}); */
     background-color: ${colors.blue.dark};
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
   }
   p {
     margin: 0;
@@ -24,13 +25,13 @@ const RootLayer = styled.div`
   margin: 0;
 `
 
-const Layout = ( props ) => {
+const Layout = (props) => {
   return (
     <>
       <GlobalStyles />
       <RootLayer>
         <FloatingActionButtons
-        hidden={ props.path === '/' ? true : false }
+        hidden={ props.location.pathname === '/' ? true : false }
         showCart={false} />
         <ContentShade 
         onClick={() => props.closeModal(props.modalData)} 
@@ -47,4 +48,4 @@ const Layout = ( props ) => {
 }
 
 
-export default Layout
+export default withRouter(Layout)

@@ -13,6 +13,7 @@ const HomeBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4vh;
   div {
     &:nth-of-type(2) {
       margin-top: 4vh;
@@ -31,14 +32,12 @@ const HomeBackground = styled.div`
 `
 
 const GoddessImg = styled(ImportedComponent)`
-  width: 100vw;
-  height: 50vh;
+  height: 40vh;
   ${fadeInForwardSlow}
 `
 
 const Home = ( props ) => (
   <>
-    <Layout path={props.match.path} />
     <HomeBackground>
       <FlexCenterHeading color='light' text='Blue Herbal Goddess' />
       <GoddessImg alt='Logo' />

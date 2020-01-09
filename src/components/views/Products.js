@@ -24,6 +24,7 @@ const ProductGroups = [
     description: 'This is a bundle created by the owner.'
   },
   {
+    modalType: 'SINGLE_PRODUCT', 
     type: 'product',
     image: images.placeholder,
     price: '$999.99',
@@ -36,6 +37,7 @@ const ProductGroups = [
     description: 'This will open a search for a specific type or category of products.'
   }, 
   {
+    modalType: 'SINGLE_PRODUCT', 
     type: 'product',
     image: images.placeholder,
     price: '$999.99',

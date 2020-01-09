@@ -19,10 +19,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  height: 50vh;
   width: 100vw;
   justify-content: space-evenly;
+  /* background-color: ${colors.blue.dark};
+  background-image: url(${images.wood}); */
+  /* background: radial-gradient(circle, rgba(23,37,224,1) 0%, rgba(5,13,113,1) 95%); */
   background-color: ${colors.trans.blue.light};
+  /* border: ${ props => props.type === 'content' ? '1px solid white' : null };  */
   backdrop-filter: blur(20px);
 `
 
@@ -33,41 +37,14 @@ const ProductImage = styled.img.attrs( props => ({
 
 const Price = styled.span``
 
-const ProductPreviewContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-  width: 100vw;
-`
-
-const BtnContainer = styled.div`
-  display: flex;
-  width: 100vw;
-  justify-content: space-evenly;
-`
-
-const ProductBundleModal = (props) => (
+const SingleProductModal = (props) => (
   <Container active={props.active}>
+    <ProductImage />
     <BodyCopy>Product Name</BodyCopy>
     <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
-    <ProductPreviewContainer>
-      <ProductImage />
-      <ProductImage />
-      <ProductImage />
-      <ProductImage />
-      <ProductImage />
-      <ProductImage />
-    </ProductPreviewContainer>
     <Price>$999.99</Price>
     <Button text='Buy This Only'/>
-    <FlexCenterHeading color='light' small text='Bundle Heading'/>
-    <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
-    <Price>$999.99</Price>
-    <BtnContainer>
-      <Button text='Buy Bundle'/>
-      <Button light onClick={props.close} text='Back'/>
-    </BtnContainer>
   </Container>
 )
 
-export default ProductBundleModal
+export default SingleProductModal

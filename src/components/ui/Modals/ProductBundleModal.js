@@ -4,44 +4,57 @@ import Images from '../../../assets/imgs'
 import { BodyCopy, FlexCenterHeading } from '../Utility'
 import Button from '../Button'
 import colors from '../../../assets/colors'
+import images from '../../../assets/imgs'
+
+// const Container = styled.div`
+//   overflow-y: hidden;
+//   /* color: white; */
+//   height: 80vh;
+//   width: 100vw;
+//   position: fixed;
+//   bottom: 0;
+//   right: 0;
+//   visibility: ${props => props.active ? 'visible' : 'hidden'};
+//   opacity: ${props => props.active ? '1' : '0'};
+//   z-index: 6;
+//   transition: all .6s ease-in-out;
+//   background-color: white;
+//   /* background-color: ${colors.blue.light}; */
+//   /* background-image: url(https://www.transparenttextures.com/patterns/wine-cork.png); */
+//   /* backdrop-filter: blur(30px); */
+// `
+
+// const ProductOverview = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   height: 60vh;
+//   justify-content: space-evenly;
+//   p {
+//     &:first-of-type { 
+//       /* padding-top: 14vh; */
+//     }
+//   }
+// `
 
 const Container = styled.div`
   color: white;
-  height: 100vh;
-  width: 100vw;
+  border-radius: 20px 20px 0 0;
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
   visibility: ${props => props.active ? 'visible' : 'hidden'};
   opacity: ${props => props.active ? '1' : '0'};
   z-index: 6;
   transition: all .6s ease-in-out;
-  background-color: grey;
-  background-color: ${colors.blue.dark};
-  background-image: url(https://www.transparenttextures.com/patterns/wine-cork.png);
-  /* backdrop-filter: blur(30px); */
-`
-
-const ProductOverview = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
-  justify-content: space-evenly;
-`
-
-const BundleInfo = styled.div`
-  box-shadow: 0px 0px 10px 0px black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  height: 40vh;
+  height: 80vh;
   width: 100vw;
   justify-content: space-evenly;
-  background-color: ${colors.blue.main};
-  background-image: url(https://www.transparenttextures.com/patterns/wine-cork.png);
+  background-color: ${colors.blue.dark};
+  background-image: url(${images.wood});
 `
 
 const ProductImage = styled.img.attrs( props => ({
@@ -65,30 +78,27 @@ const BtnContainer = styled.div`
 `
 
 const ProductBundleModal = (props) => (
-    <Container active={props.active}>
-      <ProductOverview>
-          <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
-          <ProductPreviewContainer>
-            <ProductImage />
-            <ProductImage />
-            <ProductImage />
-            <ProductImage />
-            <ProductImage />
-            <ProductImage />
-          </ProductPreviewContainer>
-          <Price>$999.99</Price>
-          <Button text='Buy This Only'/>
-        </ProductOverview>
-        <BundleInfo>
-          <FlexCenterHeading text='Bundle Heading'/>
-          <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
-          <Price>$999.99</Price>
-          <BtnContainer>
-            <Button text='Buy Bundle'/>
-            <Button light onClick={props.close} text='Back'/>
-          </BtnContainer>
-        </BundleInfo>
-    </Container>
+  <Container active={props.active}>
+    <BodyCopy>Product Name</BodyCopy>
+    <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
+    <ProductPreviewContainer>
+      <ProductImage />
+      <ProductImage />
+      <ProductImage />
+      <ProductImage />
+      <ProductImage />
+      <ProductImage />
+    </ProductPreviewContainer>
+    <Price>$999.99</Price>
+    <Button text='Buy This Only'/>
+    <FlexCenterHeading color='light' small text='Bundle Heading'/>
+    <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
+    <Price>$999.99</Price>
+    <BtnContainer>
+      <Button text='Buy Bundle'/>
+      <Button light onClick={props.close} text='Back'/>
+    </BtnContainer>
+  </Container>
 )
 
 export default ProductBundleModal

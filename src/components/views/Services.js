@@ -80,7 +80,8 @@ const ServiceItems = [
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
 ]
-export const BG = styled(NoScrollBackground)`
+
+const BG = styled(NoScrollBackground)`
 `
 
 const Services = ( props ) => {

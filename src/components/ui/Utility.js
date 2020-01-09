@@ -9,7 +9,7 @@ export const FlexCenter = styled.div`
 `
 
 const Heading = styled.span`
-  font-size: 30pt;
+  font-size: ${props => props.small ? '18pt' : '30pt'};
   color: ${ props => props.color ? colors.textColors[props.color] : colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
@@ -24,7 +24,7 @@ const Heading = styled.span`
 
 export const FlexCenterHeading = ( props ) => (
   <FlexCenter>
-    <Heading color={props.color}>{props.text}</Heading>
+    <Heading small={props.small} color={props.color}>{props.text}</Heading>
 </FlexCenter>
 )
 

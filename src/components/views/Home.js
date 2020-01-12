@@ -48,7 +48,7 @@ const Home = ( props ) => (
     <HomeBackground>
       <FlexCenterHeading color='light' text='Blue Herbal Goddess' />
       <GoddessImg alt='Logo' />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <NavigationButtons />
     </HomeBackground>
   </BG>

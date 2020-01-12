@@ -37,9 +37,9 @@ const Square = css`
   height: 40vh;
   position: fixed;
   width: 100vw;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
   bottom: 0vh;
   right: 0vh;
 `

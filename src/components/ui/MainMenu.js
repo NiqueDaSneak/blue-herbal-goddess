@@ -12,6 +12,10 @@ const MenuContainer = styled.div`
   opacity: 0;
   ${fadeInForward};
   z-index: 9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `
 
 const NavigationLinkContainer = styled.div`
@@ -19,7 +23,7 @@ const NavigationLinkContainer = styled.div`
   flex-direction: column;
   align-items: center;
   height: 20vh;
-  justify-content: space-evenly;
+  justify-content: space-between;
   @media ${ device.tablet } {
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -30,6 +34,8 @@ const NavListItem = styled.span`
     a {
         color: white;
         text-decoration: none;
+        font-size: 16pt;
+        font-weight: lighter;
         @media ${ device.tablet } {
           font-size: 22pt;
         }
@@ -48,6 +54,7 @@ const Placeholder = styled.img.attrs( props => ({
   src: images.fpo1,
   alt: 'Placeholder'
 }))`
+  height: 12vw;
   width: 12vw;
   @media ${ device.tablet } {
     width: 8vw;
@@ -56,32 +63,30 @@ const Placeholder = styled.img.attrs( props => ({
 
 const MainMenu = ( props ) => {
   return (
-      <>
-        <MenuContainer visible={props.visible}>
-            <SocialContainer>
-                <Placeholder />
-                <Placeholder />
-                <Placeholder />
-            </SocialContainer>
-            <NavigationLinkContainer>
-                <Router>
-                    <NavListItem>
-                        <Link to='/'>Discover Products</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to='/'>Cart</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to='/'>Assessment</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to='/'>About Us</Link>
-                    </NavListItem>
-                </Router>
-            </NavigationLinkContainer>
-            <SearchBar />
-        </MenuContainer>
-      </>
+    <MenuContainer visible={props.visible}>
+        <SocialContainer>
+            <Placeholder />
+            <Placeholder />
+            <Placeholder />
+        </SocialContainer>
+        <NavigationLinkContainer>
+            <Router>
+                <NavListItem>
+                    <Link to='/'>Cart</Link>
+                </NavListItem>
+                <NavListItem>
+                    <Link to='/'>About Us</Link>
+                </NavListItem>
+                <NavListItem>
+                    <Link to='/'>Assessment</Link>
+                </NavListItem>
+                <NavListItem>
+                    <Link to='/'>Discover Products</Link>
+                </NavListItem>
+            </Router>
+        </NavigationLinkContainer>
+        {/* <SearchBar /> */}
+    </MenuContainer>
   )
 }
 

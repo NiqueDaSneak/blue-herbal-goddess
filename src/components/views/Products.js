@@ -9,6 +9,7 @@ const Container = styled(PageContainer)`
 
 const CardContainer = styled.div`
   margin-top: 4vh;
+  margin-bottom: 4vh;
   display: flex;
   flex-wrap: wrap;
   width: 90vw;
@@ -30,12 +31,12 @@ const ProductGroups = [
     price: '$999.99',
     description: 'This is an individual product for sale.'
   },  
-  {
-    type: 'type',
-    image: images.placeholder,
-    // price: '$999.99',
-    description: 'This will open a search for a specific type or category of products.'
-  }, 
+  // {
+  //   type: 'search',
+  //   image: images.placeholder,
+  //   // price: '$999.99',
+  //   description: 'This will open a search for a specific type or category of products.'
+  // }, 
   {
     modalType: 'SINGLE_PRODUCT', 
     type: 'product',
@@ -49,6 +50,20 @@ const ProductGroups = [
     // price: '$999.99',
     description: 'Interested in some content while you shop?'
   },  
+  {
+    modalType: 'PRODUCT_BUNDLE', 
+    type: 'bundle',
+    image: images.placeholder,
+    price: '$999.99',
+    description: 'This is a bundle created by the owner.'
+  },
+  {
+    modalType: 'PRODUCT_BUNDLE', 
+    type: 'bundle',
+    image: images.placeholder,
+    price: '$999.99',
+    description: 'This is a bundle created by the owner.'
+  },
 ]
 export const BG = styled(NoScrollBackground)`
 `

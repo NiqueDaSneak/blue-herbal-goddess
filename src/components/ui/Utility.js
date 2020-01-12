@@ -90,10 +90,10 @@ export const PageContainer = styled.div`
   color: white;
 `
 export const NoScrollBackground = styled.div`
-background: ${props => css`url(${props.image})`};
-background-color: ${colors.blue.dark};
-height: 100vh;
-overflow: scroll;
+  background: ${props => css`url(${props.image})`};
+  background-color: ${colors.blue.dark};
+  /* height: 100vh; */
+  overflow: scroll;
 `
 
 const normal = 1

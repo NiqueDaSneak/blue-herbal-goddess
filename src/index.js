@@ -1,7 +1,7 @@
 import React, {useState, useReducer} from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { Home, Services, ComingSoon, Products } from './components/views/index'
+import { Home, Services, ComingSoon, Products, Assessment } from './components/views/index'
 import Layout from './components/hoc/Layout'
 import * as serviceWorker from './serviceWorker'
 
@@ -35,9 +35,7 @@ const AppRouter = () => {
         closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
         modalOpen={state.modalOpen}
         modalType={state.modalType} 
-        modalData={state.modalData}
-      // path={props.match.path} 
-      >
+        modalData={state.modalData} >
           <Switch>
             <Route path="/" exact >
               <Home />
@@ -50,6 +48,10 @@ const AppRouter = () => {
             <Route path='/products'> 
               <Products 
                 openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
+            </Route>
+            <Route path='/assessment'>
+              <Assessment 
+              openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
             </Route>
             {/* <Route path='/' component={ComingSoon} /> */}
           </Switch>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FlexCenterHeading, PageContainer, BodyCopy, NoScrollBackground } from '../ui/Utility'
-import Card from '../ui/Card'
+import {default as Card} from '../ui/ProductCard'
 import images from '../../assets/imgs'
 
 const Container = styled(PageContainer)`

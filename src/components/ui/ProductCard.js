@@ -53,7 +53,7 @@ const Desc = styled.p`
   font-size: 10pt;
 `
 
-const Card = ( props ) => (
+const ProductCard = ( props ) => (
   <Container onClick={() => props.click(props.info.modalType)} type={props.info.type}>
     <Image src={props.info.type === 'content' ? images.youtube : props.info.image} />
     <Price>{props.info.price ? props.info.price : null}</Price>
@@ -61,4 +61,4 @@ const Card = ( props ) => (
   </Container>
 )
 
-export default Card
+export default ProductCard

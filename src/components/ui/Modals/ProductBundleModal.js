@@ -15,7 +15,7 @@ const Container = styled.div`
   visibility: ${props => props.active ? 'visible' : 'hidden'};
   opacity: ${props => props.active ? '1' : '0'};
   z-index: 6;
-  transition: all .3s ease-in-out;
+  transition: all .6s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;

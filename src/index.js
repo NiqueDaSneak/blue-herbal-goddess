@@ -31,6 +31,7 @@ const AppRouter = () => {
   return(
     <Router>
       <Layout 
+        openModal={(type) => dispatch({type: 'openModal', modalType: type})}
         closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
         modalOpen={state.modalOpen}
         modalType={state.modalType} 

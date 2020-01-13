@@ -26,7 +26,7 @@ const NavigationButtons = ( props ) => {
     first: ['Discover Products','Herbal Assessment','Services','More'],
     second: ['Instagram','Medium','Facebook','Back'],
     links: {
-      'Discover Products': '',
+      'Discover Products': '/products',
       'Take Assessment': '',
       'Services': '/services',
       social: {

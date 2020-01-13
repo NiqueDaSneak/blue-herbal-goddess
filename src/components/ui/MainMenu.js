@@ -5,14 +5,22 @@ import SearchBar from './SearchBar'
 import { fadeInForward } from './Utility'
 import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
-
-
+import colors from '../../assets/colors'
 
 const MenuContainer = styled.div`
-  opacity: 0;
-  ${fadeInForward};
+  position: fixed;
+  background-color: ${colors.blue.main};
+  width: 100vw;
+  height: 40vh;
+  bottom: ${ props => props.active ? '0vh;' : '-40vh'};
+  visibility: ${ props => props.active ? 'visible' : 'hidden'};
+  opacity: ${ props => props.active ? '1' : '0'};
+  transition: all .6s ease-in-out;
+  border-radius: 20px 20px 0 0;
+  /* opacity: 0; */
+  /* ${fadeInForward}; */
   z-index: 9;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -63,7 +71,7 @@ const Placeholder = styled.img.attrs( props => ({
 
 const MainMenu = ( props ) => {
   return (
-    <MenuContainer visible={props.visible}>
+    <MenuContainer active={props.active}>
         <SocialContainer>
             <Placeholder />
             <Placeholder />

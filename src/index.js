@@ -10,6 +10,9 @@ const AppRouter = () => {
   const initialState = {
     modalOpen: false,
     modalType: null,
+    cart: {
+      active: false
+    }
   }
   
   function reducer(state, action) {
@@ -44,7 +47,8 @@ const AppRouter = () => {
                 openModal={(modalType, modalData) => dispatch({type: 'openModal', modalData: modalData, modalType: modalType})} />
             </Route> 
             <Route path='/products'> 
-              <Products openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
+              <Products 
+                openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
             </Route>
             {/* <Route path='/' component={ComingSoon} /> */}
           </Switch>

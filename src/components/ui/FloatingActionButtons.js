@@ -20,9 +20,9 @@ const Cir = css`
   border-radius: 10vw;
   width: 15vw;
   height: 15vw;
-  bottom: 5vh;
+  /* bottom: 5vh;
   right: 5vh;
-  position: fixed;
+  position: fixed; */
   @media ${ device.tablet } {
     width: 10vw;
     height: 10vw;
@@ -53,7 +53,7 @@ const CircleToSquare = styled.div`
 const MenuToggle = styled(CircleToSquare)`
   display: ${ props => props.hidden ? 'none' : undefined };
   background-color: ${colors.blue.main};
-  z-index: 5;
+  /* z-index: 5; */
 `
 
 const Hamburger = styled.img.attrs({
@@ -84,28 +84,36 @@ const CartToggle = styled(Circle)`
     width: 5vw;
   }
 `
+const Container = styled.div`
+  bottom: 5vh;
+  right: 5vh;
+  position: fixed;
+  z-index: 5;
+`
 
 const FloatingActionButtons = ( props ) => {
   const [menuVisible, setMenu] = useState(false);
 
   return(
     <>
-      <MenuToggle 
-        circle={menuVisible ? false : true}
-        onClick={ () => setMenu(true) }
-        hidden={props.hidden} 
-        visible={ menuVisible }>
-          { menuVisible ? (
-            <MainMenu 
-            toggleMenu={ () => setMenu(!menuVisible) } 
-            visible={ menuVisible } />
-          ) : (
-            <Hamburger />
-          ) }
-      </MenuToggle>
-      <CartToggle showCart={props.showCart}>
-        <img alt='Floating Action Button' src={images.cart}/>
-      </CartToggle>
+      <Container>
+        <MenuToggle 
+          circle={menuVisible ? false : true}
+          onClick={ () => setMenu(true) }
+          hidden={props.hidden} 
+          visible={ menuVisible }>
+            { menuVisible ? (
+              <MainMenu 
+              toggleMenu={ () => setMenu(!menuVisible) } 
+              visible={ menuVisible } />
+            ) : (
+              <Hamburger />
+            ) }
+        </MenuToggle>
+        <CartToggle showCart={props.showCart}>
+          <img alt='Floating Action Button' src={images.cart}/>
+        </CartToggle>
+      </Container>
       <ContentShade onClick={ () => setMenu(!menuVisible) } visible={ menuVisible }/>
     </>
   )

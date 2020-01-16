@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import SearchBar from './SearchBar'
-import { fadeInForward } from './Utility'
-import images from '../../assets/imgs'
-import { device } from '../../assets/MediaQueries'
-import colors from '../../assets/colors'
+// import SearchBar from './SearchBar'
+import { fadeInForward } from '../Utility'
+import images from '../../../assets/imgs'
+import { device } from '../../../assets/MediaQueries'
+import colors from '../../../assets/colors'
 
 const MenuContainer = styled.div`
   position: fixed;

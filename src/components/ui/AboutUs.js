@@ -7,7 +7,7 @@ import Button from './Button'
 
 const Container = styled(PageContainer)`
   height: 80vh;
-  padding-bottom: 15vh;
+  /* padding-bottom: 15vh; */
   p {
     @media ${ device.laptop } {
       margin-top: 4vh;
@@ -20,7 +20,9 @@ const Container = styled(PageContainer)`
 `
 
 const Image = styled.img`
-    width: 80vw;
+    width: 100vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
     @media ${ device.laptop } {
       width: 50vw;
       margin-top: 4vh;

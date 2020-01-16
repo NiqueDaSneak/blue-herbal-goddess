@@ -11,13 +11,15 @@ import { device } from '../../assets/MediaQueries'
 
 const ServicesSection = styled(PageContainer)`
   height: 80vh;
+  padding-top: 4vh;
+  margin-bottom: 4vh;
   @media ${ device.tablet } {
     height: 90vh;
   }
 `
 
 const ItemsContainer = styled.div`
-  margin-top: 4vh;
+  /* margin-top: 4vh; */
   width: 80vw;
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +33,6 @@ const ItemsContainer = styled.div`
 
 const Logo = styled.img`
   width: 12vw;
-  margin-bottom: 2vh;
   ${fadeInForward};
   opacity: 0;
   @media ${ device.tablet } {

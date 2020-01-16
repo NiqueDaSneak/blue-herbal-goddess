@@ -4,6 +4,9 @@ import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'
 
 const ButtonStyle = styled.button`
+  visibility: ${props => props.visible ? 'visible' : 'hidden'};
+  opacity: ${props => props.visible ? '1' : '0'};
+  transition: all .6s ease-in-out;
   color: ${props => props.light ? colors.blue.dark : 'white'};
   font-size: 10pt;
   background-color: ${props => props.light ? 'white' : colors.blue.dark};
@@ -11,10 +14,9 @@ const ButtonStyle = styled.button`
   padding-top: 2vh;
   padding-bottom: 2vh;
   width: 44vw;
-  /* margin-bottom: 2vh; */
   text-transform: uppercase;
   border-radius: 2vw;
-  font-weight: lighter;
+  font-weight: bolder;
   outline: none;
   @media ${ device.tablet } {
     width: 30vw;
@@ -27,10 +29,14 @@ const ButtonStyle = styled.button`
 
 const Button = ( props ) => {
   return(
-    <ButtonStyle light={props.light} onClick={props.onClick}>
+    <ButtonStyle visible={props.visible} light={props.light} onClick={props.onClick}>
       {props.text}
     </ButtonStyle>
   )
+}
+
+Button.defaultProps = {
+  visible: true
 }
 
 export default Button

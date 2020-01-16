@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
-import MainMenu from '../ui/MainMenu'
+// import MainMenu from '../ui/MainMenu'
 import { ContentShade } from './Utility'
 import { device } from '../../assets/MediaQueries'
 
@@ -93,8 +93,8 @@ const CartToggle = styled(Circle)`
   }
 `
 const Container = styled.div`
-  bottom: 5vh;
-  right: 5vh;
+  bottom: 3vh;
+  right: 3vh;
   position: fixed;
   z-index: 5;    
   display: flex;

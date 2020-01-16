@@ -19,17 +19,23 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  height: 100%;
   width: 100vw;
   justify-content: space-evenly;
   background-color: ${colors.trans.blue.light};
   backdrop-filter: blur(20px);
+  /* padding-bottom: 4vh; */
+  button {
+    margin-top: 4vh;
+  }
 `
 
 const ProductImage = styled.img.attrs( props => ({
   src: Images.placeholder,
   alt: 'Placeholder'
-}))``
+}))`
+  min-height: 80px;
+`
 
 const Price = styled.span``
 
@@ -38,12 +44,14 @@ const ProductPreviewContainer = styled.div`
   flex-direction: row;
   overflow: scroll;
   width: 100vw;
+  margin-bottom: 4vh;
 `
 
 const BtnContainer = styled.div`
   display: flex;
   width: 100vw;
   justify-content: space-evenly;
+  margin-bottom: 4vh;
 `
 
 const ProductBundleModal = (props) => (

@@ -51,7 +51,7 @@ const AppRouter = () => {
             </Route>
             <Route path='/assessment'>
               <Assessment 
-              openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
+                openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
             </Route>
             {/* <Route path='/' component={ComingSoon} /> */}
           </Switch>

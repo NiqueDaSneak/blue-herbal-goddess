@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
-const ToggleContainer = styled.div`
+const Button = css`
   color: white;
   font-size: 10pt;
   background-color: #050d71;
@@ -13,6 +13,12 @@ const ToggleContainer = styled.div`
   font-weight: lighter;
   display: flex;
   justify-content: center;
+`
+
+// Const
+
+const ToggleContainer = styled.div`
+  ${ props => props.isButton ? Button : null}
 `
 
 const ShowResultsToggle = (props) => {

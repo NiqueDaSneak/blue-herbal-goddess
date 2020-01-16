@@ -22,11 +22,9 @@ const Container = styled.div`
   height: 50vh;
   width: 100vw;
   justify-content: space-evenly;
-  /* background-color: ${colors.blue.dark};
-  background-image: url(${images.wood}); */
-  /* background: radial-gradient(circle, rgba(23,37,224,1) 0%, rgba(5,13,113,1) 95%); */
+  padding-top: 4vh;
+  padding-bottom: 4vh;
   background-color: ${colors.trans.blue.light};
-  /* border: ${ props => props.type === 'content' ? '1px solid white' : null };  */
   backdrop-filter: blur(20px);
 `
 
@@ -35,7 +33,9 @@ const ProductImage = styled.img.attrs( props => ({
   alt: 'Placeholder'
 }))``
 
-const Price = styled.span``
+const Price = styled.span`
+  margin-bottom: 4vh;
+`
 
 const SingleProductModal = (props) => (
   <Container active={props.active}>

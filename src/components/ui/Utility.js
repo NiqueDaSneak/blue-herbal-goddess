@@ -13,6 +13,7 @@ const Heading = styled.span`
   color: ${ props => props.color ? colors.textColors[props.color] : colors.blue.dark };
   text-transform: uppercase;
   text-align: center;
+  margin-top: 4vh;
   /* margin-bottom: 4vh; */
   @media ${ device.tablet } {
     font-size: 40pt;
@@ -33,8 +34,8 @@ export const BodyCopy = styled.p`
   font-weight: normal;
   text-align: center;
   font-weight: lighter;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   @media ${ device.tablet } {
     font-size: 18pt;
   }
@@ -84,8 +85,8 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding-top: 4vh;
+  /* justify-content: space-evenly; */
+  margin-bottom: 16vh;
   width: 100vw;
   color: white;
 `

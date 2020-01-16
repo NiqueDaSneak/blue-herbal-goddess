@@ -5,11 +5,12 @@ import {default as Card} from '../ui/ProductCard'
 import images from '../../assets/imgs'
 
 const Container = styled(PageContainer)`
+  
 `
 
 const CardContainer = styled.div`
-  margin-top: 4vh;
-  margin-bottom: 4vh;
+  /* margin-top: 4vh; */
+  /* margin-bottom: 4vh; */
   display: flex;
   flex-wrap: wrap;
   width: 90vw;
@@ -65,6 +66,7 @@ const ProductGroups = [
     description: 'This is a bundle created by the owner.'
   },
 ]
+
 export const BG = styled(NoScrollBackground)`
 `
 

@@ -13,7 +13,7 @@ const HomeBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4vh;
+  /* margin-top: 4vh; */
   div {
     &:nth-of-type(2) {
       margin-top: 4vh;
@@ -33,6 +33,8 @@ const HomeBackground = styled.div`
 
 const GoddessImg = styled(ImportedComponent)`
   height: 40vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   ${fadeInForwardSlow}
   width: 100vw;
   @media ${device.desktop} {

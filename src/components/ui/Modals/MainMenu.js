@@ -83,13 +83,13 @@ const MainMenu = ( props ) => {
                     <Link to='/'>Cart</Link>
                 </NavListItem>
                 <NavListItem>
-                    <Link to='/'>About Us</Link>
+                    <Link to='/services'>Services</Link>
                 </NavListItem>
                 <NavListItem>
-                    <Link to='/'>Assessment</Link>
+                    <Link to='/assessment'>Assessment</Link>
                 </NavListItem>
                 <NavListItem>
-                    <Link to='/'>Discover Products</Link>
+                    <Link to='/products'>Discover Products</Link>
                 </NavListItem>
             </Router>
         </NavigationLinkContainer>

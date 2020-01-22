@@ -19,7 +19,7 @@ const Heading = styled.span`
     font-size: 40pt;
   }
 @media ${ device.laptop } {
-    font-size: 30pt;
+    font-size: 50pt;
   }
 `
 
@@ -42,6 +42,8 @@ export const BodyCopy = styled.p`
   @media ${ device.laptop} {
     width: 50vw;
     font-size: 14pt;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
   }
 `
 

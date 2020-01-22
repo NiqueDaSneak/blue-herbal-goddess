@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
+import { device } from '../../assets/MediaQueries'
 // import modalConductor from '../hoc/ModalConductor'
 
 const colorChooser = type => {
@@ -21,8 +22,8 @@ const colorChooser = type => {
 
 const Container = styled.div`
   /* box-shadow: 0px 0px 5px 0px black; */
-  padding: 6%;
-  width: 32vw;
+  /* padding: 6%; */
+  width: 40vw;
   border-radius: 20px;
   margin-bottom: 4vh;
   height: 30vh;
@@ -36,21 +37,46 @@ const Container = styled.div`
   p {
     text-align: center;
   }
+  @media ${ device.laptop} {
+    width: 32vw;
+    height: 50vh;
+  }
+
 `
 
 const Image = styled.img.attrs({
   alt: 'Descriptive Image'
 })`
   width: 30vw;
+  @media ${device.tablet} {
+    width: 20vw;
+  }
+
+  @media ${device.laptop} {
+    width: 14vw;
+  }
 `
 
 const Price = styled.p`
   font-weight: bold;
+  @media ${device.tablet} {
+    font-size: 14pt;
+  }
+  @media ${device.laptop} {
+    font-size: 14pt;
+  }
 `
 
 const Desc = styled.p`
   font-weight: lighter;
   font-size: 10pt;
+  width: 30vw;
+  @media ${device.tablet} {
+    font-size: 14pt;
+  }
+  @media ${device.laptop} {
+    font-size: 14pt;
+  }
 `
 
 const ProductCard = ( props ) => (

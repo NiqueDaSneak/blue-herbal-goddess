@@ -6,6 +6,7 @@ import images from '../../assets/imgs'
 import Button from '../ui/Button'
 import ShowResultsToggle from '../ui/ShowResultsToggle'
 import AssessmentResults from '../ui/Modals/AssessmentResults'
+import { device } from '../../assets/MediaQueries'
 
 const Container = styled(PageContainer)`
   margin-bottom: 14vh;
@@ -22,6 +23,12 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 90vw;
+  /* @media ${device.tablet} {
+    align-items: left;
+  } */
+  @media ${device.laptop} {
+    align-items: center;
+  }
 `
 
 
@@ -36,7 +43,7 @@ const AssessmentPage = ( props ) => {
   <BG image={images.wood}>
     <Container>
       <FlexCenterHeading color='light' text='Herbal Assessment' />
-      <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
+      <BodyCopy>The health assessment evaluates your health and habits in the 10 body systems: Digestive, Hepatic, Intestinal, Circulatory, Nervous, Immune, Urininary, Glandular and Structural System.  Helps to evaluate which herbal combination will support a begtter will-being for your individual body.</BodyCopy>
       <CardContainer>
         <Card text='This is a very short question'/>
         <Card text='This is a medium length question. Maybe a second sentence.'/>
@@ -44,7 +51,7 @@ const AssessmentPage = ( props ) => {
         <Card text='This is a very short question'/>
         <Card text='This is a medium length question. Maybe a second sentence.'/>
         <Card text='This is a long question. There is some nuance to your response to this, perhaps. Take a second to consider what your response will be.'/>
-        </CardContainer>
+      </CardContainer>
         <Button visible={!resultsShown} onClick={() => setResultsVisible(true)} text='See Results'/>
         <AssessmentResults openModal={type => props.openModal(type)} active={resultsShown}/>
     </Container>

@@ -6,6 +6,7 @@ import Button from '../Button'
 import colors from '../../../assets/colors'
 import images from '../../../assets/imgs'
 import {default as Card} from '../../ui/ProductCard'
+import { device } from '../../../assets/MediaQueries'
 
 const Container = styled.div`
   color: white;
@@ -18,6 +19,7 @@ const Container = styled.div`
   align-items: center;
   button {
     &:first-of-type {
+      margin-top: 4vh;
       margin-bottom: 4vh;
     }
   }
@@ -44,12 +46,13 @@ const BtnContainer = styled.div`
 `
 
 const CardContainer = styled.div`
-  margin-top: 4vh;
-  margin-bottom: 4vh;
   display: flex;
   flex-wrap: wrap;
   width: 90vw;
   justify-content: space-between;
+  @media ${device.laptop} {
+    justify-content: space-around;
+  }
 `
 const ProductGroups = [
   {

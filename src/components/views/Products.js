@@ -3,18 +3,20 @@ import styled from 'styled-components'
 import { FlexCenterHeading, PageContainer, BodyCopy, NoScrollBackground } from '../ui/Utility'
 import {default as Card} from '../ui/ProductCard'
 import images from '../../assets/imgs'
+import { device } from '../../assets/MediaQueries'
 
 const Container = styled(PageContainer)`
   
 `
 
 const CardContainer = styled.div`
-  /* margin-top: 4vh; */
-  /* margin-bottom: 4vh; */
   display: flex;
   flex-wrap: wrap;
   width: 90vw;
   justify-content: space-between;
+  @media ${device.laptop} {
+    justify-content: space-around;
+  }
 `
 
 const ProductGroups = [

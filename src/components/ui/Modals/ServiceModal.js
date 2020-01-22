@@ -20,7 +20,7 @@ const Container = styled.div`
   bottom: ${ props => props.active ? '0vh;' : '-40vh'};
   visibility: ${ props => props.active ? 'visible' : 'hidden'};
   opacity: ${ props => props.active ? '1' : '0'};
-  height: 40vh;
+  /* height: 40vh; */
   z-index: 6;
   width: 100vw;
   border-radius: 20px 20px 0 0;
@@ -51,8 +51,9 @@ const Content = styled.div`
   p {
     text-align: left;    
     margin: 0;
-    font-size: 10pt;
-    margin-left: 4vw;
+    font-size: 12pt;
+    /* margin-left: 4vw; */
+    text-align: justify;
     width: inherit;
     @media ${ device.laptop } {
       text-align: center;

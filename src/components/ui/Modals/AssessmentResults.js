@@ -117,9 +117,10 @@ const AssessmentResults = (props) => (
     <Heading small color='light' text='Results' />
     <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
     <CardContainer>
-      { ProductGroups.map( group => {
+      { ProductGroups.map((group, index) => {
         return(
           <Card 
+          key={index}
           click={type => props.openModal(type)}
           info={group} />
           ) 

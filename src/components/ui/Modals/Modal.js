@@ -6,7 +6,6 @@ import SingleProductModal from './SingleProduct'
 import MainMenu from './MainMenu'
 
 const Modal = (props) => {
-  console.log('a modal is opened', props.modalType)
   return(
     <Portal>
       <ServiceModal active={props.modalType === 'SERVICE_MODAL'} activeItem={props.modalData} />  

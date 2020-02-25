@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { FlexCenterHeading, PageContainer, BodyCopy, NoScrollBackground } from '../ui/Utility'
 import {default as Card} from '../ui/ProductCard'
 import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
+import actions from '../../store/actions'
+import {GlobalContext} from '../hoc/Store'
 
 const Container = styled(PageContainer)`
   
@@ -73,6 +75,9 @@ export const BG = styled(NoScrollBackground)`
 `
 
 const ProductsPage = ( props ) => {
+
+  const [state, dispatch] = useContext(GlobalContext)
+
  return(
   <BG image={images.wood}>
     <Container>
@@ -83,7 +88,7 @@ const ProductsPage = ( props ) => {
         return(
           <Card
           key={index} 
-          click={type => props.openModal(type)}
+          click={type => dispatch(actions.openModal(type))}
           info={group} />
           ) 
         }) }

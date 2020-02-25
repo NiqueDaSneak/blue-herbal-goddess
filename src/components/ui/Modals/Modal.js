@@ -5,7 +5,6 @@ import ProductBundleModal from './ProductBundleModal'
 import SingleProductModal from './SingleProduct'
 import MainMenu from './MainMenu'
 import { GlobalContext } from '../../hoc/Store'
-// import actions from '../../store/actions'
 
 const Modal = (props) => {
   const [state, dispatch] = useContext(GlobalContext)

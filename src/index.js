@@ -17,13 +17,7 @@ const AppRouter = () => {
   return(
     <GlobalStore>
       <Router>
-        <Layout 
-          // openModal={(type) => dispatch({type: 'openModal', modalType: type})}
-          // closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
-          // modalOpen={state.modalOpen}
-          // modalType={state.modalType} 
-          // modalData={state.modalData} 
-          >
+        <Layout>
             <Switch>
               <Route path="/" exact >
                 <Home />

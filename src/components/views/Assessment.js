@@ -53,7 +53,7 @@ const AssessmentPage = ( props ) => {
         <Card text='This is a long question. There is some nuance to your response to this, perhaps. Take a second to consider what your response will be.'/>
       </CardContainer>
         <Button visible={!resultsShown} onClick={() => setResultsVisible(true)} text='See Results'/>
-        <AssessmentResults openModal={type => props.openModal(type)} active={resultsShown}/>
+        <AssessmentResults active={resultsShown}/>
     </Container>
   </BG>
  )

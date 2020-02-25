@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled, {css} from 'styled-components'
 import images from '../../assets/imgs'
 import { FlexCenterHeading, BodyCopy, fadeInForward, PageContainer, NoScrollBackground } from '../ui/Utility'
@@ -8,6 +8,8 @@ import colors from '../../assets/colors'
 import AboutUs from '../ui/AboutUs'
 // import ServiceModal from  '../ui/ServiceModal'
 import { device } from '../../assets/MediaQueries'
+import { GlobalContext } from '../hoc/Store'
+import actions from '../../store/actions'
 
 const ServicesSection = styled(PageContainer)`
   height: 80vh;
@@ -86,6 +88,8 @@ const BG = styled(NoScrollBackground)`
 `
 
 const Services = ( props ) => {
+  const [state, dispatch] = useContext(GlobalContext)
+
   const [activeItem, setActiveItem] = useState({})
   const [activeIndex, setActiveIndex] = useState(99)
 
@@ -101,10 +105,10 @@ const Services = ( props ) => {
             <ServiceItem
             key={index}
             index={index}
-            activeIndex={props.modalOpen ? activeIndex : null}
+            activeIndex={state.modalOpen ? activeIndex : null}
             setActiveIndex={(val) => setActiveIndex(val)} 
             activeItem={activeItem}
-            click={(item) => props.openModal('SERVICE_MODAL', item)}
+            click={(item) => dispatch(actions.openModal('SERVICE_MODAL', item))}
             item={item}
             />
             )

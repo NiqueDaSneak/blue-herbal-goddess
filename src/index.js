@@ -3,60 +3,52 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { Home, Services, ComingSoon, Products, Assessment } from './components/views/index'
 import Layout from './components/hoc/Layout'
+import {GlobalStore} from './components/hoc/Store'
 import * as serviceWorker from './serviceWorker'
 
 const AppRouter = () => {
 
-  const initialState = {
-    modalOpen: false,
-    modalType: null,
-    cart: {
-      active: false
-    }
-  }
+
   
-  function reducer(state, action) {
-    switch (action.type) {
-      case 'openModal':
-        return {modalOpen: true, modalType: action.modalType, modalData: action.modalData}
-      case 'closeModal':
-        return {modalOpen: false, modalData: action.modalData}
-      default:
-        throw new Error();
-    }
-  }
+ 
   
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // const [state, dispatch] = useReducer(reducer, initialState);
 
   return(
-    <Router>
-      <Layout 
-        openModal={(type) => dispatch({type: 'openModal', modalType: type})}
-        closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
-        modalOpen={state.modalOpen}
-        modalType={state.modalType} 
-        modalData={state.modalData} >
-          <Switch>
-            <Route path="/" exact >
-              <Home />
-            </Route>
-            <Route path='/services'>
-              <Services
-                modalOpen={state.modalOpen} 
-                openModal={(modalType, modalData) => dispatch({type: 'openModal', modalData: modalData, modalType: modalType})} />
-            </Route> 
-            <Route path='/products'> 
-              <Products 
-                openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
-            </Route>
-            <Route path='/assessment'>
-              <Assessment 
-                openModal={(type) => dispatch({type: 'openModal', modalType: type})} />
-            </Route>
-            {/* <Route path='/' component={ComingSoon} /> */}
-          </Switch>
-      </Layout>
-    </Router>
+    <GlobalStore>
+      <Router>
+        <Layout 
+          // openModal={(type) => dispatch({type: 'openModal', modalType: type})}
+          // closeModal={(modalData) => dispatch({type: 'closeModal', modalData: modalData})}
+          // modalOpen={state.modalOpen}
+          // modalType={state.modalType} 
+          // modalData={state.modalData} 
+          >
+            <Switch>
+              <Route path="/" exact >
+                <Home />
+              </Route>
+              <Route path='/services'>
+                <Services
+                  // modalOpen={state.modalOpen} 
+                  // openModal={(modalType, modalData) => dispatch({type: 'openModal', modalData: modalData, modalType: modalType})} 
+                  />
+              </Route> 
+              <Route path='/products'> 
+                <Products 
+                  // openModal={(type) => dispatch({type: 'openModal', modalType: type})} 
+                  />
+              </Route>
+              <Route path='/assessment'>
+                <Assessment 
+                  // openModal={(type) => dispatch({type: 'openModal', modalType: type})} 
+                  />
+              </Route>
+              {/* <Route path='/' component={ComingSoon} /> */}
+            </Switch>
+        </Layout>
+      </Router>
+    </GlobalStore>
   )
 }
 

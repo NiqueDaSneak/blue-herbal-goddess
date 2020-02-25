@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { withRouter } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 import colors from '../../assets/colors'
@@ -6,6 +6,8 @@ import Modal from '../ui/Modals/Modal'
 import FloatingActionButtons from '../ui/FloatingActionButtons'
 import images from '../../assets/imgs'
 import { ContentShade } from '../ui/Utility'
+import { GlobalContext } from '../hoc/Store'
+import actions from '../../store/actions'
 
 const GlobalStyles = createGlobalStyle`
   @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,500i,700&display=swap");
@@ -26,6 +28,9 @@ const RootLayer = styled.div`
 `
 
 const Layout = (props) => {
+
+  const [state, dispatch] = useContext(GlobalContext)
+
   return (
     <>
       <GlobalStyles />
@@ -33,15 +38,15 @@ const Layout = (props) => {
         <FloatingActionButtons
         hidden={ props.location.pathname === '/' ? true : false }
         showCart={false}
-        clicked={type => props.openModal(type)} />
+        clicked={type => dispatch(actions.openModal(type))} />
         <ContentShade 
-        onClick={() => props.closeModal(props.modalData)} 
-        visible={props.modalOpen} />
+        onClick={() => dispatch(actions.closeModal(state.modalData))} 
+        visible={state.modalOpen} />
         <Modal 
-          close={props.closeModal}
-          open={props.modalOpen} 
-          modalType={props.modalType}
-          modalData={props.modalData} />
+          close={() => dispatch(actions.closeModal(state.modalData))}
+          open={state.modalOpen} 
+          modalType={state.modalType}
+          modalData={state.modalData} />
         { props.children }
       </RootLayer>
     </>

@@ -8,7 +8,9 @@ const reducer = (state, action) => {
       return {...state, modalType: null, modalOpen: false}
     case 'SET_NEW_SCORES':
       return {...state, assessmentScores: action.newScores}
-      default:
+    case 'SET_ASS_RESULTS':
+      return {...state, assessmentResultCategories: action.categories}
+    default:
       throw new Error();
   }
 }

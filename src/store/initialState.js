@@ -15,7 +15,8 @@ const initialState = {
     'urinary'     : 0,
     'glandular'   : 0,
     'structural'  : 0,
-  }
+  },
+  assessmentResultCategories: []
 }
 
 export default initialState

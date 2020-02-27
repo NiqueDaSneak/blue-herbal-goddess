@@ -29,10 +29,34 @@ const setAssessmentScores = newScores => {
   }
 }
 
+const calculateAssessmentResults = () => {
+  return (dispatch, getState) => {    
+    let categoryTotalsArray = Object.values(getState().assessmentScores)
+    let maxValue = Math.max(...categoryTotalsArray)
+    let maxCategoryNames = []
+    for (let [key, value] of Object.entries(getState().assessmentScores)) {
+      if (value === maxValue) {
+        maxCategoryNames.push(key)
+      }
+    }
+    dispatch(setAssessmentResults(maxCategoryNames))
+    console.log('maxCategoryNames: ', maxCategoryNames)
+    console.log('getState().assessmentScores: ', getState().assessmentScores)
+  }
+}
+
+const setAssessmentResults = categories => {
+  return {
+    type: 'SET_ASS_RESULTS',
+    categories: categories
+  }
+}
+
 const actions = {
   openModal: openModal,
   closeModal: closeModal,
-  assessmentButtonClickHandler: assessmentButtonClickHandler
+  assessmentButtonClickHandler: assessmentButtonClickHandler,
+  calculateAssessmentResults: calculateAssessmentResults
 }
 
 export default actions

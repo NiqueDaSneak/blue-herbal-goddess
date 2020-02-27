@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Images from '../../../assets/imgs'
 import { BodyCopy, FlexCenterHeading } from '../Utility'
@@ -7,6 +7,7 @@ import colors from '../../../assets/colors'
 import images from '../../../assets/imgs'
 import {default as Card} from '../../ui/ProductCard'
 import { device } from '../../../assets/MediaQueries'
+import { GlobalContext } from '../../hoc/Store'
 
 const Container = styled.div`
   color: white;
@@ -112,23 +113,28 @@ const Heading = styled(FlexCenterHeading)`
   }
 `
 
-const AssessmentResults = (props) => (
-  <Container active={props.active}>
-    <Heading small color='light' text='Results' />
-    <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
-    <CardContainer>
-      { ProductGroups.map((group, index) => {
-        return(
-          <Card 
-          key={index}
-          click={type => props.openModal(type)}
-          info={group} />
-          ) 
-        }) }
-      </CardContainer>
-      <Button light text='More Products'/>
-      <Button text='Retake Assessment'/>
-  </Container>
-)
+const AssessmentResults = (props) => {
+  const [state, dispatch] = useContext(GlobalContext)
+
+  return(
+    <Container active={props.active}>
+    {console.log('assessmentResultCategories: ', state.assessmentResultCategories)}
+      <Heading small color='light' text='Results' />
+      <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
+      <CardContainer>
+        { ProductGroups.map((group, index) => {
+          return(
+            <Card 
+            key={index}
+            click={type => props.openModal(type)}
+            info={group} />
+            ) 
+          }) }
+        </CardContainer>
+        <Button light text='More Products'/>
+        <Button text='Retake Assessment'/>
+    </Container>
+  )
+}
 
 export default AssessmentResults

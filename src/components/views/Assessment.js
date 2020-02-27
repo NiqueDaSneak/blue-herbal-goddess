@@ -9,6 +9,7 @@ import AssessmentResults from '../ui/Modals/AssessmentResults'
 import { device } from '../../assets/MediaQueries'
 import AssessmentQuestionValues from '../../data/AssessmentQuestionValues'
 import {GlobalContext} from '../hoc/Store'
+import actions from '../../store/actions'
 
 const Container = styled(PageContainer)`
   margin-bottom: 14vh;
@@ -42,21 +43,26 @@ const AssessmentPage = ( props ) => {
 
   const [resultsShown, setResultsVisible] = useState(false)
 
- return(
-  <BG image={images.wood}>
-    <Container>
-      <FlexCenterHeading color='light' text='Herbal Assessment' />
-      <BodyCopy>The health assessment evaluates your health and habits in the 10 body systems: Digestive, Hepatic, Intestinal, Circulatory, Nervous, Immune, Urininary, Glandular and Structural System.  Helps to evaluate which herbal combination will support a begtter will-being for your individual body.</BodyCopy>
-      <CardContainer>
-      {AssessmentQuestionValues.map(question => {
-        return <Card key={question.text} questionData={question} />
-      })}
-      </CardContainer>
-        <Button visible={!resultsShown} onClick={() => setResultsVisible(true)} text='See Results'/>
-        <AssessmentResults active={resultsShown}/>
-    </Container>
-  </BG>
- )
+  const finishAssessment = () => {
+    setResultsVisible(true)
+    dispatch(actions.calculateAssessmentResults())
+  }
+
+  return(
+    <BG image={images.wood}>
+      <Container>
+        <FlexCenterHeading color='light' text='Herbal Assessment' />
+        <BodyCopy>The health assessment evaluates your health and habits in the 10 body systems: Digestive, Hepatic, Intestinal, Circulatory, Nervous, Immune, Urininary, Glandular and Structural System.  Helps to evaluate which herbal combination will support a begtter will-being for your individual body.</BodyCopy>
+        <CardContainer>
+        {AssessmentQuestionValues.map(question => {
+          return <Card key={question.text} questionData={question} />
+        })}
+        </CardContainer>
+          <Button visible={!resultsShown} onClick={() => finishAssessment()} text='See Results'/>
+          <AssessmentResults active={resultsShown}/>
+      </Container>
+    </BG>
+  )
 }
 
 export default AssessmentPage

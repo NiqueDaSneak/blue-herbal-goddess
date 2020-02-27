@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { BodyCopy } from './Utility'
 import styled, {css} from 'styled-components'
 import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'
+import {GlobalContext} from '../hoc/Store'
+import actions from '../../store/actions'
 
 const Container = styled.span`
   padding: 6%;
@@ -25,9 +27,18 @@ const Container = styled.span`
 `
 const AssessmentCard = (props) => {
   const [isActive, setActive] = useState(false)
+
+  const [state, dispatch] = useContext(GlobalContext)
+
+  const clickHandler = whichAction => {
+    setActive(whichAction)
+    let type = whichAction ? 'add' : 'subtract'
+    dispatch(actions.assessmentButtonClickHandler(type, props.questionData.scores))
+  }
+
   return(
-    <Container active={isActive} onClick={() => setActive(!isActive)}>
-      <span>{props.text}</span>
+    <Container active={isActive} onClick={() => clickHandler(!isActive)}>
+      <span>{props.questionData.text}</span>
     </Container>
   )
 }

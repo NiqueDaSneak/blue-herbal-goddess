@@ -11,19 +11,29 @@ const closeModal = () => {
     type: 'CLOSE_MODAL', 
   }
 }
+const assessmentButtonClickHandler = (type, questionValues) => {
+  return (dispatch, getState) => {
+    let newScores = getState().assessmentScores
+    for (let [key, value] of Object.entries(questionValues)) {
+      newScores[key] = type === 'add' ? newScores[key] + value : newScores[key] - value
+    }
+    dispatch(setAssessmentScores(newScores))
+  }
+}
 
+const setAssessmentScores = newScores => {
+  return {
+    type: 'SET_NEW_SCORES',
+    newScores: newScores
 
-// export const changeSameCategory = () => {
-//   return (dispatch, getState) => {
-//     let matches = getState().allAffirmations.filter( affirmation => affirmation.category === getState().currentAffirmation.category)
-//     let randomNum = Math.floor((Math.random() * matches.length))
-//     dispatch(setAffirmation({text: matches[randomNum].affirmation, category: matches[randomNum].category}))
-//   }
-// }
+  }
+}
 
 const actions = {
   openModal: openModal,
-  closeModal: closeModal
+  closeModal: closeModal,
+  assessmentButtonClickHandler: assessmentButtonClickHandler
 }
 
 export default actions
+

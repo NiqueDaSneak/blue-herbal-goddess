@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useContext, useState} from 'react'
 import styled from 'styled-components'
 import { FlexCenterHeading, PageContainer, BodyCopy, NoScrollBackground } from '../ui/Utility'
 import {default as Card} from '../ui/AssessmentCard'
@@ -7,6 +7,8 @@ import Button from '../ui/Button'
 import ShowResultsToggle from '../ui/ShowResultsToggle'
 import AssessmentResults from '../ui/Modals/AssessmentResults'
 import { device } from '../../assets/MediaQueries'
+import AssessmentQuestionValues from '../../data/AssessmentQuestionValues'
+import {GlobalContext} from '../hoc/Store'
 
 const Container = styled(PageContainer)`
   margin-bottom: 14vh;
@@ -32,10 +34,11 @@ const CardContainer = styled.div`
 `
 
 
-
-export const BG = styled(NoScrollBackground)`
+const BG = styled(NoScrollBackground)`
 `
+
 const AssessmentPage = ( props ) => {
+  const [state, dispatch] = useContext(GlobalContext)
 
   const [resultsShown, setResultsVisible] = useState(false)
 
@@ -45,12 +48,9 @@ const AssessmentPage = ( props ) => {
       <FlexCenterHeading color='light' text='Herbal Assessment' />
       <BodyCopy>The health assessment evaluates your health and habits in the 10 body systems: Digestive, Hepatic, Intestinal, Circulatory, Nervous, Immune, Urininary, Glandular and Structural System.  Helps to evaluate which herbal combination will support a begtter will-being for your individual body.</BodyCopy>
       <CardContainer>
-        <Card text='This is a very short question'/>
-        <Card text='This is a medium length question. Maybe a second sentence.'/>
-        <Card text='This is a long question. There is some nuance to your response to this, perhaps. Take a second to consider what your response will be.'/>
-        <Card text='This is a very short question'/>
-        <Card text='This is a medium length question. Maybe a second sentence.'/>
-        <Card text='This is a long question. There is some nuance to your response to this, perhaps. Take a second to consider what your response will be.'/>
+      {AssessmentQuestionValues.map(question => {
+        return <Card key={question.text} questionData={question} />
+      })}
       </CardContainer>
         <Button visible={!resultsShown} onClick={() => setResultsVisible(true)} text='See Results'/>
         <AssessmentResults active={resultsShown}/>

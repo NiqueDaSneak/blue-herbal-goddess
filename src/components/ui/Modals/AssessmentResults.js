@@ -118,7 +118,6 @@ const AssessmentResults = (props) => {
 
   return(
     <Container active={props.active}>
-    {console.log('assessmentResultCategories: ', state.assessmentResultCategories)}
       <Heading small color='light' text='Results' />
       <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
       <CardContainer>

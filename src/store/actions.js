@@ -40,8 +40,6 @@ const calculateAssessmentResults = () => {
       }
     }
     dispatch(setAssessmentResults(maxCategoryNames))
-    console.log('maxCategoryNames: ', maxCategoryNames)
-    console.log('getState().assessmentScores: ', getState().assessmentScores)
   }
 }
 

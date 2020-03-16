@@ -23,10 +23,12 @@ const colorChooser = type => {
 const Container = styled.div`
   /* box-shadow: 0px 0px 5px 0px black; */
   /* padding: 6%; */
+  ${'' /* padding-top: 2%;
+  padding-bottom: 2%; */}
   width: 40vw;
   border-radius: 20px;
   margin-bottom: 4vh;
-  height: 30vh;
+  height: 24vh;
   background-color: ${ props => colorChooser(props.type) };
   border: ${ props => props.type === 'content' ? '1px solid white' : null }; 
   backdrop-filter: blur(3px);
@@ -47,7 +49,7 @@ const Container = styled.div`
 const Image = styled.img.attrs({
   alt: 'Descriptive Image'
 })`
-  width: 30vw;
+  width: 20vw;
   @media ${device.tablet} {
     width: 20vw;
   }
@@ -69,6 +71,19 @@ const Price = styled.p`
 
 const Desc = styled.p`
   font-weight: lighter;
+  font-size: 8pt;
+  width: 30vw;
+  @media ${device.tablet} {
+    font-size: 14pt;
+  }
+  @media ${device.laptop} {
+    font-size: 14pt;
+  }
+`
+
+const Name = styled.p`
+  margin-top: 0vh !important;
+  font-weight: bolder;
   font-size: 10pt;
   width: 30vw;
   @media ${device.tablet} {
@@ -80,10 +95,13 @@ const Desc = styled.p`
 `
 
 const ProductCard = ( props ) => (
-  <Container onClick={() => props.click(props.info.modalType)} type={props.info.type}>
-    <Image src={props.info.type === 'content' ? images.youtube : props.info.image} />
-    <Price>{props.info.price ? props.info.price : null}</Price>
-    <Desc>{props.info.description}</Desc>
+  <Container onClick={() => props.click(props.data.modalType, props.data)} type={props.data.type}>
+  {/* <Container onClick={() => props.click(props.data.modalType)} type={props.data.type}> */}
+  {console.log(props.data)}
+    {/* <Image src={props.data.type === 'content' ? images.youtube : props.data.image} /> */}
+    <Name>{props.data.name}</Name>
+    <Desc>{props.data.description}</Desc>
+    <Price>{props.data.price ? props.data.price : null}</Price>
   </Container>
 )
 

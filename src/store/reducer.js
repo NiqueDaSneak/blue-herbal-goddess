@@ -10,6 +10,12 @@ const reducer = (state, action) => {
       return {...state, assessmentScores: action.newScores}
     case 'SET_ASS_RESULTS':
       return {...state, assessmentResultCategories: action.categories}
+    case 'LOAD_PRODUCTS_START':
+      return {...state, areProductsLoading: true}
+    case 'LOAD_PRODUCTS_END':
+      return {...state, areProductsLoading: false}
+    case 'SET_PRODUCTS': 
+      return {...state, herbalProducts: action.productData}
     default:
       throw new Error();
   }

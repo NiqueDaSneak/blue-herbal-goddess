@@ -13,7 +13,7 @@ const Modal = (props) => {
     <Portal>
       <ServiceModal active={state.modalType === 'SERVICE_MODAL'} activeItem={state.modalData} />  
       {/* <ProductBundleModal close={props.close} active={props.modalType === 'PRODUCT_BUNDLE'} /> */}
-      <SingleProductModal close={props.close} active={state.modalType === 'SINGLE_PRODUCT'} />
+      <SingleProductModal productData={state.modalData} close={props.close} active={state.modalType === 'SINGLE_PRODUCT'} />
       <MainMenu active={state.modalType === 'MAIN_MENU'} />
     </Portal>
   )

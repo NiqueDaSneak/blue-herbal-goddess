@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import Images from '../../../assets/imgs'
 import { BodyCopy, FlexCenterHeading } from '../Utility'
@@ -8,6 +8,8 @@ import images from '../../../assets/imgs'
 import {default as Card} from '../../ui/ProductCard'
 import { device } from '../../../assets/MediaQueries'
 import { GlobalContext } from '../../hoc/Store'
+import AssessmentRecommendations from '../../../data/AssessmentRecommendations' 
+import actions from '../../../store/actions'
 
 const Container = styled.div`
   color: white;
@@ -55,7 +57,36 @@ const CardContainer = styled.div`
     justify-content: space-around;
   }
 `
-const ProductGroups = [
+
+const Heading = styled(FlexCenterHeading)`
+  span {
+    margin-top: 4vh !important;
+    color: red;
+    /* font- */
+  }
+`
+
+// let product = state.herbalProducts.find(product => {
+//     {/* console.log("product['ItemID']: ", product['ItemID']) */}
+//     return product['ItemID'] === `${id}`
+//     })
+//     setProducts([product])
+
+
+const AssessmentResults = (props) => {
+  const [state, dispatch] = useContext(GlobalContext)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+
+  }, [])
+
+  // if (props.active) {
+  //   // {AssessmentRecommendations[category].productIds.forEach(id => {
+  //   // })}
+  // }
+const renderProducts = category => {
+  const ProductGroups = [
   {
     modalType: 'PRODUCT_BUNDLE', 
     type: 'bundle',
@@ -105,35 +136,55 @@ const ProductGroups = [
   },
 ]
 
-const Heading = styled(FlexCenterHeading)`
-  span {
-    margin-top: 4vh !important;
-    color: red;
-    /* font- */
-  }
-`
-
-const AssessmentResults = (props) => {
-  const [state, dispatch] = useContext(GlobalContext)
+  console.log(category)
+  let products = []
+  AssessmentRecommendations[category].productIds.forEach(id => {
+  console.log('id: ', id)
+  let product = state.herbalProducts.find(product => product['ItemID'] === `${id}`)
+  console.log('product: ', product)
+  let productObj = {
+    modalType: 'SINGLE_PRODUCT', 
+    type: 'product',
+    image: images.placeholder,
+    benefits: product.Benefits,
+    recommendedUse: product.RecommendedUse,
+    name: product.Name,
+    price: product.Amounts[4].Price.toFixed(2),
+    description: product.Benefits[0]
+  }  
+  products.push(
+    <Card 
+      // key={index}
+      click={(modalType, modalData) => dispatch(actions.openModal(modalType, modalData))}
+      data={productObj} />
+  )
+  {/* console.log("product['ItemID']: ", product['ItemID']) */}
+  // setProducts([product])
+  // {/* console.log('product: ', product) */}
+  })
+  return products
+}
 
   return(
-    <Container active={props.active}>
+    <Container active={true}>
+    {/* <Container active={props.active}> */}
       <Heading small color='light' text='Results' />
-      <BodyCopy>Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
-      <CardContainer>
-        { ProductGroups.map((group, index) => {
-          return(
-            <Card 
-            key={index}
-            click={type => props.openModal(type)}
-            info={group} />
-            ) 
-          }) }
-        </CardContainer>
-        <Button light text='More Products'/>
-        <Button text='Retake Assessment'/>
+      <BodyCopy>It looks like you have a deficiency with the following body systems:</BodyCopy>
+      {state.assessmentResultCategories.map((category, i) => {
+        return(
+          <span key={i}>
+            <Heading small color='light' text={AssessmentRecommendations[category].title} />
+            <BodyCopy>{AssessmentRecommendations[category].description}</BodyCopy>
+            <CardContainer>
+            {state.herbalProducts.length > 0 ? renderProducts(category) : null}
+            </CardContainer>
+          </span>
+        )
+      })}
+      <Button text='Retake Assessment'/>
     </Container>
   )
 }
+
 
 export default AssessmentResults

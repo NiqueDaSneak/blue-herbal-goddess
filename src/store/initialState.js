@@ -1,5 +1,6 @@
 const initialState = {
   modalOpen: false,
+  modalData: {},
   modalType: null,
   cart: {
     active: false
@@ -16,7 +17,9 @@ const initialState = {
     'glandular'   : 0,
     'structural'  : 0,
   },
-  assessmentResultCategories: []
+  assessmentResultCategories: ['respiratory'],
+  areProductsLoading: false,
+  herbalProducts: []
 }
 
 export default initialState

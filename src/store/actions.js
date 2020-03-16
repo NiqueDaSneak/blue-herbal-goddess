@@ -1,3 +1,6 @@
+import axios from 'axios'
+// import HerbalProducts from '../data/HerbalProducts'
+
 const openModal = (modalType, modalData) => {
   return {
     type: 'OPEN_MODAL', 
@@ -50,11 +53,53 @@ const setAssessmentResults = categories => {
   }
 }
 
+const loadProducts = () => {
+  return (dispatch, getState) => {
+    dispatch(startLoadingProducts)
+    // console.log(HerbalProducts.data.length)
+    axios.get('https://us-central1-blue-herbal-goddess.cloudfunctions.net/helloWorld', { headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}, credentials: 'same-origin'})
+    .then(res => {
+      dispatch(setProducts(res.data.Data))
+      console.log(res)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  //   axios.get('https://sandbox.naturessunshine.com/us/api/getItems?excludeInactive=true', { headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}, credentials: 'same-origin',})
+  //   .then(response => {
+  //     console.log(response)
+  //   })
+  //   .catch(error => {
+  //     console.log(error)
+  // })
+  }
+}
+
+const setProducts = productData => {
+  return {
+    type: 'SET_PRODUCTS',
+    productData
+  }
+}
+
+const startLoadingProducts = () => {
+  return {
+    type: 'LOAD_PRODUCTS_START'
+  }
+}
+
+const finishLoadingProducts = () => {
+  return {
+    type: 'LOAD_PRODUCTS_END'
+  }
+}
+
 const actions = {
   openModal: openModal,
   closeModal: closeModal,
   assessmentButtonClickHandler: assessmentButtonClickHandler,
-  calculateAssessmentResults: calculateAssessmentResults
+  calculateAssessmentResults: calculateAssessmentResults,
+  loadProducts: loadProducts
 }
 
 export default actions

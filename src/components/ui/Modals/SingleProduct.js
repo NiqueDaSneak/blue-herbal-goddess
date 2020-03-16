@@ -19,7 +19,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50vh;
+  ${'' /* height: 50vh; */}
   width: 100vw;
   justify-content: space-evenly;
   padding-top: 4vh;
@@ -35,14 +35,26 @@ const ProductImage = styled.img.attrs( props => ({
 
 const Price = styled.span`
   margin-bottom: 4vh;
+  font-size: 16pt;
+  font-weight: bolder;
+`
+
+const Copy = styled.p`
+  width: 80%;
+  margin-bottom: 4%;
+  font-size: 14pt;
+  text-align: center;
 `
 
 const SingleProductModal = (props) => (
   <Container active={props.active}>
-    <ProductImage />
-    <BodyCopy>Product Name</BodyCopy>
-    <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
-    <Price>$999.99</Price>
+  {console.log(props.productData)}
+    {/* <ProductImage /> */}
+    <Copy>{props.productData.name}</Copy>
+    {props.productData.benefits !== undefined ? props.productData.benefits.map(benefit => <Copy>{benefit}</Copy>) : null }
+    <Copy>{props.productData.howItWorks}</Copy>
+    <Copy>{props.productData.recommendedUse}</Copy>
+    <Price>{props.productData.price}</Price>
     <Button text='Buy This Only'/>
   </Container>
 )

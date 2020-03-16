@@ -46,6 +46,7 @@ const AssessmentPage = ( props ) => {
   const finishAssessment = () => {
     setResultsVisible(true)
     dispatch(actions.calculateAssessmentResults())
+    dispatch(actions.loadProducts())
   }
 
   return(

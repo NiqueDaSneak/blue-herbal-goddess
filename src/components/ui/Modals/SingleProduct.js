@@ -46,11 +46,15 @@ const Copy = styled.p`
   text-align: center;
 `
 
+const Name = styled(Copy)`
+  font-weight: bolder;
+`
+
 const SingleProductModal = (props) => (
   <Container active={props.active}>
   {console.log(props.productData)}
     {/* <ProductImage /> */}
-    <Copy>{props.productData.name}</Copy>
+    <Name>{props.productData.name}</Name>
     {props.productData.benefits !== undefined ? props.productData.benefits.map(benefit => <Copy>{benefit}</Copy>) : null }
     <Copy>{props.productData.howItWorks}</Copy>
     <Copy>{props.productData.recommendedUse}</Copy>

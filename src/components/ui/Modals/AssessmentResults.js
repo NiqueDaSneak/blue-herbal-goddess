@@ -166,19 +166,18 @@ const renderProducts = category => {
 }
 
   return(
-    <Container active={true}>
-    {/* <Container active={props.active}> */}
+    <Container active={props.active}>
       <Heading small color='light' text='Results' />
       <BodyCopy>It looks like you have a deficiency with the following body systems:</BodyCopy>
       {state.assessmentResultCategories.map((category, i) => {
         return(
-          <span key={i}>
+          <div key={i}>
             <Heading small color='light' text={AssessmentRecommendations[category].title} />
             <BodyCopy>{AssessmentRecommendations[category].description}</BodyCopy>
             <CardContainer>
             {state.herbalProducts.length > 0 ? renderProducts(category) : null}
             </CardContainer>
-          </span>
+          </div>
         )
       })}
       <Button text='Retake Assessment'/>

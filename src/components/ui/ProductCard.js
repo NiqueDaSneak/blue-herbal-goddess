@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'
 import Button from './Button'
+import actions from '../../store/actions'
+import { GlobalContext } from '../hoc/Store'
+import AssessmentRecommendations from '../../data/AssessmentRecommendations'
 
 const colorChooser = type => {
   switch (type) {
@@ -80,13 +83,23 @@ const AddToCartBtn = styled(Button)`
   margin-bottom: 0 !important;
 `
 
-const ProductCard = ( props ) => (
-  <Container onClick={() => props.click(props.data.modalType, props.data.modalType === 'PRODUCT_BUNDLE' ? props.data.bundleData : props.data)} type={props.data.type}>
-    <Name>{props.data.name}</Name>
-    {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
-    <Price>{props.data.price ? `$${props.data.price}` : null}</Price>
-    {props.data.type === 'bundle' ? <AddToCartBtn small={true} text='Add To Cart'/> : null}
-  </Container>
-)
+const ProductCard = props => {
+  const [state, dispatch] = useContext(GlobalContext)
+
+  const dispatchBundle = () => {
+    AssessmentRecommendations[props.data.category].productIds.forEach(id => {
+      dispatch(actions.addToCart(id))
+    })
+  }
+
+  return(
+    <Container onClick={() => props.click(props.data.modalType, props.data.modalType === 'PRODUCT_BUNDLE' ? props.data.bundleData : props.data)} type={props.data.type}>
+      <Name>{props.data.name}</Name>
+      {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
+      <Price>{props.data.price ? `$${props.data.price}` : null}</Price>
+      {props.data.type === 'bundle' ? <AddToCartBtn onClick={() => dispatchBundle()} small={true} text='Add To Cart'/> : null}
+    </Container>
+  ) 
+}
 
 export default ProductCard

@@ -3,7 +3,8 @@ const initialState = {
   modalData: {},
   modalType: null,
   cart: {
-    active: false
+    active: false,
+    items: []
   },
   assessmentScores: {
     'digestive'   : 0,

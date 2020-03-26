@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
 import colors from '../../../assets/colors'
+import { GlobalContext } from '../../hoc/Store'
+import actions from '../../../store/actions'
 
 const Container = styled.div`
   color: white;
@@ -42,16 +44,21 @@ const Name = styled(Copy)`
   font-size: 14pt;
 `
 
-const SingleProductModal = (props) => (
-  <Container active={props.active}>
-    <Name>{props.productData.name}</Name>
-    {props.productData.benefits !== undefined ? props.productData.benefits.map(benefit => <Copy>{benefit}</Copy>) : null }
-    <Copy>{props.productData.howItWorks}</Copy>
-    <Copy>{props.productData.recommendedUse}</Copy>
-    <Price>{`$${props.productData.price}`}</Price>
-    <Button text='Add To Cart'/>
-  </Container>
-)
+const SingleProductModal = (props) => {
+  const [state, dispatch] = useContext(GlobalContext)
+
+  return(
+    <Container active={props.active}>
+      <Name>{props.productData.name}</Name>
+      {props.productData.benefits !== undefined ? props.productData.benefits.map(benefit => <Copy key={benefit}>{benefit}</Copy>) : null }
+      <Copy>{props.productData.howItWorks}</Copy>
+      <Copy>{props.productData.recommendedUse}</Copy>
+      <Price>{`$${props.productData.price}`}</Price>
+      <Button onClick={() => dispatch(actions.addToCart(props.productData.id))} text='Add To Cart'/>
+    </Container>
+  )
+}
+
 
 SingleProductModal.defaultProps = {
   productData: {}

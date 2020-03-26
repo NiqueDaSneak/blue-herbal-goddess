@@ -57,7 +57,8 @@ const renderProducts = category => {
     recommendedUse: product.RecommendedUse,
     name: product.Name,
     price: product.Amounts[4].Price.toFixed(2),
-    description: product.Benefits[0]
+    description: product.Benefits[0],
+    id: id
   }
 
   products.push(
@@ -73,13 +74,14 @@ const renderProducts = category => {
     image: images.placeholder,
     price: bundlePrice.toFixed(2),
     name: 'Buy The Bundle',
-    bundleData: products
+    bundleData: products,
+    category: category
   }
 
   products.push(
     <Card 
       key={bundleObj.price}
-      click={(modalType, modalData) => dispatch(actions.openModal(modalType, modalData))}
+      click={() => null}
       data={bundleObj}
     />
   )

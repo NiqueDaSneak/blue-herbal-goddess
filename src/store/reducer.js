@@ -14,6 +14,8 @@ const reducer = (state, action) => {
       return {...state, areProductsLoading: false}
     case 'SET_PRODUCTS': 
       return {...state, herbalProducts: action.productData}
+    case 'ADD_TO_CART':
+      return {...state, cart: {active: true, items: [...state.cart.items, action.item]}}
     default:
       throw new Error();
   }

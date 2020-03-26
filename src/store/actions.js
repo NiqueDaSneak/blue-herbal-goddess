@@ -88,12 +88,20 @@ const finishLoadingProducts = () => {
   }
 }
 
+const addToCart = item => {
+  return { 
+    type: 'ADD_TO_CART',
+    item: item
+  }
+}
+
 const actions = {
   openModal: openModal,
   closeModal: closeModal,
   assessmentButtonClickHandler: assessmentButtonClickHandler,
   calculateAssessmentResults: calculateAssessmentResults,
-  loadProducts: loadProducts
+  loadProducts: loadProducts,
+  addToCart: addToCart
 }
 
 export default actions

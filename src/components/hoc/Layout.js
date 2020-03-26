@@ -37,7 +37,6 @@ const Layout = (props) => {
       <RootLayer>
         <FloatingActionButtons
         hidden={ props.location.pathname === '/' ? true : false }
-        showCart={false}
         clicked={type => dispatch(actions.openModal(type))} />
         <ContentShade 
         onClick={() => dispatch(actions.closeModal(state.modalData))} 

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
+import { GlobalContext } from '../hoc/Store'
 
 const Circle = styled.div`
   display: flex;
@@ -62,8 +63,9 @@ const Container = styled.div`
   align-items: center;
 `
 
-const FloatingActionButtons = ( props ) => {
+const FloatingActionButtons = props => {
   // const [menuVisible, setMenu] = useState(false);
+  const [state, dispatch] = useContext(GlobalContext)
 
   return(
     <>
@@ -74,7 +76,7 @@ const FloatingActionButtons = ( props ) => {
           <Hamburger />
         </MenuToggle>
         <CartToggle 
-          showCart={props.showCart}
+          showCart={state.cart.active}
           onClick={() => props.clicked('CART')} >
           <img alt='Floating Action Button' src={images.cart}/>
         </CartToggle>

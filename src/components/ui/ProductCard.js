@@ -82,7 +82,6 @@ const AddToCartBtn = styled(Button)`
 
 const ProductCard = ( props ) => (
   <Container onClick={() => props.click(props.data.modalType, props.data.modalType === 'PRODUCT_BUNDLE' ? props.data.bundleData : props.data)} type={props.data.type}>
-  {console.log(props.data)}
     <Name>{props.data.name}</Name>
     {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
     <Price>{props.data.price ? `$${props.data.price}` : null}</Price>

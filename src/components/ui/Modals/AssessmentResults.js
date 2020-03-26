@@ -45,12 +45,8 @@ const renderProducts = category => {
   var products = []
   var bundlePrice = 0
   
-  console.log(category)
-  
   AssessmentRecommendations[category].productIds.forEach(id => {
-  console.log('id: ', id)
   let product = state.herbalProducts.find(product => product['ItemID'] === `${id}`)
-  console.log('product: ', product)
   bundlePrice = bundlePrice + Number(product.Amounts[4].Price.toFixed(2))
 
   let productObj = {
@@ -64,10 +60,9 @@ const renderProducts = category => {
     description: product.Benefits[0]
   }
 
-
   products.push(
     <Card 
-      // key={index}
+      key={productObj.name}
       click={(modalType, modalData) => dispatch(actions.openModal(modalType, modalData))}
       data={productObj} />
   )
@@ -83,6 +78,7 @@ const renderProducts = category => {
 
   products.push(
     <Card 
+      key={bundleObj.price}
       click={(modalType, modalData) => dispatch(actions.openModal(modalType, modalData))}
       data={bundleObj}
     />

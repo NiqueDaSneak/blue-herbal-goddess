@@ -44,7 +44,6 @@ const Name = styled(Copy)`
 
 const SingleProductModal = (props) => (
   <Container active={props.active}>
-  {console.log(props.productData)}
     <Name>{props.productData.name}</Name>
     {props.productData.benefits !== undefined ? props.productData.benefits.map(benefit => <Copy>{benefit}</Copy>) : null }
     <Copy>{props.productData.howItWorks}</Copy>

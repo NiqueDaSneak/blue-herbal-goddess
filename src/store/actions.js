@@ -61,7 +61,7 @@ const loadProducts = () => {
     .then(res => {
       dispatch(finishLoadingProducts)
       dispatch(setProducts(res.data.Data))
-      console.log(res)
+      // console.log(res)
     })
     .catch(error => {
       console.log(error)

@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Images from '../../../assets/imgs'
-import { BodyCopy, FlexCenterHeading } from '../Utility'
 import Button from '../Button'
 import colors from '../../../assets/colors'
-import images from '../../../assets/imgs'
 
 const Container = styled.div`
   color: white;
@@ -19,7 +16,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  ${'' /* height: 50vh; */}
   width: 100vw;
   justify-content: space-evenly;
   padding-top: 4vh;
@@ -27,11 +23,6 @@ const Container = styled.div`
   background-color: ${colors.trans.blue.light};
   backdrop-filter: blur(20px);
 `
-
-const ProductImage = styled.img.attrs( props => ({
-  src: Images.placeholder,
-  alt: 'Placeholder'
-}))``
 
 const Price = styled.span`
   margin-bottom: 4vh;

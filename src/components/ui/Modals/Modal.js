@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import Portal from '../../hoc/Portal'
 import ServiceModal from  './ServiceModal'
-import ProductBundleModal from './ProductBundleModal'
 import SingleProductModal from './SingleProduct'
 import MainMenu from './MainMenu'
 import { GlobalContext } from '../../hoc/Store'
@@ -13,7 +12,6 @@ const Modal = (props) => {
     <Portal>
       <MainMenu active={state.modalType === 'MAIN_MENU'} />
       <ServiceModal active={state.modalType === 'SERVICE_MODAL'} activeItem={state.modalData} />  
-      {/* <ProductBundleModal modalData={state.modalData} close={props.close} active={props.modalType === 'PRODUCT_BUNDLE'} /> */}
       <SingleProductModal productData={state.modalData} close={props.close} active={state.modalType === 'SINGLE_PRODUCT'} />
     </Portal>
   )

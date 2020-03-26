@@ -1,5 +1,4 @@
 import React, {useContext, useState} from 'react'
-import { BodyCopy } from './Utility'
 import styled, {css} from 'styled-components'
 import colors from '../../assets/colors'
 import { device } from '../../assets/MediaQueries'

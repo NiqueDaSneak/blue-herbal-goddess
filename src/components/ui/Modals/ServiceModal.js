@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../Button'
-import { ContentShade } from '../Utility'
 import { BodyCopy } from '../Utility'
-import images from '../../../assets/imgs'
 import colors from '../../../assets/colors'
 import { device } from '../../../assets/MediaQueries'
 
@@ -25,14 +23,6 @@ const Container = styled.div`
   width: 100vw;
   border-radius: 20px 20px 0 0;
   transition: all .6s ease-in-out;
-`
-
-const Chevron = styled.img`
-  width: 10vw;
-  transform: ${ props => props.right ? null : 'scaleX(-1)'};
-  @media ${ device.laptop } {
-    width: 4vw;
-  }
 `
 
 const Content = styled.div`

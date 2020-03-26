@@ -2,11 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import styled from 'styled-components'
 // import SearchBar from './SearchBar'
-import { fadeInForward } from '../Utility'
 import images from '../../../assets/imgs'
 import { device } from '../../../assets/MediaQueries'
 import colors from '../../../assets/colors'
-import Switcher from '../../hoc/Switch'
 
 const MenuContainer = styled.div`
   position: fixed;
@@ -107,7 +105,6 @@ const MainMenu = ( props ) => {
                 <NavListItem>
                     <Link to='/products'>Discover Products</Link>
                 </NavListItem>
-                {/* <Switcher/> */}
             </Router>
         </NavigationLinkContainer>
         {/* <SearchBar /> */}

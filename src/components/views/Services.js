@@ -1,12 +1,9 @@
 import React, { useState, useContext } from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import images from '../../assets/imgs'
 import { FlexCenterHeading, BodyCopy, fadeInForward, PageContainer, NoScrollBackground } from '../ui/Utility'
 import ServiceItem from '../ui/ServiceItem'
-import colors from '../../assets/colors'
-// import Layout from '../hoc/Layout'
 import AboutUs from '../ui/AboutUs'
-// import ServiceModal from  '../ui/ServiceModal'
 import { device } from '../../assets/MediaQueries'
 import { GlobalContext } from '../hoc/Store'
 import actions from '../../store/actions'
@@ -21,7 +18,6 @@ const ServicesSection = styled(PageContainer)`
 `
 
 const ItemsContainer = styled.div`
-  /* margin-top: 4vh; */
   width: 80vw;
   display: flex;
   flex-wrap: wrap;

@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
-import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
 import Button from './Button'
-// import modalConductor from '../hoc/ModalConductor'
 
 const colorChooser = type => {
   switch (type) {
@@ -22,10 +20,6 @@ const colorChooser = type => {
 }
 
 const Container = styled.div`
-  /* box-shadow: 0px 0px 5px 0px black; */
-  /* padding: 6%; */
-  ${'' /* padding-top: 2%;
-  padding-bottom: 2%; */}
   width: 40vw;
   border-radius: 20px;
   margin-bottom: 4vh;
@@ -45,19 +39,6 @@ const Container = styled.div`
     height: 50vh;
   }
 
-`
-
-const Image = styled.img.attrs({
-  alt: 'Descriptive Image'
-})`
-  width: 20vw;
-  @media ${device.tablet} {
-    width: 20vw;
-  }
-
-  @media ${device.laptop} {
-    width: 14vw;
-  }
 `
 
 const Price = styled.p`
@@ -101,9 +82,7 @@ const AddToCartBtn = styled(Button)`
 
 const ProductCard = ( props ) => (
   <Container onClick={() => props.click(props.data.modalType, props.data.modalType === 'PRODUCT_BUNDLE' ? props.data.bundleData : props.data)} type={props.data.type}>
-  {/* <Container onClick={() => props.click(props.data.modalType)} type={props.data.type}> */}
   {console.log(props.data)}
-    {/* <Image src={props.data.type === 'content' ? images.youtube : props.data.image} /> */}
     <Name>{props.data.name}</Name>
     {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
     <Price>{props.data.price ? `$${props.data.price}` : null}</Price>

@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { Home, Services, ComingSoon, Products, Assessment } from './components/views/index'
@@ -19,25 +19,10 @@ const AppRouter = () => {
       <Router>
         <Layout>
             <Switch>
-              <Route path="/" exact >
-                <Home />
-              </Route>
-              <Route path='/services'>
-                <Services
-                  // modalOpen={state.modalOpen} 
-                  // openModal={(modalType, modalData) => dispatch({type: 'openModal', modalData: modalData, modalType: modalType})} 
-                  />
-              </Route> 
-              <Route path='/products'> 
-                <Products 
-                  // openModal={(type) => dispatch({type: 'openModal', modalType: type})} 
-                  />
-              </Route>
-              <Route path='/assessment'>
-                <Assessment 
-                  // openModal={(type) => dispatch({type: 'openModal', modalType: type})} 
-                  />
-              </Route>
+              <Route path="/" exact component={Home}/>
+              <Route path='/services' component={Services}/>
+              <Route path='/products' component={Products}/> 
+              <Route path='/assessment' component={Assessment}/>
               {/* <Route path='/' component={ComingSoon} /> */}
             </Switch>
         </Layout>

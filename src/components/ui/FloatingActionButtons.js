@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import styled, { css } from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
-// import MainMenu from '../ui/MainMenu'
-import { ContentShade } from './Utility'
 import { device } from '../../assets/MediaQueries'
 
 const Circle = styled.div`
@@ -20,44 +18,6 @@ const Circle = styled.div`
     width: 4vw;
     height: 4vw;
   }
-`
-
-const Cir = css`
-  display: flex;
-  justify-content: center;
-  border-radius: 10vw;
-  width: 15vw;
-  height: 15vw;
-  /* bottom: 5vh;
-  right: 5vh;
-  position: fixed; */
-  transition: all .4s;
-  @media ${ device.tablet } {
-    width: 10vw;
-    height: 10vw;
-  }
-  @media ${ device.laptop } {
-    width: 4vw;
-    height: 4vw;
-  }
-`
-const Square = css`   
-  border-radius: 20px 20px 0 0;
-  height: 40vh;
-  position: fixed;
-  width: 100vw;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; */
-  bottom: 0vh;
-  right: 0vh;
-  transition: all .4s;
-`
-
-const CircleToSquare = styled.div`
-  ${ props => props.circle ? Cir : Square };
-  box-shadow: 0px 0px 5px 0px black;
-  transition: all .4s;
 `
 
 const MenuToggle = styled(Circle)`

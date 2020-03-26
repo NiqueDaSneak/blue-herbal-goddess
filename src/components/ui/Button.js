@@ -13,7 +13,7 @@ const ButtonStyle = styled.button`
   border: none;
   padding-top: 2vh;
   padding-bottom: 2vh;
-  width: 44vw;
+  width: ${props => props.small ? '34vw' : '44vw'};
   text-transform: uppercase;
   border-radius: 2vw;
   font-weight: bolder;
@@ -30,7 +30,7 @@ const ButtonStyle = styled.button`
 
 const Button = ( props ) => {
   return(
-    <ButtonStyle visible={props.visible} light={props.light} onClick={props.onClick}>
+    <ButtonStyle small={props.small} visible={props.visible} light={props.light} onClick={props.onClick}>
       {props.text}
     </ButtonStyle>
   )

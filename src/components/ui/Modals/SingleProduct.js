@@ -42,24 +42,24 @@ const Price = styled.span`
 const Copy = styled.p`
   width: 80%;
   margin-bottom: 4%;
-  font-size: 14pt;
+  font-size: 10pt;
   text-align: center;
 `
 
 const Name = styled(Copy)`
   font-weight: bolder;
+  font-size: 14pt;
 `
 
 const SingleProductModal = (props) => (
   <Container active={props.active}>
   {console.log(props.productData)}
-    {/* <ProductImage /> */}
     <Name>{props.productData.name}</Name>
     {props.productData.benefits !== undefined ? props.productData.benefits.map(benefit => <Copy>{benefit}</Copy>) : null }
     <Copy>{props.productData.howItWorks}</Copy>
     <Copy>{props.productData.recommendedUse}</Copy>
-    <Price>{props.productData.price}</Price>
-    <Button text='Buy This Only'/>
+    <Price>{`$${props.productData.price}`}</Price>
+    <Button text='Add To Cart'/>
   </Container>
 )
 

@@ -56,15 +56,19 @@ const BtnContainer = styled.div`
 
 const ProductBundleModal = (props) => (
   <Container active={props.active}>
-    <BodyCopy>Product Name</BodyCopy>
-    <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy>
+    {/* <BodyCopy>Product Name</BodyCopy>
+    <BodyCopy>Proin pulvinar arcu eu sem posuere, vitae elementum justo auctor. Phasellus non odio felis. Suspendisse et libero in justo vulputate tristique accumsan nec arcu.</BodyCopy> */}
     <ProductPreviewContainer>
+    {/* {console.log(props)} */}
+    {props.active ? props.modalData.map(ProductCard => {
+      return ProductCard
+    }) : null}
+      {/* <ProductImage />
       <ProductImage />
       <ProductImage />
       <ProductImage />
       <ProductImage />
-      <ProductImage />
-      <ProductImage />
+      <ProductImage /> */}
     </ProductPreviewContainer>
     <Price>$999.99</Price>
     <Button text='Buy This Only'/>

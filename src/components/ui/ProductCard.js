@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import colors from '../../assets/colors'
 import images from '../../assets/imgs'
 import { device } from '../../assets/MediaQueries'
+import Button from './Button'
 // import modalConductor from '../hoc/ModalConductor'
 
 const colorChooser = type => {
@@ -93,15 +94,20 @@ const Name = styled.p`
     font-size: 14pt;
   }
 `
+const AddToCartBtn = styled(Button)`
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+`
 
 const ProductCard = ( props ) => (
-  <Container onClick={() => props.click(props.data.modalType, props.data)} type={props.data.type}>
+  <Container onClick={() => props.click(props.data.modalType, props.data.modalType === 'PRODUCT_BUNDLE' ? props.data.bundleData : props.data)} type={props.data.type}>
   {/* <Container onClick={() => props.click(props.data.modalType)} type={props.data.type}> */}
   {console.log(props.data)}
     {/* <Image src={props.data.type === 'content' ? images.youtube : props.data.image} /> */}
     <Name>{props.data.name}</Name>
-    <Desc>{props.data.description}</Desc>
-    <Price>{props.data.price ? props.data.price : null}</Price>
+    {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
+    <Price>{props.data.price ? `$${props.data.price}` : null}</Price>
+    {props.data.type === 'bundle' ? <AddToCartBtn small={true} text='Add To Cart'/> : null}
   </Container>
 )
 

@@ -20,11 +20,11 @@ const Container = styled.div`
   display: ${props => props.active ? 'flex' : 'none'};
   flex-direction: column;
   align-items: center;
-  button {
+  ${'' /* button {
     &:first-of-type {
       margin-top: 4vh;
       margin-bottom: 4vh;
-    }
+    } */}
   }
 `
 
@@ -76,7 +76,6 @@ const Heading = styled(FlexCenterHeading)`
 const AssessmentResults = (props) => {
   const [state, dispatch] = useContext(GlobalContext)
   const [products, setProducts] = useState([])
-
   useEffect(() => {
 
   }, [])
@@ -135,13 +134,17 @@ const renderProducts = category => {
     description: 'This is a bundle created by the owner.'
   },
 ]
-
+  var products = []
+  var bundlePrice = 0
+  
   console.log(category)
-  let products = []
+  
   AssessmentRecommendations[category].productIds.forEach(id => {
   console.log('id: ', id)
   let product = state.herbalProducts.find(product => product['ItemID'] === `${id}`)
   console.log('product: ', product)
+  bundlePrice = bundlePrice + Number(product.Amounts[4].Price.toFixed(2))
+
   let productObj = {
     modalType: 'SINGLE_PRODUCT', 
     type: 'product',
@@ -151,7 +154,9 @@ const renderProducts = category => {
     name: product.Name,
     price: product.Amounts[4].Price.toFixed(2),
     description: product.Benefits[0]
-  }  
+  }
+
+
   products.push(
     <Card 
       // key={index}
@@ -162,6 +167,23 @@ const renderProducts = category => {
   // setProducts([product])
   // {/* console.log('product: ', product) */}
   })
+  const bundleObj = {
+    modalType: 'PRODUCT_BUNDLE', 
+    type: 'bundle',
+    image: images.placeholder,
+    price: bundlePrice.toFixed(2),
+    // description: 'Ships together',
+    name: 'Buy The Bundle',
+    bundleData: products
+  }
+
+  products.push(
+    <Card 
+      click={(modalType, modalData) => dispatch(actions.openModal(modalType, modalData))}
+      data={bundleObj}
+    />
+  )
+
   return products
 }
 

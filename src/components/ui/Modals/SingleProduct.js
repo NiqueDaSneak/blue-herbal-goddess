@@ -63,4 +63,8 @@ const SingleProductModal = (props) => (
   </Container>
 )
 
+SingleProductModal.defaultProps = {
+  productData: {}
+}
+
 export default SingleProductModal

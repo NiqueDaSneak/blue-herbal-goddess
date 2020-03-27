@@ -17,28 +17,30 @@ import Desert from './desert.jpg'
 import Wood from './wood.png'
 import Placeholder from './placeholder.svg'
 import Youtube from './youtube.svg'
+import CartDelete from './cart-delete.svg'
 
 const Images = {
-  menu: Menu,
+  breathe: Breathe,
   cart: ShoppingCart,
-  goddess: {
-    white: GoddessWhite,
-    gradient: GradientGoddess,
-  },
-  waterRipple: WaterRipple,
-  mountains: Mountains,
-  information: Information,
-  ocean: Ocean,
-  woman: Woman,
+  cartDelete: CartDelete,
   chevron: Chevron,
-  tree: Tree,
+  desert: Desert,
   fpo1: FPO1,
   fpo2: FPO2,
   fpo3: FPO3,
-  breathe: Breathe,
-  desert: Desert,
-  wood: Wood,
+  goddess: {
+    gradient: GradientGoddess,
+    white: GoddessWhite,
+  },
+  information: Information,
+  menu: Menu,
+  mountains: Mountains,
+  ocean: Ocean,
   placeholder: Placeholder,
+  tree: Tree,
+  waterRipple: WaterRipple,
+  woman: Woman,
+  wood: Wood,
   youtube: Youtube
 }
 

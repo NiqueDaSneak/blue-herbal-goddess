@@ -54,7 +54,7 @@ const SingleProductModal = (props) => {
       <Copy>{props.productData.howItWorks}</Copy>
       <Copy>{props.productData.recommendedUse}</Copy>
       <Price>{`$${props.productData.price}`}</Price>
-      <Button onClick={() => dispatch(actions.addToCart(props.productData.id))} text='Add To Cart'/>
+      <Button onClick={() => dispatch(actions.addToCart({id: props.productData.id, name: props.productData.name, price: props.productData.price}))} text='Add To Cart'/>
     </Container>
   )
 }

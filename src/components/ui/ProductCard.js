@@ -86,9 +86,16 @@ const AddToCartBtn = styled(Button)`
 const ProductCard = props => {
   const [state, dispatch] = useContext(GlobalContext)
 
-  const dispatchBundle = () => {
+  const addToCartHandler = () => {
     AssessmentRecommendations[props.data.category].productIds.forEach(id => {
-      dispatch(actions.addToCart(id))
+      let product = state.herbalProducts.find(product => product['ItemID'] === `${id}`)
+
+      let cartObj = {
+        id: id, 
+        name: product.Name, 
+        price: product.Amounts[4].Price.toFixed(2) 
+      }
+      dispatch(actions.addToCart(cartObj))
     })
   }
 
@@ -97,7 +104,7 @@ const ProductCard = props => {
       <Name>{props.data.name}</Name>
       {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
       <Price>{props.data.price ? `$${props.data.price}` : null}</Price>
-      {props.data.type === 'bundle' ? <AddToCartBtn onClick={() => dispatchBundle()} small={true} text='Add To Cart'/> : null}
+      {props.data.type === 'bundle' ? <AddToCartBtn onClick={() => addToCartHandler()} small={true} text='Add To Cart'/> : null}
     </Container>
   ) 
 }

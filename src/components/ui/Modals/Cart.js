@@ -130,14 +130,14 @@ const testItems = [
 const TrashIcon = styled.img.attrs({
   src: images.cartDelete
 })`
-  width: 10vw;
-  height: 10vw;
+  width: 8vw;
+  height: 8vw;
 `
 
 const ItemContainer = styled.div`
   ${'' /* background-color: white; */}
   width: 100vw;
-  height: 8vh;
+  height: 10vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -150,16 +150,45 @@ const Content = styled.div`
   text-align: left;
   color: white;
   color: white;
-  width: 50%;
+  width: 34%;
   ${'' /* margin-top: 8vh;
   margin-bottom: 8vh; */}
 `
 
-const Name = styled.p`
-  font-size: 14pt;
+const Name = styled.span`
+  font-size: 12pt;
 `
-const Price = styled.p`
-  font-size: 16pt;
+const Price = styled.span`
+  font-size: 12pt;
+  font-weight: bolder;
+`
+
+const Counter = styled.div`
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-around;
+`
+
+const ProductCount = styled.span`
+  font-size: 12pt;
+`
+
+const CounterControls = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 54%;
+`
+
+const CounterControl = styled.button`
+  color: white;
+  border: none;
+  border-radius: ${props => props.flip ? '0 0 10px 10px': '10px 10px 0 0'};
+  font-size: 20pt;
+  background-color: ${props => props.flip ? colors.blue.light : colors.blue.dark};
+  text-align: center;
+  width: 100%;
 `
 
 const Cart = ( props ) => {
@@ -175,9 +204,15 @@ const Cart = ( props ) => {
           <TrashIcon onClick={() => dispatch(actions.removeFromCart(item.id))} />
           <Content>
             <Name>{item.name}</Name>
-            <Price>{item.price}</Price>
+            <Price>{` $${item.price}`}</Price>
           </Content>
-          <TrashIcon/>
+          <Counter>
+            <ProductCount>999</ProductCount>
+            <CounterControls>
+              <CounterControl>+</CounterControl>
+              <CounterControl flip>-</CounterControl>
+            </CounterControls>
+          </Counter>
         </ItemContainer>
         ) 
       })}

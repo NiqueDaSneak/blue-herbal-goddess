@@ -95,13 +95,28 @@ const addToCart = item => {
   }
 }
 
+const removeFromCart = itemId => {
+  return (dispatch, getState) => {
+    let newCart = getState().cart.items.filter(item => item.id !== itemId)
+    dispatch(setCart(newCart))
+  }
+}
+
+const setCart = cartData => {
+  return {
+    type: 'SET_CART',
+    cartData: cartData
+  }
+}
+
 const actions = {
   openModal: openModal,
   closeModal: closeModal,
   assessmentButtonClickHandler: assessmentButtonClickHandler,
   calculateAssessmentResults: calculateAssessmentResults,
   loadProducts: loadProducts,
-  addToCart: addToCart
+  addToCart: addToCart,
+  removeFromCart: removeFromCart,
 }
 
 export default actions

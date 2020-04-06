@@ -6,17 +6,18 @@ import images from '../../../assets/imgs'
 import { device } from '../../../assets/MediaQueries'
 import colors from '../../../assets/colors'
 import { GlobalContext } from '../../hoc/Store'
+import actions from '../../../store/actions'
 
 const CartContainer = styled.div`
   position: fixed;
   background-color: ${colors.blue.main};
   width: 100vw;
-  height: 100%;
+  height: 80%;
   bottom: ${ props => props.active ? '0vh;' : '-40vh'};
   visibility: ${ props => props.active ? 'visible' : 'hidden'};
   opacity: ${ props => props.active ? '1' : '0'};
   transition: all .6s ease-in-out;
-  ${'' /* border-radius: 20px 20px 0 0; */}
+  border-radius: 20px 20px 0 0;
   z-index: 9;
   ${'' /* display: flex;
   flex-direction: column;
@@ -148,6 +149,8 @@ const ItemContainer = styled.div`
 const Content = styled.div`
   text-align: left;
   color: white;
+  color: white;
+  width: 50%;
   ${'' /* margin-top: 8vh;
   margin-bottom: 8vh; */}
 `
@@ -163,13 +166,13 @@ const Cart = ( props ) => {
   const [state, dispatch] = useContext(GlobalContext)
   console.log(state.cart.items)
   return (
-    // <CartContainer active={props.active}>
-    <CartContainer active={true}>
+    <CartContainer active={props.active}>
+    {/* <CartContainer active={true}> */}
       <CartIcon />
-      {testItems.map(item => {
+      {state.cart.items.map(item => {
         return(
         <ItemContainer>
-          <TrashIcon/>
+          <TrashIcon onClick={() => dispatch(actions.removeFromCart(item.id))} />
           <Content>
             <Name>{item.name}</Name>
             <Price>{item.price}</Price>

@@ -57,7 +57,7 @@ const loadProducts = () => {
   return (dispatch, getState) => {
     dispatch(startLoadingProducts)
 
-    axios.get('https://us-central1-blue-herbal-goddess.cloudfunctions.net/helloWorld', { headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}, credentials: 'same-origin'})
+    axios.get('https://us-central1-blue-herbal-goddess.cloudfunctions.net/getHerbalProducts', { headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}, credentials: 'same-origin'})
     .then(res => {
       dispatch(finishLoadingProducts)
       dispatch(setProducts(res.data.Data))

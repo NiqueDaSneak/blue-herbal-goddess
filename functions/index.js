@@ -5,7 +5,7 @@ const axios = require('axios')
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
+exports.getHerbalProducts = functions.https.onRequest((request, response) => {
   console.log('fired in firebase')
   cors(request, response, () => {
     axios.get('https://sandbox.naturessunshine.com/us/api/getItems?excludeInactive=true')

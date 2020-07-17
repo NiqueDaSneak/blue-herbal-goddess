@@ -72,7 +72,7 @@ const ServiceModal = ({active, activeItem = defaultProps, setActiveIndex}) => (
           <img alt='Placeholder' src={activeItem.icon}/>
           <BodyCopy>{activeItem.description}</BodyCopy>
         </Content>
-        <Button text='CTA Text' />
+        {/* <Button text='CTA Text' /> */}
       </CenterModule>
       {/* <Chevron onClick={() => setActiveIndex(1)} right src={ images.chevron }/> */}
     </Container>

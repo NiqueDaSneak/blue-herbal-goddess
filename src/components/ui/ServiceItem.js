@@ -40,12 +40,14 @@ const Container = styled.div`
 `
 
 const ServiceIcon = styled.img`
-  width: 12vw;
+  width: 10vw;
+  max-height: 5vh;
   @media ${ device.tablet } {
     width: 8vw;
   }
   @media ${ device.laptop } {
     width: 4vw;
+    max-height: 6vh;
   }
 `
 

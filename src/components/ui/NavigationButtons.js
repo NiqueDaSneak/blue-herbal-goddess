@@ -23,16 +23,18 @@ const ButtonContainer = styled.div`
 
 const NavigationButtons = ( props ) => {
   const buttonValues = {
-    first: ['Discover Products','Herbal Assessment','Services','More'],
-    second: ['Instagram','Medium','Facebook','Back'],
+    first: ['Services', 'Instagram', 'Facebook'],
+    // second: ['Instagram','Medium','Facebook','Back'],
+    // first: ['Discover Products','Herbal Assessment','Services','More'],
+    // second: ['Instagram','Medium','Facebook','Back'],
     links: {
-      'Discover Products': '/products',
-      'Herbal Assessment': '/assessment',
+      // 'Discover Products': '/products',
+      // 'Herbal Assessment': '/assessment',
       'Services': '/services',
       social: {
-        'Instagram': 'https://instagram.com',
-        'Medium': 'https://www.medium.com',
-        'Facebook': 'https://facebook.com',
+        'Instagram': 'https://instagram.com/bhgoddess4',
+        // 'Medium': 'https://www.medium.com',
+        'Facebook': 'https://facebook.com/bhgoddess4',
       },
       'More': '',
       'Back': ''

@@ -33,8 +33,8 @@ const AboutUs = ( props ) => (
     <Container>
         <FlexCenterHeading color='light' text='About Us' />
         <Image src={images.woman} />
-        <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
-        <Button light text='Learn More'/>
+        <BodyCopy>Blue Herbal Goddess' mission is to create an environment where we can gain understanding of the mind, body and spirit connection; and to find purpose, inner peace and self-love. </BodyCopy>
+        {/* <Button light text='Learn More'/> */}
     </Container>
 )
 

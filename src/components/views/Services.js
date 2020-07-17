@@ -45,37 +45,37 @@ const ServiceItems = [
   {
     heading: 'Heading 1',
     productName: 'Herbal \nAssessment',
-    icon: images.fpo1,
+    icon: images.plant,
     description: `A tool that can help determine your body's strengths and weaknesses. It's the perfect starting point to better health and well-being.`
   },
   {
     heading: 'Heading 2',
     productName: "Foot \nDetox",
-    icon: images.fpo2,
+    icon: images.foot,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
     heading: 'Heading 3',
     productName: 'Iridology \nSession',
-    icon: images.fpo3,
+    icon: images.eye,
     description: 'Iridology is the study of the color, pigmentations, and structure of the iris or colored portion of the eye as they relate genetically through reflex responses to the strengths and weaknesses of the body system.'
   },
   {
     heading: 'Heading 4',
     productName: 'Keto \nCoaching',
-    icon: images.fpo1,
+    icon: images.cutlery,
     description: 'Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.'
   },
   {
     heading: 'Heading 5',
     productName: 'Chi \nMachine',
-    icon: images.fpo2,
+    icon: images.atom,
     description: 'Scientifically designed to improves energy, increases your oxygen, energy and circulation, relieves muscle aches and pains.'
   },
   {
     heading: 'Heading 6',
     productName: 'Zyto \nScan',
-    icon: images.fpo3,
+    icon: images.hand,
     description: 'A generated report that provides insights on nutritional supplements and services to help maintin health ad welless.'
   },
 ]
@@ -94,7 +94,7 @@ const Services = ( props ) => {
       <ServicesSection>
         <Logo src={images.goddess.white} />
         <FlexCenterHeading color='light' text='Services' />
-        <BodyCopy>Fusce eu purus in felis commodo lobortis sed id erat. Pellentesque a lobortis purus, a consequat augue. Integer eu erat ante. Vestibulum ac odio sit amet velit blandit hendrerit eu lacinia lectus.</BodyCopy>
+        <BodyCopy>We offer a variety of services to help assist mind, body and spirit:</BodyCopy>
         <ItemsContainer>
         { ServiceItems.map( (item, index) => {
           return (

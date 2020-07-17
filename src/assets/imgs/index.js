@@ -18,13 +18,23 @@ import Wood from './wood.png'
 import Placeholder from './placeholder.svg'
 import Youtube from './youtube.svg'
 import CartDelete from './cart-delete.svg'
+import Plant from './plant.svg'
+import Foot from './foot.svg'
+import Eye from './eye.svg'
+import Cutlery from './cutlery.svg'
+import Atom from './atom.svg'
+import Hand from './hand.svg'
 
 const Images = {
+  atom: Atom,
   breathe: Breathe,
   cart: ShoppingCart,
   cartDelete: CartDelete,
   chevron: Chevron,
+  cutlery: Cutlery,
   desert: Desert,
+  eye: Eye,
+  foot: Foot,
   fpo1: FPO1,
   fpo2: FPO2,
   fpo3: FPO3,
@@ -32,11 +42,13 @@ const Images = {
     gradient: GradientGoddess,
     white: GoddessWhite,
   },
+  hand: Hand,
   information: Information,
   menu: Menu,
   mountains: Mountains,
   ocean: Ocean,
   placeholder: Placeholder,
+  plant: Plant,
   tree: Tree,
   waterRipple: WaterRipple,
   woman: Woman,

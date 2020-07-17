@@ -100,11 +100,11 @@ const ProductCard = props => {
   }
 
   return(
-    <Container onClick={() => props.click(props.data.modalType, props.data.modalType === 'PRODUCT_BUNDLE' ? props.data.bundleData : props.data)} type={props.data.type}>
-      <Name>{props.data.name}</Name>
-      {props.data.type === 'bundle' ? null : <Desc>{props.data.description}</Desc>}
-      <Price>{props.data.price ? `$${props.data.price}` : null}</Price>
-      {props.data.type === 'bundle' ? <AddToCartBtn onClick={() => addToCartHandler()} small={true} text='Add To Cart'/> : null}
+    <Container onClick={() => props.click(props.info.modalType, props.info.modalType === 'PRODUCT_BUNDLE' ? props.info.bundleData : props.info)} type={props.info.type}>
+      <Name>{props.info.name}</Name>
+      {props.info.type === 'bundle' ? null : <Desc>{props.info.description}</Desc>}
+      <Price>{props.info.price ? `$${props.info.price}` : null}</Price>
+      {props.info.type === 'bundle' ? <AddToCartBtn onClick={() => addToCartHandler()} small={true} text='Add To Cart'/> : null}
     </Container>
   ) 
 }

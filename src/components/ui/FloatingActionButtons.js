@@ -1,48 +1,87 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
 import colors from '../../assets/colors'
-import Images from '../../assets/imgs'
+import images from '../../assets/imgs'
+import { device } from '../../assets/MediaQueries'
+import { GlobalContext } from '../hoc/Store'
 
 const Circle = styled.div`
   display: flex;
   justify-content: center;
   border-radius: 10vw;
-  border-radius: 50%;
-  width: 20vw;
-  height: 20vw;
-  position: fixed;
-  img {
-    width: 6vw
+  width: 15vw;
+  height: 15vw;
+  @media ${ device.tablet } {
+    width: 10vw;
+    height: 10vw;
+  }
+  @media ${ device.laptop } {
+    width: 4vw;
+    height: 4vw;
   }
 `
 
 const MenuToggle = styled(Circle)`
-  bottom: 4vh;
-  right: ${ props => props.hidden ? '-30vw' : '8vw' };
-  background-color: ${colors.blue.dark};
-  z-index: 2;
+  display: ${ props => props.hidden ? 'none' : undefined };
+  background-color: ${colors.blue.main};
+  /* z-index: 5; */
+`
+
+const Hamburger = styled.img.attrs({
+  alt: 'Floating Action Button', 
+  src: images.menu
+})`
+  width: 6vw;  
+  transition: all 1s ease-in-out;
+  @media ${ device.tablet } {
+    width: 4vw;
+  }
+  @media ${ device.laptop } {
+    width: 1.4vw;
+  }
 `
 
 const CartToggle = styled(Circle)`
-  width: 14vw;
-  height: 14vw;
-  /* bottom: 18vh; */
-  right: ${ props => props.hidden ? '-30vw' : '11vw' };
+  width: 12vw;
+  height: 12vw;
   background-color: ${colors.blue.light};
+  visibility: ${ props => props.showCart ? "visible" : "hidden"  };
   z-index: 1;
-  bottom: ${ props => props.showCart ? '18vh' : '5vh' };
-  transition: bottom 1s;
+  margin-bottom: 2vh;
+  box-shadow: 0px 0px 5px 0px black;
+  img {
+    width: 5vw;
+  }
+`
+const Container = styled.div`
+  bottom: 3vh;
+  right: 3vh;
+  position: fixed;
+  z-index: 5;    
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 `
 
-const FloatingActionButtons = ( props ) => {
+const FloatingActionButtons = props => {
+  // const [menuVisible, setMenu] = useState(false);
+  const [state, dispatch] = useContext(GlobalContext)
+
   return(
     <>
-      <MenuToggle hidden={props.hidden} onClick={props.onClick}>
-        <img alt='Floating Action Button' src={Images.menu}/>
-      </MenuToggle>
-      <CartToggle hidden={props.hidden} showCart={props.showCart}>
-        <img alt='Floating Action Button' src={Images.cart}/>
-      </CartToggle>
+      <Container>
+        <MenuToggle 
+          onClick={() => props.clicked('MAIN_MENU')}
+          hidden={props.hidden}>
+          <Hamburger />
+        </MenuToggle>
+        <CartToggle 
+          showCart={state.cart.active}
+          onClick={() => props.clicked('CART')} >
+          <img alt='Floating Action Button' src={images.cart}/>
+        </CartToggle>
+      </Container>
+      {/* <ContentShade onClick={ () => setMenu(!menuVisible) } visible={ menuVisible }/> */}
     </>
   )
 }
